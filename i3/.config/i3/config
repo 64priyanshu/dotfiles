@@ -33,7 +33,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 5%-
 
 # Lock Screen
-bindsym $alt+Shift+l exec i3lock
+bindsym $alt+Shift+l exec "i3lock -i $HOME/lockwallpaper.png"
 
 # Suspend System
 bindsym $alt+Shift+period exec systemctl suspend
