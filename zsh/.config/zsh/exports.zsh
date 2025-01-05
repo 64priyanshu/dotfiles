@@ -7,8 +7,6 @@ HISTFILE="$HOME"/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-export PATH="$HOME/.local/bin":$PATH
-export PATH="/opt/nvim-linux64/bin":$PATH
 export PATH="$HOME/.cargo/bin":$PATH
 
 #pnpm (required for live-server)
