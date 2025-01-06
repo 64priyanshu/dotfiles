@@ -170,6 +170,7 @@ set $bg #282828
 set $red #cc241d
 set $green #98971a
 set $yellow #d79921
+set $lightyellow #f5ce82
 set $blue #458588
 set $purple #b16286
 set $aqua #689d68
@@ -195,9 +196,9 @@ default_border pixel 1
 default_floating_border pixel 1
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          #00000000 $yellow   #00000000
-client.focused_inactive #00000000 $darkgray #00000000
-client.unfocused        #00000000 $darkgray #00000000
-client.urgent           #00000000 $red      #00000000
+client.focused          #00000000 $yellow   #00000000 $lightyellow
+client.focused_inactive #00000000 $darkgray #00000000 $darkgray
+client.unfocused        #00000000 $darkgray #00000000 $darkgray
+client.urgent           #00000000 $red      #00000000 $red
 
 gaps inner 5
