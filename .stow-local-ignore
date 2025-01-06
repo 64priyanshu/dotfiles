@@ -1,0 +1,12 @@
+# Version control directories
+\.git
+\.svn
+_darcs
+\.hg
+
+# Ignore specific files
+\.gitignore
+\.cvsignore
+^/README.*
+^/LICENSE.*
+^/COPYING

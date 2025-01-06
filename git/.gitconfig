@@ -1,0 +1,10 @@
+[user]
+	email = priyanshukatuwal@gmail.com
+	name = Priyanshu Katuwal
+
+[core]
+	editor = nvim
+  pager = less
+
+[color]
+	ui = true

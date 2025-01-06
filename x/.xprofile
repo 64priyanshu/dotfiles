@@ -1,0 +1,16 @@
+# Load .Xresources
+xrdb -merge ~/.Xresources
+
+# Screen Wallpaper
+feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg &
+
+# Network Manager Applet
+nm-applet --indicator &
+
+# Screenshots
+flameshot &
+
+# Environment variables set everywhere
+export EDITOR="nvim"
+export TERMINAL="kitty"
+export BROWSER="firefox"

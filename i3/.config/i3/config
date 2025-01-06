@@ -9,13 +9,6 @@ font pango: JetBrainsMonoNL Nerd Font 8
 exec --no-startup-id dex --autostart --environment i3
 # Ensures screen-locker automatically activates when system is about to sleep
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-# Starts NetworkManager applet (nm-applet) when i3 launches
-exec --no-startup-id nm-applet
-#Make sure to use 125% recommended resolution scale (Xft.dpi: 120)
-exec xrdb -merge ~/.Xresources
-
-# Wallpaper
-exec_always feh --bg-fill $HOME/wallpaper.jpg
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
@@ -33,7 +26,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=2 -q set 5%-
 
 # Lock Screen
-bindsym $alt+Shift+l exec "i3lock -i $HOME/lockwallpaper.png"
+bindsym $alt+Shift+l exec "i3lock -i $HOME/Pictures/lock.png"
 
 # Suspend System
 bindsym $alt+Shift+period exec systemctl suspend
@@ -90,7 +83,7 @@ bindsym $super+v split v
 bindsym $super+f fullscreen toggle
 
 # change container layout (toggle split only)
-bindsym $super+e layout toggle split
+bindsym $super+t layout toggle split
 
 # toggle tiling / floating
 bindsym $super+space floating toggle
