@@ -18,5 +18,5 @@ source $HOME/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -U compinit; compinit
 source $HOME/fzf-tab/fzf-tab.plugin.zsh
 
-# As much I love VIM motion, I hate having to go through the horrible mess it is in terminals
-bindkey -e # Replaces VIM modes with EMCAS which I know nothing of
+# Replaces shell VIM motion with EMCAS which I know nothing of (Sorry)
+bindkey -e 
