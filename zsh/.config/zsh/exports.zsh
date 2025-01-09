@@ -8,6 +8,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 export PATH="$HOME/.cargo/bin":$PATH
+export PATH="$HOME/.local/scripts/":$PATH
 
 #pnpm (required for live-server)
 export PNPM_HOME="/home/priyanshu/.local/share/pnpm"

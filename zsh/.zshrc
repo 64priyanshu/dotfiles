@@ -2,6 +2,7 @@
 source $HOME/.config/zsh/exports.zsh
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/zshprompt.zsh
+source $HOME/.config/zsh/keybindings.zsh
 
 # Plugins 
 
@@ -17,6 +18,3 @@ source $HOME/zsh-autosuggestions/zsh-autosuggestions.zsh
 # git clone https://github.com/Aloxaf/fzf-tab ~/fzf-tab
 autoload -U compinit; compinit
 source $HOME/fzf-tab/fzf-tab.plugin.zsh
-
-# Replaces shell VIM motion with EMCAS which I know nothing of (Sorry)
-bindkey -e 
