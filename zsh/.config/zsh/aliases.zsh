@@ -5,3 +5,4 @@ alias ..="cd .."
 alias ....="cd ../.."
 
 alias se="sudoedit"
+alias dotf="v ~/.dotfiles"
