@@ -5,4 +5,5 @@ alias ..="cd .."
 alias ....="cd ../.."
 
 alias se="sudoedit"
-alias dotf="v ~/.dotfiles"
+alias dotf="cd ~/.dotfiles"
+alias dotn="cd ~/.config/nvim/"
