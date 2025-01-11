@@ -10,6 +10,9 @@ nm-applet --indicator &
 # Screenshots
 flameshot &
 
+# Notifications
+dunst &
+
 # Environment variables set everywhere
 export EDITOR="nvim"
 export TERMINAL="kitty"

@@ -1,0 +1,36 @@
+[global]
+    padding = 15
+    horizontal_padding = 20
+    frame_width = 1
+    frame_color = "#d5c4a1"
+    sort = yes
+    idle_threshold = 120
+    show_age_threshold = 30
+    font = JetBrainsMonoNL Nerd Font 10
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    word_wrap = yes
+    stack_duplicates = true
+    show_indicators = yes
+    icon_path = /usr/share/icons/Papirus/96x96/devices/:/usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/96x96/apps/
+    width = 250
+    scale = 1
+    offset = (20, 40)
+
+[urgency_low]
+    background = "#3c3836"
+    foreground = "#665c54"
+    highlight = "#8ec07c"
+    timeout = 2
+
+[urgency_normal]
+    background = "#504945"
+    foreground = "#d5c4a1"
+    highlight = "#8ec07c"
+    timeout = 2
+
+[urgency_critical]
+    background = "#fb4934"
+    foreground = "#ebdbb2"
+    highlight = "#8ec07c"
+    timeout = 10
