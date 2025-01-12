@@ -14,7 +14,7 @@ while true; do
 
   if [[ "$BatteryStatus" == "Discharging" ]]; then
     if [ "$BatteryCapacity" -le "$CriticalAlert" ]; then
-      notify-send -u critical "󰂃 Battery Low" "Battery is at $BatteryCapacity%"
+      notify-send -u critical "󰂎 Battery Low" "Battery is at $BatteryCapacity%"
       sleep 60 # 1min
     elif [ "$BatteryCapacity" -le "$NormalAlert" ]; then
       notify-send -u normal "󰁻 Battery Warning" "Battery is at $BatteryCapacity%"
