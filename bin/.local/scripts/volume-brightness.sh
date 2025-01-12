@@ -30,7 +30,7 @@ function get_volume_icon {
   elif [ "$volume" -lt 50 ]; then
     volume_icon=""
   else
-    volume_icon=""
+    volume_icon=" "
   fi
 }
 
@@ -38,51 +38,12 @@ function get_volume_icon {
 function get_brightness_icon {
   brightness_icon=""
 }
-function get_album_art {
-  url=$(playerctl -f "{{mpris:artUrl}}" metadata)
-  if [[ $url == "file://"* ]]; then
-    album_art="${url/file:\/\//}"
-  elif [[ $url == "http://"* ]] && [[ $download_album_art == "true" ]]; then
-    # Identify filename from URL
-    filename="$(echo $url | sed "s/.*\///")"
-
-        # Download file to /tmp if it doesn't exist
-        if [ ! -f "/tmp/$filename" ]; then
-          wget -O "/tmp/$filename" "$url"
-        fi
-
-        album_art="/tmp/$filename"
-      elif [[ $url == "https://"* ]] && [[ $download_album_art == "true" ]]; then
-        # Identify filename from URL
-        filename="$(echo $url | sed "s/.*\///")"
-
-        # Download file to /tmp if it doesn't exist
-        if [ ! -f "/tmp/$filename" ]; then
-          wget -O "/tmp/$filename" "$url"
-        fi
-
-        album_art="/tmp/$filename"
-      else
-        album_art=""
-        fi
-      }
 
 # Displays a volume notification
 function show_volume_notif {
   volume=$(get_mute)
   get_volume_icon
-
-  if [[ $show_music_in_volume_indicator == "true" ]]; then
-    current_song=$(playerctl -f "{{title}} - {{artist}}" metadata)
-
-    if [[ $show_album_art == "true" ]]; then
-      get_album_art
-    fi
-
-    notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume -i "$album_art" "$volume_icon $volume%" "$current_song"
-  else
-    notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%"
-  fi
+  notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%"
 }
 
 # Displays a brightness notification using dunstify
