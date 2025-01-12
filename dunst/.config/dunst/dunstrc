@@ -17,9 +17,15 @@
     scale = 1
     offset = (20, 40)
 
+    # dmenu path
+    dmenu = /usr/bin/dmenu -p dunst:
+
+    # Browser for opening urls in context menu
+    browser = /usr/bin/firefox -new-tab
+
 [urgency_low]
-    background = "#3c3836"
-    foreground = "#665c54"
+    background = "#665c54"
+    foreground = "#141211"
     highlight = "#8ec07c"
     timeout = 2
 
@@ -30,7 +36,7 @@
     timeout = 2
 
 [urgency_critical]
-    background = "#fb4934"
+    background = "#b03728"
     foreground = "#ebdbb2"
     highlight = "#8ec07c"
     timeout = 10
