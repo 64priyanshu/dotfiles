@@ -14,7 +14,7 @@
 
     # Box Dimension and Position
     width = (85, 450)
-    scale = 0
+    scale = 1
     offset = (20, 40)
 
     # Notification elements formatting
