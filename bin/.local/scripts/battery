@@ -1,33 +1,30 @@
 #!/bin/bash
 
-export DISPLAY=:0
-BATTERY_PATH="/sys/class/power_supply/BAT1"
-
-last_status=""
-CriticalAlert=10
-NormalAlert=20
-LowAlert=35
+CRITICAL_ALERT=15
+NORMAL_ALERT=25
+LOW_ALERT=40
 
 while true; do
-  BatteryCapacity=$(cat "$BATTERY_PATH/capacity")
-  BatteryStatus=$(cat "$BATTERY_PATH/status")
+  batteryCapacity=$(cat /sys/class/power_supply/BAT1/capacity)
+  batteryStatus=$(cat /sys/class/power_supply/BAT1/status)
 
-  if [[ "$BatteryStatus" == "Discharging" ]]; then
-    if [ "$BatteryCapacity" -le "$CriticalAlert" ]; then
-      notify-send -u critical "󰂎 Battery Low" "Battery is at $BatteryCapacity%"
-      sleep 60 # 1min
-    elif [ "$BatteryCapacity" -le "$NormalAlert" ]; then
-      notify-send -u normal "󰁻 Battery Warning" "Battery is at $BatteryCapacity%"
-      sleep 300 # 5mins
-    elif [ "$BatteryCapacity" -le "$LowAlert" ]; then
-      notify-send -u low "󰁽 Battery Info" "Consider plugging in the charger. Battery is at $BatteryCapacity%"
-      sleep 480 # 8mins
+  if [[ "$batteryStatus" == "Discharging" ]]; then
+    if [[ $batteryCapacity -le $CRITICAL_ALERT ]]; then
+      notify-send -u critical -t 0 "󰂎 Battery Low" "Battery is at $batteryCapacity%"
+      sleep 120 # 2 mins
+    elif [[ $batteryCapacity -le $NORMAL_ALERT ]]; then
+      notify-send -u normal "󰁻 Battery Warning" "Battery is at $batteryCapacity%"
+      sleep 420 # 7 mins
+    elif [[ $batteryCapacity -le $LOW_ALERT ]]; then
+      notify-send -u low "󰁽 Battery Info" "Consider plugging in the charger. Battery is at $batteryCapacity%"
+      sleep 900 # 15 mins
+    else
+      sleep 2250 # 45mins
     fi
-  elif [[ "$BatteryStatus" == "Full" ]] && [[ "$last_status" != "Full" ]]; then
-    notify-send -u low "󰁹 Battery Full" "You can unplug the charger."
-  else
-    sleep 1800 # 30mins
+  elif [[ "$batteryStatus" == "Charging" ]]; then
+    if [[ $batteryStatus -ge 90 ]]; then
+      notify-send -u low "󰁹 Battery almost full" "You can unplug the charger."
+      sleep 600 # 10 mins
+    fi
   fi
-
-  last_status="$BatteryStatus"
 done
