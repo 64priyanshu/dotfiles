@@ -4,6 +4,8 @@ source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/zshprompt.zsh
 source $HOME/.config/zsh/keybindings.zsh
 
+source $HOME/alias.zsh
+
 # Plugins
 PLUGIN_PATH="$HOME/.config/zsh/plugins"
 

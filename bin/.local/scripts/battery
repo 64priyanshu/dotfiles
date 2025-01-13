@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Make sure that there aren't multiple instances of the script running
+cd $(dirname $0)
+PIDFILE=/tmp/$(basename $0 .sh).pid
+
+if [ -f $PIDFILE ]; then
+  if [ -e /proc/$(cat $PIDFILE) ]; then
+    exit 0
+  fi
+fi
+echo $BASHPID > $PIDFILE
+
+# Battery Notification script starts here
 CRITICAL_ALERT=15
 NORMAL_ALERT=25
 LOW_ALERT=40
