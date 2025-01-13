@@ -19,7 +19,7 @@ floating_modifier $super
 focus_follows_mouse no
 
 # Path of the script
-set $volumeBrightnessScript ~/.local/scripts/volume-brightness.sh
+set $volumeBrightnessScript ~/.local/scripts/volume-brightness
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volumeBrightnessScript volume_up
