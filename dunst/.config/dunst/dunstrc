@@ -1,5 +1,4 @@
 [global]
-
     # Notification Box styling
     padding = 15
     horizontal_padding = 20
@@ -35,7 +34,6 @@
 
     # Browser for opening urls in context menu
     browser = /usr/bin/firefox -new-tab
-
 
 [urgency_low]
     background = "#665c54"
