@@ -37,6 +37,8 @@ while true; do
     if [[ $batteryStatus -ge 90 ]]; then
       notify-send -u low "󰁹 Battery almost full" "You can unplug the charger."
       sleep 600 # 10 mins
+    else
+      sleep 2250 # 45 mins
     fi
   fi
 done
