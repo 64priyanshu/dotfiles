@@ -2,7 +2,7 @@
 xrdb -merge ~/.Xresources
 
 # Screen Wallpaper
-feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg &
+feh --bg-fill $HOME/Pictures/wallpapers/wallpaper.png &
 
 # Network Manager Applet
 nm-applet --indicator &
