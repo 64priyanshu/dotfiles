@@ -1,6 +1,18 @@
 # Replaces shell VIM motion with EMCAS which I know nothing of (Sorry)
 bindkey -e
 
+# Some Basic EMACS motion keymaps
+# CTRL-P - Go to the Previous command in your history
+# CTRL-N - Go to the Next command in your history
+# CTRL-R - Reverse-search through your history
+# CTRL-S - Search forward through your history
+# CTRL-A - Move the cursor to the beginning of the line
+# CTRL-E - Move the cursor to the end of the line
+# CTRL-W - Delete a Word backwards
+# ALT-D  - Delete a word forwards
+# ALT-F  - Move cursor Forward 1 word
+# ALT-B  - Move cursor Backward 1 word
+
 # Disable CTRL+S and CTRL + Q (freeze and unfreeze terminal output)
 stty -ixon  # Disable XON/XOFF flow control
 
