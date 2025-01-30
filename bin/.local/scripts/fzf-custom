@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Select a file, cd into it's parent directory open the file in vim
+fzf_file(){
+  file=$(find . -type f -not -path '*/.git/*' -not -path '*/node_modules/*' -not -path '*/.venv/*' | fzf)
+  if [[ -n "$file" ]]; then
+    full_path=$(realpath "$file")
+    cd "$(dirname "$full_path")"
+    v "$full_path"
+  fi
+}
+
+# Search for directory and cd into it
+fzf_dir(){
+  dir=$(find . -type d -not -path '*/.git/*' -not -path '*/node_modules/*' -not -path '*/.venv/*' | fzf)
+  if [[ -n "$dir" ]]; then
+    cd "$dir"
+  fi
+}
+
+# Search for vim-sessions in the sessiondir and source it and cd into the parent directory of the project
+fzf_session(){
+  session_file=$(find "$HOME/.vim/sessions" -type f -name "*.vim" | fzf)
+  if [[ -n "$session_file" ]]; then
+    full_path=$(realpath "$session_file")
+    parent_dir=$(grep -oP '^cd\s*\K.*' "$session_file")
+    expanded_path=$(eval echo "$parent_dir")
+    cd "$expanded_path"
+    v -S "$full_path"
+  fi
+}
