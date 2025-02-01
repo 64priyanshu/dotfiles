@@ -55,7 +55,7 @@ bindsym $super+Shift+q kill
 bindsym $super+Shift+s exec --no-startup-id "flameshot gui"
 
 # Key to use colorpicker tool (xcolor)
-bindsym $super+Shift+e exec --no-startup-id "xcolor | xclip -selection clipboard"
+bindsym $super+Shift+e exec --no-startup-id "xcolor | tr -d '\n' | xclip -selection clipboard"
 
 # change focus
 bindsym $super+h focus left
