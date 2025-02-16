@@ -5,7 +5,7 @@ You will need `git` and GNU `stow`
 Clone into your `$HOME` directory or `~`
 
 ```bash
-git clone git@github.com:priyanshulxiv/dotfiles.git ~/.dotfiles
+git clone https://github.com/priyanshulxiv/dotfiles ~/.dotfiles
 ```
 
 For the `nvim` config, go to the dotfiles directory and initialize sub-modules
@@ -18,7 +18,7 @@ git submodule update --init
 Or just use this single command
 
 ```bash
-git clone --recurse-submodules git@github.com:priyanshulxiv/dotfiles.git ~/.dotfiles
+git clone --recurse-submodules https://github.com/priyanshulxiv/dotfiles ~/.dotfiles
 ```
 
 Run `stow` to symlink everything or select the directories you want (DON'T DO `stow .`)
