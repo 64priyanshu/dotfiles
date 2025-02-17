@@ -87,7 +87,9 @@ config.use_fancy_tab_bar = false
 -- Cursor
 config.default_cursor_style = "SteadyBlock"
 config.animation_fps = 1
-config.cursor_blink_rate = 600
+config.cursor_blink_rate = 500
+config.cursor_blink_ease_in = "Constant"
+config.cursor_blink_ease_out = "Constant"
 
 -- Others
 config.front_end = "WebGpu"
