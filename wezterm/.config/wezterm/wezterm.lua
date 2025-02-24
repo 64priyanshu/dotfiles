@@ -148,24 +148,24 @@ config.keys = {
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
-		mods = "LEADER|CTRL",
+		mods = "LEADER",
 		key = "LeftArrow",
-		action = wezterm.action.AdjustPaneSize({ "Left", 2 }),
+		action = wezterm.action.AdjustPaneSize({ "Left", 10 }),
 	},
 	{
-		mods = "LEADER|CTRL",
+		mods = "LEADER",
 		key = "RightArrow",
-		action = wezterm.action.AdjustPaneSize({ "Right", 2 }),
+		action = wezterm.action.AdjustPaneSize({ "Right", 10 }),
 	},
 	{
-		mods = "LEADER|CTRL",
+		mods = "LEADER",
 		key = "DownArrow",
-		action = wezterm.action.AdjustPaneSize({ "Down", 2 }),
+		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
 	},
 	{
-		mods = "LEADER|CTRL",
+		mods = "LEADER",
 		key = "UpArrow",
-		action = wezterm.action.AdjustPaneSize({ "Up", 2 }),
+		action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
 	},
 	{
 		mods = "LEADER",
