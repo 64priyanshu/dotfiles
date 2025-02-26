@@ -7,9 +7,12 @@ if wezterm.config_builder then
 end
 
 -- Colorscheme
-config.color_scheme = "Gruvbox Dark (Gogh)"
+config.color_scheme = "GruvboxDark"
 config.term = "xterm-256color"
 config.colors = {
+	cursor_bg = "#bdae93",
+	cursor_fg = "#665c54",
+	cursor_border = "#bdae93",
 	tab_bar = {
 		background = "#333333", -- Background for the entire tab bar
 
