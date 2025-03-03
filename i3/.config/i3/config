@@ -43,8 +43,8 @@ bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $super+Return exec i3-sensible-terminal
 # Start browser (firefox)
 bindsym $super+b exec "firefox"
-# Start file-explorer (thunar)
-bindsym $super+e exec "thunar"
+# Start CLI file-explorer (yazi)
+bindsym $super+e exec "$TERMINAL yazi"
 # Start dmenu (a program launcher) with custom theme and JetBrains Nerd Font
 bindsym $super+d exec --no-startup-id "dmenu_run -nb '$bg' -nf '$yellow' -sb '$aqua' -sf '$darkgray' -fn 'JetBrainsMonoNL Nerd Font-10'"
 
