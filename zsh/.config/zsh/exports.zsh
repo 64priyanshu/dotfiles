@@ -1,7 +1,7 @@
 export EDITOR="nvim"
 export TERMINAL="kitty"
 export BROWSER="firefox"
-# export TERM="xterm-256color"
+export TERM="xterm-256color"
 
 HISTFILE="$HOME"/.zsh_history
 HISTSIZE=1000000
