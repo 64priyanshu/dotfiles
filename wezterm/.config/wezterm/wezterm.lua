@@ -105,6 +105,9 @@ config.keys = {
 	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action.SendKey({ key = "a", mods = "CTRL" }) },
 	{ key = "f", mods = "LEADER", action = wezterm.action.ToggleFullScreen },
 
+	-- Normally in Windows, terminals can't do the C-Space key combination and return NULL. Uncomment the below line to enable the keybinding.
+	-- { key = "Space", mods = "CTRL", action = wezterm.action.SendKey({ key = "Space", mods = "CTRL" }) },
+
 	{
 		mods = "LEADER",
 		key = "c",
