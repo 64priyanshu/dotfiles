@@ -183,6 +183,16 @@ config.keys = {
 		key = "n",
 		action = wezterm.action.ActivateTabRelative(1),
 	},
+	{
+		mods = "LEADER",
+		key = "P",
+		action = wezterm.action.MoveTabRelative(-1),
+	},
+	{
+		mods = "LEADER",
+		key = "N",
+		action = wezterm.action.MoveTabRelative(1),
+	},
 }
 
 for i = 1, 9 do
