@@ -51,4 +51,4 @@
     background = "#b03728"
     foreground = "#ebdbb2"
     highlight = "#8ec07c"
-    timeout = 10
+    timeout = 0
