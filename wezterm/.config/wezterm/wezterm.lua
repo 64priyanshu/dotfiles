@@ -44,7 +44,7 @@ config.colors = {
 }
 
 -- Shell
-config.default_prog = { "pwsh.exe", "-NoLogo" }
+-- config.default_prog = { "pwsh.exe", "-NoLogo" }
 
 -- Fonts
 config.font = wezterm.font("JetBrainsMonoNL Nerd Font")
