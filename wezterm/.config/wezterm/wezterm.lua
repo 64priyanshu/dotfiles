@@ -48,7 +48,7 @@ config.colors = {
 
 -- Fonts
 config.font = wezterm.font("JetBrainsMonoNL Nerd Font")
-config.font_rules = {
+--[[ config.font_rules = {
 	{
 		intensity = "Bold",
 		italic = false,
@@ -65,7 +65,7 @@ config.font_rules = {
 			style = "Italic",
 		}),
 	},
-}
+} ]]
 config.font_size = 9.2
 config.line_height = 1
 config.adjust_window_size_when_changing_font_size = false
@@ -78,10 +78,10 @@ config.scrollback_lines = 3500
 config.window_decorations = "RESIZE"
 config.enable_scroll_bar = false
 config.window_padding = {
-	top = 10,
+	top = 15,
 	bottom = 0,
-	left = 10,
-	right = 10,
+	left = 5,
+	right = 5,
 }
 config.tab_bar_at_bottom = true
 config.tab_and_split_indices_are_zero_based = false
