@@ -15,12 +15,12 @@ config.bold_brightens_ansi_colors = false
 -- config.default_prog = { "pwsh.exe", "-NoLogo" }
 
 -- Fonts
-config.font = wezterm.font("JetBrainsMonoNL Nerd Font")
+config.font = wezterm.font_with_fallback({ { family = "JetBrainsMono Nerd Font", weight = "Regular" }, "Twemoji" })
 -- config.font_rules = {
 -- 	{
 -- 		intensity = "Bold",
 -- 		italic = false,
--- 		font = wezterm.font("JetBrainsMonoNL Nerd Font", {
+-- 		font = wezterm.font("JetBrainsMono Nerd Font", {
 -- 			weight = "Bold",
 -- 			style = "Normal",
 -- 		}),
@@ -28,7 +28,7 @@ config.font = wezterm.font("JetBrainsMonoNL Nerd Font")
 -- 	{
 -- 		intensity = "Bold",
 -- 		italic = true,
--- 		font = wezterm.font("JetBrainsMonoNL Nerd Font", {
+-- 		font = wezterm.font("JetBrainsMono Nerd Font", {
 -- 			weight = "Bold",
 -- 			style = "Italic",
 -- 		}),
@@ -37,6 +37,7 @@ config.font = wezterm.font("JetBrainsMonoNL Nerd Font")
 config.font_size = 9.2
 config.line_height = 1
 config.adjust_window_size_when_changing_font_size = false
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 -- Window and Tabs
 config.initial_rows = 30

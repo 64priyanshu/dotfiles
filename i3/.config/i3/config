@@ -3,7 +3,7 @@ set $super Mod4
 set $alt Mod1
 
 # Set font
-font pango: JetBrainsMonoNL Nerd Font 8
+font pango: JetBrainsMono Nerd Font 8
 
 # Automatically starts programs that are set to run on login
 exec --no-startup-id dex --autostart --environment i3
@@ -46,7 +46,7 @@ bindsym $super+b exec "firefox"
 # Start CLI file-explorer (yazi)
 bindsym $super+e exec "$TERMINAL yazi"
 # Start dmenu (a program launcher) with custom theme and JetBrains Nerd Font
-bindsym $super+d exec --no-startup-id "dmenu_run -nb '$bg' -nf '$yellow' -sb '$aqua' -sf '$darkgray' -fn 'JetBrainsMonoNL Nerd Font-10'"
+bindsym $super+d exec --no-startup-id "dmenu_run -nb '$bg' -nf '$yellow' -sb '$aqua' -sf '$darkgray' -fn 'JetBrainsMono Nerd Font-10'"
 
 # kill focused window
 bindsym $super+Shift+q kill
