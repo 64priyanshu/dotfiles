@@ -17,7 +17,7 @@ config.bold_brightens_ansi_colors = false
 -- Fonts
 config.font = wezterm.font_with_fallback({ { family = "JetBrainsMono Nerd Font", weight = "Regular" }, "Twemoji" })
 -- config.font_rules = {
--- 	{
+-- 	{ -- Bold only
 -- 		intensity = "Bold",
 -- 		italic = false,
 -- 		font = wezterm.font("JetBrainsMono Nerd Font", {
@@ -25,7 +25,15 @@ config.font = wezterm.font_with_fallback({ { family = "JetBrainsMono Nerd Font",
 -- 			style = "Normal",
 -- 		}),
 -- 	},
--- 	{
+-- 	{ -- Italic Only
+-- 		intensity = "Normal",
+-- 		italic = true,
+-- 		font = wezterm.font("JetBrainsMono Nerd Font", {
+-- 			weight = "Regular",
+-- 			style = "Italic",
+-- 		}),
+-- 	},
+-- 	{ -- Bold and Italic
 -- 		intensity = "Bold",
 -- 		italic = true,
 -- 		font = wezterm.font("JetBrainsMono Nerd Font", {
