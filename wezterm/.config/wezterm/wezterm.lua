@@ -11,37 +11,37 @@ config.color_scheme = "wezterm-theme"
 config.term = "xterm-256color"
 config.bold_brightens_ansi_colors = false
 
--- Shell
+-- Shell (For Windows)
 -- config.default_prog = { "pwsh.exe", "-NoLogo" }
 
--- Fonts
-config.font = wezterm.font_with_fallback({ { family = "JetBrainsMono Nerd Font", weight = "Regular" }, "Twemoji" })
--- config.font_rules = {
--- 	{ -- Bold only
--- 		intensity = "Bold",
--- 		italic = false,
--- 		font = wezterm.font("JetBrainsMono Nerd Font", {
--- 			weight = "Bold",
--- 			style = "Normal",
--- 		}),
--- 	},
--- 	{ -- Italic Only
--- 		intensity = "Normal",
--- 		italic = true,
--- 		font = wezterm.font("JetBrainsMono Nerd Font", {
--- 			weight = "Regular",
--- 			style = "Italic",
--- 		}),
--- 	},
--- 	{ -- Bold and Italic
--- 		intensity = "Bold",
--- 		italic = true,
--- 		font = wezterm.font("JetBrainsMono Nerd Font", {
--- 			weight = "Bold",
--- 			style = "Italic",
--- 		}),
--- 	},
--- }
+-- Fonts (check `wezterm ls-fonts`)
+config.font = wezterm.font_with_fallback({ { family = "JetBrainsMono NF", weight = "Regular" }, "Twemoji" })
+config.font_rules = {
+	{ -- Bold only
+		intensity = "Bold",
+		italic = false,
+		font = wezterm.font("JetBrainsMono NF", {
+			weight = "Bold",
+			style = "Normal",
+		}),
+	},
+	{ -- Italic Only
+		intensity = "Normal",
+		italic = true,
+		font = wezterm.font("JetBrainsMono NF", {
+			weight = "Regular",
+			style = "Italic",
+		}),
+	},
+	{ -- Bold and Italic
+		intensity = "Bold",
+		italic = true,
+		font = wezterm.font("JetBrainsMono NF", {
+			weight = "Bold",
+			style = "Italic",
+		}),
+	},
+}
 config.font_size = 9.2
 config.line_height = 1
 config.adjust_window_size_when_changing_font_size = false
