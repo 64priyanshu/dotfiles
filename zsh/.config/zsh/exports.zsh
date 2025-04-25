@@ -10,10 +10,3 @@ SAVEHIST=1000000
 export PATH="$HOME/.cargo/bin":$PATH
 export PATH="$HOME/.local/scripts/":$PATH
 export PATH="$HOME/.local/bin/":$PATH
-
-#pnpm (required for live-server)
-export PNPM_HOME="/home/priyanshu/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
