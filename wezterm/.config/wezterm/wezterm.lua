@@ -11,7 +11,7 @@ config.color_scheme = "wezterm-theme"
 config.term = "xterm-256color"
 config.bold_brightens_ansi_colors = false
 
--- Shell (For Windows)
+-- Shell (For Windows OS)
 -- config.default_prog = { "pwsh.exe", "-NoLogo" }
 
 -- Fonts (check `wezterm ls-fonts`)
@@ -60,7 +60,7 @@ config.window_padding = {
 	left = 5,
 	right = 5,
 }
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.tab_bar_at_bottom = true
 config.tab_and_split_indices_are_zero_based = false
 config.use_fancy_tab_bar = false
@@ -90,13 +90,12 @@ config.webgpu_power_preference = "HighPerformance"
 config.enable_kitty_graphics = true
 
 -- Keymaps
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = math.maxinteger } -- Infinite timeout
 config.keys = {
 	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action.SendKey({ key = "a", mods = "CTRL" }) },
 	{ key = "f", mods = "LEADER", action = wezterm.action.ToggleFullScreen },
-	-- Normally in Windows, terminals can't do the C-Space key combination and return NULL. Uncomment the below line to enable the keybinding.
 	{ key = "[", mods = "LEADER", action = wezterm.action.ActivateCopyMode },
+	-- Normally in Windows (OS), terminal shells can't do the <C-Space> key combination and return NULL. Uncomment the below line to enable the keybinding.
 	-- { key = "Space", mods = "CTRL", action = wezterm.action.SendKey({ key = "Space", mods = "CTRL" }) },
 	{
 		mods = "LEADER",
