@@ -69,6 +69,7 @@ config.hide_tab_bar_if_only_one_tab = false
 config.tab_bar_at_bottom = true
 config.tab_and_split_indices_are_zero_based = false
 config.use_fancy_tab_bar = false
+config.tab_max_width = 30
 
 -- LEADER active indicator on statusline
 wezterm.on("update-right-status", function(window, _)
