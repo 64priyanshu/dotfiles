@@ -77,6 +77,19 @@ wezterm.on("update-right-status", function(window, _)
 	window:set_right_status(indicator)
 end)
 
+-- Change Tab Bar title
+wezterm.on("format-tab-title", function(tab)
+	local pane = tab.active_pane
+	local pane_cwd = string.match(pane.current_working_dir.file_path, "([^/]+)/?$") .. "/"
+	-- local pane_cwd = string.match(pane.current_working_dir.file_path, "([^/]+)/*$") .. "/"
+	-- local process_name = string.gsub(pane.foreground_process_name, "(.*[/\\])(.*)", "%2")
+	return wezterm.format({
+		{ Attribute = { Intensity = "Bold" } },
+		{ Text = string.format(" %d:%s ", tab.tab_index + 1, pane_cwd) },
+		-- { Text = string.format(" %d:%s ", tab.tab_index + 1, process_name) },
+	})
+end)
+
 -- Cursor
 config.default_cursor_style = "SteadyBlock"
 config.animation_fps = 1
