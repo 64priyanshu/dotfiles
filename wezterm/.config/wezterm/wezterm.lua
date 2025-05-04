@@ -6,13 +6,18 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- Check if the OS is windows
+local is_windows = wezterm.target_triple == "x86_64-pc-windows-msvc"
+
+-- Shell (For Windows OS)
+if is_windows then
+	config.default_prog = { "pwsh.exe", "-NoLogo" }
+end
+
 -- Colorscheme
 config.color_scheme = "wezterm-theme"
 config.term = "xterm-256color"
 config.bold_brightens_ansi_colors = false
-
--- Shell (For Windows OS)
--- config.default_prog = { "pwsh.exe", "-NoLogo" }
 
 -- Fonts (check `wezterm ls-fonts`)
 config.font = wezterm.font_with_fallback({ { family = "JetBrainsMono NF", weight = "Regular" }, "Twemoji" })
@@ -108,8 +113,6 @@ config.keys = {
 	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action.SendKey({ key = "a", mods = "CTRL" }) },
 	{ key = "f", mods = "LEADER", action = wezterm.action.ToggleFullScreen },
 	{ key = "[", mods = "LEADER", action = wezterm.action.ActivateCopyMode },
-	-- Normally in Windows (OS), terminal shells can't do the <C-Space> key combination and return NULL. Uncomment the below line to enable the keybinding.
-	-- { key = "Space", mods = "CTRL", action = wezterm.action.SendKey({ key = "Space", mods = "CTRL" }) },
 	{
 		mods = "LEADER",
 		key = "c",
@@ -202,6 +205,15 @@ for i = 1, 9 do
 		key = tostring(i),
 		mods = "LEADER",
 		action = wezterm.action.ActivateTab(i - 1),
+	})
+end
+
+-- Normally in Windows (OS), terminal shells can't do the <C-Space> key combination and return NULL. Below keymap fixes it
+if is_windows then
+	table.insert(config.keys, {
+		key = "Space",
+		mods = "CTRL",
+		action = wezterm.action.SendKey({ key = "Space", mods = "CTRL" }),
 	})
 end
 
