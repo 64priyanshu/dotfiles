@@ -1,3 +1,8 @@
+; Setup GitAuth for Linux
+; https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+; gh auth login
+; gh auth setup-git
+
 [user]
   email = priyanshukatuwal@gmail.com
   name = Priyanshu Katuwal
