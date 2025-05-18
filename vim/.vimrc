@@ -11,6 +11,10 @@ syntax on
 " Backspace
 set backspace=indent,eol,start
 
+" Quickly time out on keycodes, but never time out on mappings
+set timeoutlen=1000
+set ttimeoutlen=0
+
 " Cursor
 set guicursor=n-v-i:block-Cursor
 
