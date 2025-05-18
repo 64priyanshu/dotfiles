@@ -53,7 +53,7 @@ set guioptions-=T  " Remove GUI Toolbar
 if has("win32") || has("win64")
   set guifont=JetBrainsMono_NFM:h10
 elseif has("unix")
-  set guifont=JetBrainsMono\ Nerd\ Font\ Mono
+  set guifont=JetBrainsMono\ Nerd\ Font\ Mono\ 10
 endif
 
 " Colorscheme
