@@ -8,6 +8,9 @@ set relativenumber
 " Syntax on
 syntax on
 
+" Backspace
+set backspace=indent,eol,start
+
 " Tabs and indentation
 set expandtab       " Convert tabs to spaces
 set tabstop=2       " Number of spaces that a <Tab> in the file counts for
