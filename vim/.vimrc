@@ -11,6 +11,9 @@ syntax on
 " Backspace
 set backspace=indent,eol,start
 
+" Cursor
+set guicursor=n-v-i:block-Cursor
+
 " Tabs and indentation
 set expandtab       " Convert tabs to spaces
 set tabstop=2       " Number of spaces that a <Tab> in the file counts for
@@ -47,11 +50,8 @@ if !isdirectory(&undodir)
 endif
 set undofile
 
-" Cursor
-set guicursor=n-v-i:block-Cursor
-
 " GVIM
-set guioptions-=T  " Remove GUI Toolbar
+set guioptions-=T   " Remove GUI Toolbar
 " Font specification for Windows and UNIX
 if has("win32") || has("win64")
   set guifont=JetBrainsMono_NFM:h10
