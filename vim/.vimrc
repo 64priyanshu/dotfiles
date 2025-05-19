@@ -29,6 +29,7 @@ set laststatus=3    " Use a single statusline for all windows
 " UI Settings
 set signcolumn=yes  " Always show the sign column
 set cursorline      " Highlight the current line
+set autoindent      " Auto Indent
 set smartindent     " Smart auto-indenting
 set breakindent     " Wrapped lines continue visually indented
 set linebreak       " Prevent line breaks in the middle of words
