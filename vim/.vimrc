@@ -57,6 +57,7 @@ set undofile
 
 " GVIM
 set guioptions-=T   " Remove GUI Toolbar
+
 " Font specification for Windows and UNIX
 if has("win32") || has("win64")
   set guifont=JetBrainsMono_NFM:h10
@@ -67,6 +68,11 @@ endif
 " Colorscheme
 set background=dark
 colorscheme retrobox
+
+" Fix Background Color Erase (BCE) so colorscheme renders properly
+if &term =~ '256color'
+  set t_ut=
+endif
 
 " Leader keymaps
 nnoremap <silent> <leader>h :nohlsearch<CR>
