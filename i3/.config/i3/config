@@ -45,8 +45,8 @@ bindsym $super+Return exec i3-sensible-terminal
 bindsym $super+b exec "firefox"
 # Start CLI file-explorer (yazi)
 bindsym $super+e exec "$TERMINAL yazi"
-# Start dmenu (a program launcher) with custom theme and JetBrains Nerd Font
-bindsym $super+d exec --no-startup-id "dmenu_run -nb '$bg' -nf '$yellow' -sb '$aqua' -sf '$darkgray' -fn 'JetBrainsMono Nerd Font-10'"
+# Start Rofi (a program launcher)
+bindsym $super+d exec --no-startup-id "rofi -show drun"
 
 # kill focused window
 bindsym $super+Shift+q kill

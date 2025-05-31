@@ -1,0 +1,13 @@
+configuration {
+    modi: "run,drun,window";
+    terminal: "kitty";
+    font: "JetBrainsMono Nerd Font Regular 12";
+    show-icons: true;
+    drun-display-format: "{icon} {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+    sidebar-mode: true;
+    display-drun: " 󰀻 Apps";
+    display-run: "  Run";
+    display-window: " 󰕰 Window";
+}
+
+@theme "theme"
