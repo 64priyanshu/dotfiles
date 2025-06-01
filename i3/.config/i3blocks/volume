@@ -31,9 +31,9 @@ MIXER="${2:-$MIXER}"
 # This defaults to the first control of your selected mixer
 # For a list of the available, use `amixer -D $Your_Mixer scontrols`
 SCONTROL="${BLOCK_INSTANCE:-$(amixer -D $MIXER scontrols |
-                  sed -n "s/Simple mixer control '\([A-Za-z ]*\)',0/\1/p" |
-                  head -n1
-                )}"
+  sed -n "s/Simple mixer control '\([A-Za-z ]*\)',0/\1/p" |
+  head -n1
+)}"
 
 # The first parameter sets the step to change the volume by (and units to display)
 # This may be in in % or dB (eg. 5% or 3dB)
