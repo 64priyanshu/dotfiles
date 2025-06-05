@@ -113,6 +113,7 @@ nnoremap <leader>y "+y
 xnoremap <leader>y "+y
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
+nnoremap <leader>e :Lexplore<CR>
 
 " Autocmds
 augroup RemoveTrailingWhitespace
@@ -121,3 +122,14 @@ augroup RemoveTrailingWhitespace
   autocmd BufWritePre * silent! %s/\s\+$//e
   autocmd BufWritePre * call setpos(".", save_cursor)
 augroup END
+
+augroup CloseWinOnEsc
+  autocmd!
+  autocmd FileType help,qf call s:CloseOnEsc()
+augroup END
+
+function! s:CloseOnEsc()
+  nnoremap <silent> <buffer> q :close<CR>
+  nnoremap <silent> <buffer> <Esc> :close<CR>
+  setlocal nobuflisted
+endfunction
