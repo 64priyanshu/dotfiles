@@ -51,6 +51,9 @@ set wildmenu        " Enable TAB completions menu on command-line mode
 set wildoptions=pum " Pum completions
 set pumheight=10    " Maximum height for completions
 
+" Fuzzy find
+set path=.,,**
+
 " Set the undo directory and enable persistent undo
 let &undodir = expand('$HOME') . "/.vim/gvim"
 if !isdirectory(&undodir)
