@@ -47,6 +47,9 @@ set mouse=a         " Enable mouse
 set termguicolors   " Enable true colors
 set noerrorbells    " Turn off bells
 set novisualbell    " Turn off visual bell warning
+set wildmenu        " Enable TAB completions menu on command-line mode
+set wildoptions=pum " Pum completions
+set pumheight=10    " Maximum height for completions
 
 " Set the undo directory and enable persistent undo
 let &undodir = expand('$HOME') . "/.vim/gvim"
