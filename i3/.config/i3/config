@@ -51,6 +51,9 @@ bindsym $super+d exec --no-startup-id "rofi -show drun"
 # kill focused window
 bindsym $super+Shift+q kill
 
+# refocus window
+bindsym $super+Shift+f focus parent; focus child
+
 # Key to use screenshot tool (flameshot)
 bindsym $super+Shift+s exec --no-startup-id "flameshot gui"
 
