@@ -35,6 +35,10 @@
   # Browser for opening urls in context menu
   browser = /usr/bin/firefox -new-tab
 
+[play_sound]
+  summary = "*"
+  script = ~/.local/scripts/sound
+
 [urgency_low]
   background = "#665c54"
   foreground = "#d5c4a1"
