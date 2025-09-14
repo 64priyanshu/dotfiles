@@ -11,6 +11,9 @@ if [ -f $PIDFILE ]; then
 fi
 echo $BASHPID > $PIDFILE
 
+# Check if script is running for the first time
+first_run=true
+
 # Battery Notification script starts here
 CRITICAL_ALERT=15
 NORMAL_ALERT=25
@@ -19,6 +22,13 @@ LOW_ALERT=40
 while true; do
   batteryCapacity=$(cat /sys/class/power_supply/BAT1/capacity)
   batteryStatus=$(cat /sys/class/power_supply/BAT1/status)
+
+  # Wait before giving the initial battery notification (To fix *pop* sound)
+  if [[ "$first_run" = true ]]; then
+    first_run=false
+    sleep 1
+    continue
+  fi
 
   if [[ "$batteryStatus" == "Discharging" ]]; then
     if [[ $batteryCapacity -le $CRITICAL_ALERT ]]; then
