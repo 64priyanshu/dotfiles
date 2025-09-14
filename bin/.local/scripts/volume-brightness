@@ -45,7 +45,7 @@ function get_brightness_icon {
 function show_volume_notif {
   volume=$(get_mute)
   get_volume_icon
-  notify-send -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%"
+  notify-send -a "system-control" -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%"
 }
 
 # Displays a brightness notification using dunstify
@@ -53,7 +53,7 @@ function show_brightness_notif {
   brightness=$(get_brightness)
   echo $brightness
   get_brightness_icon
-  notify-send -t $notification_timeout -h string:x-dunst-stack-tag:brightness_notif -h int:value:$brightness "$brightness_icon $brightness%"
+  notify-send -a "system-control" -t $notification_timeout -h string:x-dunst-stack-tag:brightness_notif -h int:value:$brightness "$brightness_icon $brightness%"
 }
 
 # Main function - Takes user input, "volume_up", "volume_down", "brightness_up", or "brightness_down"
