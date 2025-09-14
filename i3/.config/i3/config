@@ -31,13 +31,13 @@ bindsym XF86MonBrightnessUp exec --no-startup-id $volumeBrightnessScript brightn
 bindsym XF86MonBrightnessDown exec --no-startup-id $volumeBrightnessScript brightness_down
 
 # Lock Screen
-bindsym $alt+Shift+l exec "i3lock -i $HOME/Pictures/wallpapers/lock.png"
+bindsym $alt+Shift+l exec --no-startup-id "i3lock -i $HOME/Pictures/wallpapers/lock.png"
 
 # Suspend System
-bindsym $alt+Shift+period exec systemctl suspend
+bindsym $alt+Shift+period exec --no-startup-id systemctl suspend
 
 # Exit i3 completely (type startx to get back into i3 again)
-bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $alt+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Start terminal (kitty)
 bindsym $super+Return exec i3-sensible-terminal
