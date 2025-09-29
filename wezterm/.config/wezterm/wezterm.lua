@@ -20,7 +20,7 @@ config.term = "xterm-256color"
 config.bold_brightens_ansi_colors = false
 
 -- Fonts (check `wezterm ls-fonts`)
-config.font = wezterm.font_with_fallback({ { family = "JetBrainsMono NF", weight = "Regular" }, "Twemoji" })
+config.font = wezterm.font_with_fallback({ { family = "JetBrainsMono NF", weight = "Regular" }, "Twemoji" }) -- In Windows it's "Twemoji Mozilla"
 config.font_rules = {
 	{ -- Bold only
 		intensity = "Bold",

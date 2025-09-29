@@ -2,8 +2,9 @@
 set $super Mod4
 set $alt Mod1
 
-# Set font
-font pango: JetBrainsMono Nerd Font 8
+# Set font (Install using getnf: https://github.com/getnf/getnf)
+# Check font-family names using 'fc-list : family' or 'fc-list : family | grep -i jetbrains'
+font pango: JetBrainsMono NF 8
 
 # Automatically starts programs that are set to run on login
 exec --no-startup-id dex --autostart --environment i3

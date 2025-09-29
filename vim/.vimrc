@@ -66,9 +66,9 @@ set guioptions-=T   " Remove GUI Toolbar
 
 " Font specification for Windows and UNIX
 if has("win32") || has("win64")
-  set guifont=JetBrainsMono_NFM:h10
+  set guifont=JetBrainsMono\ NFM:h10
 elseif has("unix")
-  set guifont=JetBrainsMono\ Nerd\ Font\ Mono\ 10
+  set guifont=JetBrainsMono\ NF\ 10
 endif
 
 " Colorscheme
