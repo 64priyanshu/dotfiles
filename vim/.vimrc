@@ -52,8 +52,8 @@ set wildoptions=pum " Pum completions
 set pumheight=10    " Maximum height for completions
 
 " Fold
+set foldcolumn=1    " Always show fold column
 set foldmethod=manual
-set foldcolumn=1     " Always show fold column
 set fillchars+=foldopen:⏷,foldclose:⏵,foldsep:▏
 
 " Fuzzy find
