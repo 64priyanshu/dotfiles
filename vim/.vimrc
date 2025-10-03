@@ -120,6 +120,11 @@ nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 nnoremap <leader>e :Lexplore<CR>
 
+" Paste from clipboard keymap for GVIM
+if has("gui_running")
+  inoremap <silent> <C-S-v> <Esc>"+pa
+endif
+
 " Autocmds
 augroup RemoveTrailingWhitespace
   autocmd!
