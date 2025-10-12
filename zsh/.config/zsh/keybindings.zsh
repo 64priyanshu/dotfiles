@@ -33,7 +33,6 @@ source $HOME/.local/scripts/fzf-custom
 
 bindkey -s '^o' 'fzf_file\n'
 bindkey -s '^h' 'fzf_dir\n'
-bindkey -s '^v' 'fzf_session\n'
 
 # Search history with text that is already on prompt and put cursor at the end
 autoload -U history-search-end
