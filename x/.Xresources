@@ -1,2 +1,8 @@
 ! Affects font scaling across X11 applications (default: 96)
 Xft.dpi: 120
+Xft.antialias: false
+
+! Cursor (Use nwg-look to set GTK ~/.themes, ~/.icons and cursors OR /usr/share/themes/, /usr/share/icons/)
+! Theme  - https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme
+! Icons  - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+! Cursor - https://github.com/sainnhe/capitaine-cursors (cursor index name must not contain spaces)

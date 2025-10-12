@@ -1,8 +1,30 @@
+# For QT Themes
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# Environment variables set everywhere
+export EDITOR="nvim"
+export TERMINAL="kitty"
+export BROWSER="firefox"
+
 # Load .Xresources
 xrdb -merge ~/.Xresources
 
+# Touchpad/Mouse - xinput list
+TOUCHPAD=$(xinput list --name-only | grep -i touchpad)
+# Trackpad speed (-1 to 1)
+xinput set-prop "$TOUCHPAD" "libinput Accel Speed" 0
+
+# Remap caps to escape
+# setxkbmap -option caps:escape
+# Swap escape and caps
+# setxkbmap -option caps:swapescape
+
+# Keys speed
+xset r rate 550 25 # initial delay 600ms, repeat 25 ms
+
 # Screen Wallpaper
-feh --bg-fill $HOME/Pictures/wallpapers/wallpaper.png &
+feh --bg-fill $XDG_PICTURES_DIR/wallpapers/wallpaper.png &
+# feh --randomize --bg-fill $XDG_PICTURES_DIR/wallpapers/* &
 
 # Network Manager Applet
 nm-applet --indicator &
@@ -12,8 +34,3 @@ flameshot &
 
 # Notifications
 dunst &
-
-# Environment variables set everywhere
-export EDITOR="nvim"
-export TERMINAL="kitty"
-export BROWSER="firefox"
