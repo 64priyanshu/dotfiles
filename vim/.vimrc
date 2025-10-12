@@ -29,6 +29,7 @@ set laststatus=3    " Use a single statusline for all windows
 " UI Settings
 set signcolumn=yes  " Always show the sign column
 set cursorline      " Highlight the current line
+set cursorcolumn    " Highlight column
 set autoindent      " Auto Indent
 set smartindent     " Smart auto-indenting
 set breakindent     " Wrapped lines continue visually indented
@@ -94,7 +95,7 @@ nnoremap <leader>cfp :let @+ = expand("%:p:h")<CR>:echo "Copied path to clipboar
 
 " Remaps
 nnoremap <silent> L :bnext<CR>
-nnoremap <silent> H :bnext<CR>
+nnoremap <silent> H :bprevious<CR>
 xnoremap J :m '>+1<CR>gv=gv
 xnoremap K :m '<-2<CR>gv=gv
 nnoremap <C-d> <C-d>zz
@@ -118,11 +119,12 @@ nnoremap <leader>y "+y
 xnoremap <leader>y "+y
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
-nnoremap <leader>e :Lexplore<CR>
+nnoremap <leader>e :Ex<CR>
 
 " Paste from clipboard keymap for GVIM
 if has("gui_running")
-  inoremap <silent> <C-S-v> <Esc>"+pa
+  inoremap <C-S-v> <C-r>+
+  cnoremap <C-S-v> <C-r>+
 endif
 
 " Autocmds
