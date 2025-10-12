@@ -1,11 +1,10 @@
 # Source
-source $HOME/.config/zsh/exports.zsh
-source $HOME/.config/zsh/aliases.zsh
-source $HOME/.config/zsh/zshprompt.zsh
-source $HOME/.config/zsh/keybindings.zsh
+source $XDG_CONFIG_HOME/zsh/aliases.zsh
+source $XDG_CONFIG_HOME/zsh/zshprompt.zsh
+source $XDG_CONFIG_HOME/zsh/keybindings.zsh
 
 # Plugins
-PLUGIN_PATH="$HOME/.config/zsh-plugins"
+PLUGIN_PATH="$XDG_CONFIG_HOME/zsh-plugins"
 
 # 1. Syntax Highlighting
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh-plugins/zsh-syntax-highlighting

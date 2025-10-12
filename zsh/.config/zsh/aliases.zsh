@@ -1,6 +1,9 @@
 # Update mirrors
 alias update-mirror="sudo reflector --verbose --latest 5 --country Nepal --sort rate --save /etc/pacman.d/mirrorlist"
 
+# Remove orphan packages
+alias remove-orphan="sudo pacman -Rns $(pacman -Qtdq)"
+
 alias v="nvim"
 alias vi="nvim"
 
