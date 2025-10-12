@@ -32,7 +32,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id $volumeBrightnessScript brightn
 bindsym XF86MonBrightnessDown exec --no-startup-id $volumeBrightnessScript brightness_down
 
 # Lock Screen
-bindsym $alt+Shift+l exec --no-startup-id "i3lock -i $HOME/Pictures/wallpapers/lock.png"
+bindsym $alt+Shift+l exec --no-startup-id i3lock -i "$XDG_PICTURES_DIR/wallpapers/lock.png"
 
 # Suspend System
 bindsym $alt+Shift+period exec --no-startup-id systemctl suspend
@@ -43,11 +43,12 @@ bindsym $alt+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 # Start terminal (kitty)
 bindsym $super+Return exec i3-sensible-terminal
 # Start browser (firefox)
-bindsym $super+b exec "firefox"
+bindsym $super+b exec firefox
 # Start CLI file-explorer (yazi)
 bindsym $super+e exec "$TERMINAL yazi"
-# Start Rofi (a program launcher)
-bindsym $super+d exec --no-startup-id "rofi -show drun"
+# Start Rofi (a program launcher) with emoji-picker
+bindsym $super+d exec --no-startup-id rofi -show drun
+bindsym $super+period exec --no-startup-id rofi -modi emoji -show emoji
 
 # kill focused window
 bindsym $super+Shift+q kill
@@ -56,7 +57,8 @@ bindsym $super+Shift+q kill
 bindsym $super+Shift+f focus parent; focus child
 
 # Key to use screenshot tool (flameshot)
-bindsym $super+Shift+s exec --no-startup-id "flameshot gui"
+# bindsym $super+Shift+s exec --no-startup-id "flameshot gui"
+bindsym $super+Shift+s exec "env QT_ENABLE_HIGHDPI_SCALING=0 flameshot gui"
 
 # Key to use colorpicker tool (xcolor)
 bindsym $super+Shift+e exec --no-startup-id "xcolor | tr -d '\n' | xclip -selection clipboard"
