@@ -24,7 +24,8 @@ set tabstop=2       " Number of spaces that a <Tab> in the file counts for
 set shiftwidth=2    " Number of spaces for auto-indent
 
 " Statusline
-set laststatus=3    " Use a single statusline for all windows
+set laststatus=2    " Use a single statusline for all windows
+set statusline=%<%f\ %h%m%r\ %y%=%-14.(%l,%c%V%)\ %P
 
 " UI Settings
 set signcolumn=yes  " Always show the sign column
