@@ -61,6 +61,11 @@ set fillchars+=foldopen:⏷,foldclose:⏵,foldsep:▏
 " Fuzzy find
 set path=.,,**
 
+" Netrw
+let g:netrw_banner = 0                " Disable banner
+let g:netrw_winsize = 25              " Set size of netrw split window
+let g:netrw_localcopydircmd = "cp -r" " Copy directories recursively
+
 " Set the undo directory and enable persistent undo
 let &undodir = expand('$HOME') . "/.vim/gvim"
 if !isdirectory(&undodir)
@@ -120,7 +125,6 @@ nnoremap <leader>y "+y
 xnoremap <leader>y "+y
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
-nnoremap <leader>e :Ex<CR>
 
 " Paste from clipboard keymap for GVIM
 if has("gui_running")
