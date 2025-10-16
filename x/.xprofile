@@ -34,3 +34,6 @@ flameshot &
 
 # Notifications
 dunst &
+
+# Clipboard manager
+greenclip daemon &

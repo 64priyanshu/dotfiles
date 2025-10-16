@@ -46,9 +46,12 @@ bindsym $super+Return exec i3-sensible-terminal
 bindsym $super+b exec firefox
 # Start CLI file-explorer (yazi)
 bindsym $super+e exec "$TERMINAL yazi"
-# Start Rofi (a program launcher) with emoji-picker
+# Start Rofi (a program launcher)
 bindsym $super+d exec --no-startup-id rofi -show drun
+# Start Rofi-emoji-picker: https://github.com/Mange/rofi-emoji
 bindsym $super+period exec --no-startup-id rofi -modi emoji -show emoji
+# Start Rofi-clipboard-manager: https://github.com/erebe/greenclip
+bindsym $super+colon exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 # kill focused window
 bindsym $super+Shift+q kill
