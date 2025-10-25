@@ -11,7 +11,7 @@ exec --no-startup-id dex --autostart --environment i3
 # Ensures screen-locker automatically activates when system is about to sleep
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Dunst battery status
-exec --no-startup-id ~/.local/scripts/battery
+exec --no-startup-id ~/.local/bin/battery
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
@@ -20,7 +20,7 @@ floating_modifier $super
 focus_follows_mouse no
 
 # Path of the script
-set $volumeBrightnessScript ~/.local/scripts/volume-brightness
+set $volumeBrightnessScript ~/.local/bin/volume-brightness
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volumeBrightnessScript volume_up

@@ -29,7 +29,7 @@ stty -ixon  # Disable XON/XOFF flow control
 bindkey -s '^s' 'tmux-sessionizer\n'
 
 # Sourcing my fzf scripts
-source $HOME/.local/scripts/fzf-custom
+source $HOME/.local/bin/fzf-custom
 
 bindkey -s '^o' 'fzf_file\n'
 bindkey -s '^h' 'fzf_dir\n'

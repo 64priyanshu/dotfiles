@@ -33,5 +33,4 @@ SAVEHIST=1000000
 
 # Paths
 export PATH="$HOME/.cargo/bin":$PATH
-export PATH="$HOME/.local/scripts/":$PATH
 export PATH="$HOME/.local/bin/":$PATH

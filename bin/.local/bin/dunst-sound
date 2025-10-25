@@ -8,12 +8,12 @@ fi
 # Use the urgency to play different sounds
 case "$DUNST_URGENCY" in
   LOW)
-    paplay ~/.local/scripts/sounds/bell.wav
+    paplay ~/.local/bin/.sounds/bell.wav
     ;;
   NORMAL)
-    paplay ~/.local/scripts/sounds/message.wav
+    paplay ~/.local/bin/.sounds/message.wav
     ;;
   CRITICAL)
-    paplay ~/.local/scripts/sounds/bell_end.wav
+    paplay ~/.local/bin/.sounds/bell_end.wav
     ;;
 esac
