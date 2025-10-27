@@ -39,7 +39,6 @@ set ignorecase      " Case-insensitive search
 set smartcase       " Case-sensitive search if uppercase letters are used
 set noswapfile      " Disable swap file
 set nobackup        " Disable backup files
-set undofile        " Enable undo file
 set wrap            " Enable line wrapping
 set showcmd         " Show command display
 set incsearch       " Incremental search highlighting
