@@ -49,7 +49,7 @@ bindsym $super+e exec "$TERMINAL yazi"
 # Start Rofi (a program launcher)
 bindsym $super+d exec --no-startup-id rofi -show drun
 # Start Rofi-emoji-picker: https://github.com/Mange/rofi-emoji
-bindsym $super+period exec --no-startup-id rofi -modi emoji -show emoji
+bindsym $super+period exec --no-startup-id rofi -modi emoji -show emoji -emoji-mode insert_no_copy -kb-secondary-copy "" -kb-custom-1 Ctrl+c
 # Start Rofi-clipboard-manager: https://github.com/erebe/greenclip
 bindsym $super+colon exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
