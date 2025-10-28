@@ -26,7 +26,7 @@ xset r rate 550 25 # initial delay 600ms, repeat 25 ms
 xset +dpms
 
 # Primary Display
-export PRIMARY_DISPLAY="$(xrandr | awk '/ primary/{print $1}')"
+export PRIMARY_DISPLAY=$(xrandr | awk '/ primary/{print $1}')
 
 # Turn off screen after 3 minutes (180 seconds) and lock after 1 minute and Suspend system after 10 minutes (600 seconds) of inactivity
 xidlehook \
@@ -36,8 +36,8 @@ xidlehook \
   'xrandr --output "$PRIMARY_DISPLAY" --brightness .01' \
   'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
   --timer 60 \
-  'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock -i "$XDG_PICTURES_DIR/wallpapers/lock.png"' \
-  '' \
+  'xrandr --output "$PRIMARY_DISPLAY" --brightness .01; i3lock -p default -i "$XDG_PICTURES_DIR/wallpapers/lock.png"' \
+  'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
   --timer 600 \
   'systemctl suspend' \
   '' &
