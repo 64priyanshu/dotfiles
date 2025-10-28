@@ -6,9 +6,6 @@ export EDITOR="nvim"
 export TERMINAL="kitty"
 export BROWSER="firefox"
 
-# Load .Xresources
-xrdb -merge ~/.Xresources
-
 # Touchpad/Mouse - xinput list
 export TOUCHPAD=$(xinput list --name-only | grep -i touchpad)
 # Trackpad speed (-1 to 1)
