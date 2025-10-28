@@ -59,8 +59,8 @@ bindsym $super+Shift+q kill
 bindsym $super+Shift+f focus parent; focus child
 
 # Key to use screenshot tool (flameshot)
-# bindsym $super+Shift+s exec --no-startup-id "flameshot gui"
-bindsym $super+Shift+s exec "env QT_ENABLE_HIGHDPI_SCALING=0 flameshot gui"
+bindsym $super+Shift+s exec --no-startup-id "flameshot gui"
+# bindsym $super+Shift+s exec "env QT_ENABLE_HIGHDPI_SCALING=0 flameshot gui"
 
 # Key to use colorpicker tool (xcolor)
 bindsym $super+Shift+e exec --no-startup-id "xcolor | tr -d '\n' | xclip -selection clipboard"
