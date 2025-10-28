@@ -8,8 +8,7 @@ font pango: JetBrainsMono NF 8
 
 # Automatically starts programs that are set to run on login
 exec --no-startup-id dex --autostart --environment i3
-# Ensures screen-locker automatically activates when system is about to sleep
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
 # Dunst battery status
 exec --no-startup-id ~/.local/bin/battery
 
