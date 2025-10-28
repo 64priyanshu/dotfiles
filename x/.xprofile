@@ -10,7 +10,7 @@ export BROWSER="firefox"
 xrdb -merge ~/.Xresources
 
 # Touchpad/Mouse - xinput list
-TOUCHPAD=$(xinput list --name-only | grep -i touchpad)
+export TOUCHPAD=$(xinput list --name-only | grep -i touchpad)
 # Trackpad speed (-1 to 1)
 xinput set-prop "$TOUCHPAD" "libinput Accel Speed" 0
 
@@ -28,17 +28,17 @@ xset +dpms
 # Primary Display
 export PRIMARY_DISPLAY="$(xrandr | awk '/ primary/{print $1}')"
 
-# Turn off screen after 5 minutes (300 seconds) and lock after 5 minutes and Suspend system after 15 minutes (900 seconds) of inactivity
+# Turn off screen after 3 minutes (180 seconds) and lock after 1 minute and Suspend system after 10 minutes (600 seconds) of inactivity
 xidlehook \
   --not-when-fullscreen \
   --not-when-audio \
-  --timer 300 \
+  --timer 180 \
   'xrandr --output "$PRIMARY_DISPLAY" --brightness .01' \
   'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
-  --timer 300 \
+  --timer 60 \
   'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock -i "$XDG_PICTURES_DIR/wallpapers/lock.png"' \
   '' \
-  --timer 900 \
+  --timer 600 \
   'systemctl suspend' \
   '' &
 
