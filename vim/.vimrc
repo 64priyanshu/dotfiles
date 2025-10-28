@@ -57,7 +57,7 @@ set foldcolumn=1    " Always show fold column
 set foldmethod=manual
 set fillchars+=foldopen:⏷,foldclose:⏵,foldsep:▏
 
-" Fuzzy find
+" Search Recursively
 set path=.,,**
 
 " Netrw
