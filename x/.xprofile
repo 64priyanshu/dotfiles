@@ -33,10 +33,10 @@ xidlehook \
   'xrandr --output "$PRIMARY_DISPLAY" --brightness .01' \
   'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
   --timer 60 \
-  'xrandr --output "$PRIMARY_DISPLAY" --brightness .01; i3lock -p default -i "$XDG_PICTURES_DIR/wallpapers/lock.png"' \
+  'i3lock -p default -i "$XDG_PICTURES_DIR/wallpapers/lock.png"' \
   'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
   --timer 600 \
-  'systemctl suspend' \
+  'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; sleep 1; systemctl suspend' \
   '' &
 
 # Screen Wallpaper
