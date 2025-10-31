@@ -22,22 +22,11 @@ xset r rate 550 25 # initial delay 600ms, repeat 25 ms
 # Enable DPMS (Display Power Management Signaling)
 xset +dpms
 
-# Primary Display
-export PRIMARY_DISPLAY=$(xrandr | awk '/ primary/{print $1}')
+# Turn off screensaver
+xset s off
 
-# Turn off screen after 3 minutes (180 seconds) and lock after 1 minute and Suspend system after 10 minutes (600 seconds) of inactivity
-xidlehook \
-  --not-when-fullscreen \
-  --not-when-audio \
-  --timer 180 \
-  'xrandr --output "$PRIMARY_DISPLAY" --brightness .01' \
-  'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
-  --timer 60 \
-  'i3lock -p default -i "$XDG_PICTURES_DIR/wallpapers/lock.png"' \
-  'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
-  --timer 600 \
-  'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; sleep 1; systemctl suspend' \
-  '' &
+# Turn off screen after 15 minutes (900 seconds) of inactivity
+xset dpms 0 0 900
 
 # Screen Wallpaper
 feh --bg-fill $XDG_PICTURES_DIR/wallpapers/wallpaper.png &
