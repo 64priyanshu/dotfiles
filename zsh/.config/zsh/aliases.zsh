@@ -1,5 +1,5 @@
 # Update mirrors
-alias mirror-update="sudo reflector --verbose --latest 5 --country Nepal --sort rate --save /etc/pacman.d/mirrorlist"
+alias mirror-update="sudo reflector --verbose --protocol https --latest 5 --country Nepal --sort rate --save /etc/pacman.d/mirrorlist"
 
 # Remove orphan packages
 alias orphan-remove="sudo pacman -Rns $(pacman -Qtdq)"
