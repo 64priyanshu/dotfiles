@@ -68,6 +68,9 @@ bindsym $super+Shift+f focus parent; focus child
 bindsym $super+Shift+s exec --no-startup-id "flameshot gui"
 # bindsym $super+Shift+s exec "env QT_ENABLE_HIGHDPI_SCALING=0 flameshot gui"
 
+# Key to open screen-recorder script
+bindsym $super+Shift+v exec --no-startup-id ~/.local/bin/recorder
+
 # Key to use colorpicker tool (xcolor, imagick)
 # bindsym $super+Shift+e exec --no-startup-id "xcolor | tr -d '\n' | xclip -selection clipboard"
 bindsym $super+Shift+e exec --no-startup-id ~/.local/bin/colorpicker
