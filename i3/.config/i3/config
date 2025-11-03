@@ -74,6 +74,8 @@ bindsym $super+Shift+e exec --no-startup-id ~/.local/bin/colorpicker
 
 # Webcam Script
 bindsym $super+w exec --no-startup-id ~/.local/bin/webcam
+# Usb Script
+bindsym $super+u exec --no-startup-id ~/.local/bin/usb
 
 # change focus
 bindsym $super+h focus left
