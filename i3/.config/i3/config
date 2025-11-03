@@ -71,6 +71,9 @@ bindsym $super+Shift+s exec --no-startup-id "flameshot gui"
 # Key to use colorpicker tool (xcolor)
 bindsym $super+Shift+e exec --no-startup-id "xcolor | tr -d '\n' | xclip -selection clipboard"
 
+# Webcam Script
+bindsym $super+w exec --no-startup-id ~/.local/bin/webcam
+
 # change focus
 bindsym $super+h focus left
 bindsym $super+j focus down
@@ -206,11 +209,18 @@ bar {
 }
 
 # Disable window title but have borders instead
-default_border pixel 1
-default_floating_border pixel 1
+# default_border pixel 1
+# default_floating_border pixel 1
 
 # Disable border for firefox browser window
 for_window [class="firefox"] border none
+# Disable border for kitty terminal
+for_window [class="kitty"] border pixel 1
+
+# Webcam
+for_window [title="^webcam$"] border pixel 1
+for_window [title="^webcam$"] floating enable
+for_window [title="^webcam$"] sticky enable
 
 # class                 border|backgr|text|indicator|child_border
 client.focused          #00000000 $yellow   #00000000 $lightyellow
