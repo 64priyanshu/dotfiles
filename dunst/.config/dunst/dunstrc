@@ -10,7 +10,7 @@
   format = "<b>%s</b>\n%b"
   alignment = left
   word_wrap = yes
-  icon_path = /usr/share/icons/Papirus/96x96/devices/:/usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/96x96/apps/
+  icon_path = /usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/96x96/apps/:/usr/share/icons/Papirus/96x96/devices/
 
   # Box Dimension and Position
   width = (85, 450)
