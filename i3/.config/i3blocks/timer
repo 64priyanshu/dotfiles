@@ -3,17 +3,17 @@
 path=/tmp/miotimer
 
 modifica () {
-  if [ $BLOCK_BUTTON == 4 ];then
+  if [ "$BLOCK_BUTTON" == 4 ];then
     current=$((current + 1))
-    echo $mode > $path
+    echo "$mode" > $path
     echo $current >> $path
   fi
-  if [ $BLOCK_BUTTON == 5 ] && [ $current != 0 ];then
+  if [ "$BLOCK_BUTTON" == 5 ] && [ "$current" != 0 ];then
     current=$((current - 1))
-    echo $mode > $path
+    echo "$mode" > $path
     echo $current >> $path
   fi
-  if [ $current == 0 ];then
+  if [ "$current" == 0 ];then
     echo "󰔛 Tmr"
   else
     echo " $(sed '2!d' $path) m"
@@ -45,23 +45,23 @@ then
   mode=$(sed '1!d' $path)
   current=$(sed '2!d' $path)
 
-  if [ $BLOCK_BUTTON == 1 ] && [ $current != 0 ];then
-    if [ $mode == "w" ];then
+  if [ "$BLOCK_BUTTON" == 1 ] && [ "$current" != 0 ];then
+    if [ "$mode" == "w" ];then
       rm $path
       echo "󰔛 Tmr"
       exit
     fi
     mode=w
     echo $mode > $path
-    echo $current >> $path
-    echo $(date +%s) >> $path
+    echo "$current" >> $path
+    date +%s >> $path
   fi
 
-  if [ $mode == "m" ];then
+  if [ "$mode" == "m" ];then
     modifica
   fi
 
-  if [ $mode == "w" ];then
+  if [ "$mode" == "w" ];then
     timer
   fi
 
