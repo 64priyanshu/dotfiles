@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Requires
+# sudo pacman -S dunst
+
 # Make sure that there aren't multiple instances of the script running
 cd $(dirname $0)
 PIDFILE=/tmp/$(basename $0 .sh).pid

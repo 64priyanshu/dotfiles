@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Requires 'brightnessctl'
+
+# Requires
+# sudo pacman -S brightnessctl
 
 # echo "󰃠 $(brightnessctl | grep -Po '[0-9]{1,3}(?=%)' | head -n 1)%"
 

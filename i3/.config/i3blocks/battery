@@ -1,5 +1,8 @@
 #!/usr/bin/perl
-#
+
+# Requires
+# sudo pacman -S acpi
+
 # Copyright 2014 Pierre Mavro <deimos@deimos.fr>
 # Copyright 2014 Vivien Didelot <vivien@didelot.org>
 #

@@ -28,7 +28,7 @@ xset s off
 # Turn off screen after 15 minutes (900 seconds) of inactivity
 xset dpms 0 0 900
 
-# Screen Wallpaper
+# Screen Wallpaper: sudo pacman -S feh
 feh --bg-fill $XDG_PICTURES_DIR/wallpapers/wallpaper.png &
 # feh --randomize --bg-fill $XDG_PICTURES_DIR/wallpapers/* &
 
@@ -41,5 +41,5 @@ flameshot &
 # Notifications
 dunst &
 
-# Clipboard manager
+# Clipboard manager: https://github.com/erebe/greenclip
 greenclip daemon &

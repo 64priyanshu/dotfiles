@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# Requires imagemagick, xcolor, xclip
+# Requires
+# sudo pacman -S dunst
+# sudo pacman -S xcolor
+# sudo pacman -S xclip
+# sudo pacman -S imagemagick
 
 # Pick a pixel and get hex color
 color=$(xcolor | tr -d "\n")

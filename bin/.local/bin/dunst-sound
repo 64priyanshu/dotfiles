@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Skip sounds for system-control notifications
-if [ "$DUNST_APP_NAME" = "system-control" ]; then
-  exit 0
-fi
-
 # Use the urgency to play different sounds
 case "$DUNST_URGENCY" in
   LOW)

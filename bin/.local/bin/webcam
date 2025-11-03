@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# sudo pacman -S mpv
+
 # Also install cameractrls from: sudo pacman -S cameractrls
 pkill -f /dev/video0 || mpv --geometry=-0-0 -autofit=30% \
   --profile=low-latency --untimed \

@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Requires
+# Pipewire - https://wiki.archlinux.org/title/PipeWire
+
 # Displays the default device, volume, and mute status for i3blocks
 
 set -a

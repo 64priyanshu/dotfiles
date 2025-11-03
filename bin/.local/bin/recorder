@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Requires
+# sudo pacman -S ffmpeg
+# sudo pacman -S slop
+
 # Usage:
 # `$0`: Ask for recording type via rofi
 # `$0 screencast`: Record both audio and screen

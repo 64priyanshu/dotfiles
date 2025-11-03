@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Requires
+# sudo pacman -S fzf
+
 # Select a file, cd into it's parent directory open the file in vim
 fzf_file(){
   file=$(find . -type f -not -path '*/.git/*' -not -path '*/node_modules/*' -not -path '*/.venv/*' | fzf)

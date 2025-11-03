@@ -1,9 +1,12 @@
 #!/bin/sh
 
-# https://github.com/BryceVandegrift/dotfiles/blob/master/.local/bin/usb
+# Source: https://github.com/BryceVandegrift/dotfiles/blob/master/.local/bin/usb
 
+# Requires
+# sudo pacman -S dmenu
+# sudo pacman -S rofi
 # sudo pacman -S opendoas
-# sudo pacman -S dmenu or sudo pacman -S rofi
+# sudo pacman -S dunst
 
 # Mounts and unmounts USB drives
 
