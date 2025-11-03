@@ -29,9 +29,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id $volumeBrightnessScript volume
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumeBrightnessScript volume_down
 bindsym XF86AudioMute exec --no-startup-id $volumeBrightnessScript volume_mute
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id $volumeBrightnessScript brightness_up
-bindsym XF86MonBrightnessDown exec --no-startup-id $volumeBrightnessScript brightness_down
+# Brightness control
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set +1%; exec --no-startup-id pkill -RTMIN+2 i3blocks
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=1 -q set 1%-; exec --no-startup-id pkill -RTMIN+2 i3blocks
 
 # Lock Screen (enable pointer)
 bindsym $alt+Shift+l exec --no-startup-id i3lock -p default -i "$XDG_PICTURES_DIR/wallpapers/lock.png"
