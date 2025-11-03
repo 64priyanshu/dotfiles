@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Requires imagemagick, xcolor, xclip
+
+# Pick a pixel and get hex color
+color=$(xcolor | tr -d "\n")
+
+# Copy to clipboard
+echo -n "$color" | xclip -selection clipboard
+
+# Create a small color preview icon
+icon="/tmp/color_preview.png"
+magick -size 32x32 "xc:$color" "$icon"
+
+# Send notification with color hex and preview
+notify-send "Color copied!" "$color" -i "$icon"
