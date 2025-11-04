@@ -7,19 +7,24 @@
 
   # Text and Icon
   font = JetBrainsMono NF, Twemoji 10 # Install Twemoji font from yay (aur)
-  format = "<b>%s</b>\n%b"
+  format = "<span foreground='#a89984'><b>%s</b></span>\n%b"
   alignment = left
   word_wrap = yes
+  min_icon_size = 48
+  max_icon_size = 48
   icon_path = /usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/96x96/apps/:/usr/share/icons/Papirus/96x96/devices/
 
   # Box Dimension and Position
   width = (85, 450)
   scale = 1
   offset = (20, 40)
+  progress_bar_min_width = 150
+  progress_bar_max_width = 450
 
   # Notification elements formatting
+  sticky_history = true
   stack_duplicates = true
-  show_indicators = false
+  show_indicators = true
   sort = yes
   idle_threshold = 120
   show_age_threshold = 30
