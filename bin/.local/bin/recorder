@@ -115,10 +115,10 @@ videoselected()
 }
 
 case "$1" in
-	screencast) screencast;;
-	audio) audio;;
-	video) video;;
-	*selected) videoselected;;
+	screencast) killrecording && screencast;;
+	audio) killrecording && audio;;
+	video) killrecording && video;;
+	*selected) killrecording && videoselected;;
 	kill) killrecording;;
 	*) if [ -f /tmp/recordingpid ]; then
       asktoend && exit
