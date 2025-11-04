@@ -47,7 +47,7 @@ function get_volume_icon {
 
 # Always returns the same icon
 function get_brightness_icon {
-  brightness_icon=""
+  brightness_icon="󰃠"
 }
 
 # Get Album art

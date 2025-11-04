@@ -10,7 +10,7 @@ if command -v brightnessctl &>/dev/null; then
   CURRENT_BRIGHTNESS=$(brightnessctl g)
 
   PERCENTAGE=$((CURRENT_BRIGHTNESS * 100 / MAX_BRIGHTNESS))
-  echo "󰃠 ${PERCENTAGE}%"
+  echo "${PERCENTAGE}%"
 
   # Scrolling functionality
   case "$BLOCK_BUTTON" in
@@ -19,6 +19,6 @@ if command -v brightnessctl &>/dev/null; then
     5) brightnessctl --min-val=1 -q set 5%- && pkill -RTMIN+2 i3blocks & ;;
 esac
 else
-  echo "󰃠 NULL"
+  echo "NULL"
   exit 1
 fi
