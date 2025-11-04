@@ -40,6 +40,12 @@
   # Browser for opening urls in context menu
   browser = /usr/bin/firefox -new-tab
 
+  # Shortcuts
+  close = ctrl+space
+  close_all = ctrl+shift+space
+  history = ctrl+comma
+  context = ctrl+semicolon
+
 [play_sound]
   summary = "*"
   script = ~/.local/bin/dunst-sound
