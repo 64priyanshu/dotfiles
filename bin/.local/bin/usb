@@ -20,45 +20,45 @@ option=$(printf "mount\numount\n" | rofi -dmenu -l 2 -i -p "mount or umount")
 [ -z "$option" ] && exit 1
 
 rmtemp() {
-	rmdir "$1"
-	exit 1
+  rmdir "$1"
+  exit 1
 }
 
 if [ "$option" = "mount" ]; then
-	temp="$(mktemp -d)"
+  temp="$(mktemp -d)"
   # drive=$(ls -1 /dev | grep "sd[a-z][0-9]" | dmenu -p "drive to mount:" -i -l 5)
   drive=$(ls -1 /dev | grep "sd[a-z][0-9]" | rofi -dmenu -l 5 -i -p "drive to mount")
 
-	[ -z "$drive" ] && rmtemp "$temp"
+  [ -z "$drive" ] && rmtemp "$temp"
 
-   # Check if already mounted
-   if mount | grep -q "/dev/$drive"; then
-     notify-send -t 30000 "󱊞  USB Mount Failed!" "/dev/$drive is already mounted."
-     exit 0
-   fi
+  # Check if already mounted
+  if mount | grep -q "/dev/$drive"; then
+    notify-send -t 30000 "󱊞  USB Mount Failed!" "/dev/$drive is already mounted."
+    exit 0
+  fi
 
-   # Doas does its stuff (notification for 30 seconds)
-	doas mount "/dev/$drive" "$temp" >/dev/null 2>&1 && notify-send -t 30000 "󱊞  USB Mounted!" "mounted $drive to $temp."
+  # Doas does its stuff (notification for 30 seconds)
+  doas mount "/dev/$drive" "$temp" >/dev/null 2>&1 && notify-send -t 30000 "󱊞  USB Mounted!" "mounted $drive to $temp."
 
   # Copy temp directory to clipboard
   echo "$temp" | xclip -selection clipboard
 
-elif [ "$option" = "umount" ]; then
-  # mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | dmenu -p "drive to unmount:" -i -l 5)
-  mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | rofi -dmenu -l 5 -i -p "drive to unmount")
+  elif [ "$option" = "umount" ]; then
+    # mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | dmenu -p "drive to unmount:" -i -l 5)
+    mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | rofi -dmenu -l 5 -i -p "drive to unmount")
 
-	[ -z "$mount" ] && exit 1
+  [ -z "$mount" ] && exit 1
 
   # Drive
-	drive="$(echo "$mount" | awk '{ print $1 }')"
+  drive="$(echo "$mount" | awk '{ print $1 }')"
   # Mount Point (Directory)
-	mountpoint="$(echo "$mount" | awk '{ print $3 }')"
+  mountpoint="$(echo "$mount" | awk '{ print $3 }')"
 
   # Doas does it stuff
-	if doas umount "$mountpoint" >/dev/null 2>&1; then
+  if doas umount "$mountpoint" >/dev/null 2>&1; then
     notify-send -t 30000 "󱊞  USB Unmounted!" "unmounted $drive from $mountpoint."
   else
     notify-send -u critical "󱊞 USB Unmount Failed!" "unmount failed due to running process or other reasons."
   fi
-	rmdir "$mountpoint"
+  rmdir "$mountpoint"
 fi

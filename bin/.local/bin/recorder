@@ -15,114 +15,111 @@
 
 getdim() { xrandr | grep -oP '(?<=current ).*(?=,)' | tr -d ' ' ;}
 
-killrecording() {
-	recpid="$(cat /tmp/recordingpid)"
-	kill -15 "$recpid"
+killrecording() { \
+  recpid="$(cat /tmp/recordingpid)"
+  kill -15 "$recpid"
 
-	rm -f /tmp/recordingpid && pkill -RTMIN+3 i3blocks
+  rm -f /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
 
-screencast() { \
-	ffmpeg -y \
-	-f x11grab \
-	-framerate 30 \
-	-s "$(getdim)" \
-	-i "$DISPLAY" \
-	-r 24 \
-	-f alsa -thread_queue_size 1024 -i default \
- 	-c:v h264 \
-	-crf 0 -preset ultrafast -c:a aac \
+screencast() { ffmpeg -y \
+  -f x11grab \
+  -framerate 30 \
+  -s "$(getdim)" \
+  -i "$DISPLAY" \
+  -r 24 \
+  -f alsa -thread_queue_size 1024 -i default \
+  -c:v h264 \
+  -crf 0 -preset ultrafast -c:a aac \
   -af "afftdn=nf=-75" \
-	"$HOME/Videos/screencast-$(date +%F-%T).mp4" &
+  "$HOME/Videos/screencast-$(date +%F-%T).mp4" &
 
-	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
+  echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
 
 video() { ffmpeg \
-	-f x11grab \
-	-framerate 30 \
-	-s "$(getdim)" \
-	-i "$DISPLAY" \
- 	-c:v libx264 -qp 0 -r 30 \
-	"$HOME/Videos/video-$(date +%F-%T).mkv" &
+  -f x11grab \
+  -framerate 30 \
+  -s "$(getdim)" \
+  -i "$DISPLAY" \
+  -c:v libx264 -qp 0 -r 30 \
+  "$HOME/Videos/video-$(date +%F-%T).mkv" &
 
-	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
+  echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
 
 webcamhidef() { ffmpeg \
-	-f v4l2 \
+  -f v4l2 \
   -use_wallclock_as_timestamps 1 \
-	-i /dev/video0 \
-	-video_size 1920x1080 \
-	"$HOME/Videos/webcam-$(date +%F-%T).mkv" &
+  -i /dev/video0 \
+  -video_size 1920x1080 \
+  "$HOME/Videos/webcam-$(date +%F-%T).mkv" &
 
-	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
+  echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
 
 webcam() { ffmpeg \
-	-f v4l2 \
+  -f v4l2 \
   -use_wallclock_as_timestamps 1 \
-	-i /dev/video0 \
-	-video_size 640x480 \
-	"$HOME/Videos/webcam-$(date +%F-%T).mkv" &
+  -i /dev/video0 \
+  -video_size 640x480 \
+  "$HOME/Videos/webcam-$(date +%F-%T).mkv" &
 
-	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
+  echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
 
 
-audio() { \
-	ffmpeg \
-	-f alsa -i default \
+audio() { ffmpeg \
+  -f alsa -i default \
   -af "afftdn=nf=-75" \
-	-c:a flac \
-	"$HOME/Music/audio-$(date +%F-%T).mkv" &
+  -c:a flac \
+  "$HOME/Music/audio-$(date +%F-%T).mkv" &
 
-	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
+  echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
 
 askrecording() { \
-	choice=$(printf "screencast\\nvideo\\nvideo selected\\naudio\\nwebcam\\nwebcam (hi-def)" | rofi -dmenu -l 6 -i -p "Select recording style")
-	case "$choice" in
-		screencast) screencast;;
-		audio) audio;;
-		video) video;;
-		*selected) videoselected;;
-		webcam) webcam;;
-		"webcam (hi-def)") webcamhidef;;
-	esac
+  choice=$(printf "screencast\\nvideo\\nvideo selected\\naudio\\nwebcam\\nwebcam (hi-def)" | rofi -dmenu -l 6 -i -p "Select recording style")
+  case "$choice" in
+    screencast) screencast;;
+    audio) audio;;
+    video) video;;
+    *selected) videoselected;;
+    webcam) webcam;;
+    "webcam (hi-def)") webcamhidef;;
+  esac
 }
 
 asktoend() { \
-	response=$(printf "No\\nYes" | rofi -l 2 -dmenu -i -p "Recording still active. End recording?") &&
-	[ "$response" = "Yes" ] &&  killrecording
+  response=$(printf "No\\nYes" | rofi -l 2 -dmenu -i -p "Recording still active. End recording?") &&
+  [ "$response" = "Yes" ] &&  killrecording
 }
 
-videoselected()
-{
-	slop -f "%x %y %w %h" > /tmp/slop
-	read -r X Y W H < /tmp/slop
-	rm /tmp/slop
+videoselected() {
+  slop -f "%x %y %w %h" > /tmp/slop
+  read -r X Y W H < /tmp/slop
+  rm /tmp/slop
 
-	ffmpeg \
-	-f x11grab \
-	-framerate 30 \
-	-video_size "$W"x"$H" \
-	-i :0.0+"$X,$Y" \
-	-c:v libx264 -qp 0 -r 30 \
-	"$HOME/Videos/box-$(date +%F-%T).mkv" &
+  ffmpeg \
+  -f x11grab \
+  -framerate 30 \
+  -video_size "$W"x"$H" \
+  -i :0.0+"$X,$Y" \
+  -c:v libx264 -qp 0 -r 30 \
+  "$HOME/Videos/box-$(date +%F-%T).mkv" &
 
-	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
+  echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
 
 case "$1" in
-	screencast) killrecording && screencast;;
-	audio) killrecording && audio;;
-	video) killrecording && video;;
-	*selected) killrecording && videoselected;;
-	kill) killrecording;;
-	*) if [ -f /tmp/recordingpid ]; then
-      asktoend && exit
-    else
-      askrecording
+  screencast) killrecording && screencast;;
+  audio) killrecording && audio;;
+  video) killrecording && video;;
+  *selected) killrecording && videoselected;;
+  kill) killrecording;;
+  *) if [ -f /tmp/recordingpid ]; then
+    asktoend && exit
+  else
+    askrecording
     fi ;;
 esac
