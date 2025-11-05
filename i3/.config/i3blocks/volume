@@ -110,10 +110,10 @@ function set_default_playback_device_next {
 }
 
 case "$BLOCK_BUTTON" in
-    1) amixer -q -D "$MIXER" sset "$SCONTROL" "$CAPABILITY" toggle ;;
-    3) pavucontrol ;;
-    4) amixer -q -D "$MIXER" sset "$SCONTROL" "$CAPABILITY" "$AUDIO_DELTA"%+ unmute ;;
-    5) amixer -q -D "$MIXER" sset "$SCONTROL" "$CAPABILITY" "$AUDIO_DELTA"%- ;;
+  1) amixer -q -D "$MIXER" sset "$SCONTROL" "$CAPABILITY" toggle ;;
+  3) pavucontrol ;;
+  4) amixer -q -D "$MIXER" sset "$SCONTROL" "$CAPABILITY" "$AUDIO_DELTA"%+ unmute ;;
+  5) amixer -q -D "$MIXER" sset "$SCONTROL" "$CAPABILITY" "$AUDIO_DELTA"%- ;;
 esac
 
 function print_format {

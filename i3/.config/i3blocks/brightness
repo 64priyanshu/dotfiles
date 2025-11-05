@@ -17,7 +17,7 @@ if command -v brightnessctl &>/dev/null; then
     1) pkill -RTMIN+2 i3blocks & ;;
     4) brightnessctl -q set +5% && pkill -RTMIN+2 i3blocks & ;;
     5) brightnessctl --min-val=1 -q set 5%- && pkill -RTMIN+2 i3blocks & ;;
-esac
+  esac
 else
   echo "NULL"
   exit 1
