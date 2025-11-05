@@ -7,7 +7,7 @@
 
   # Text and Icon
   font = JetBrainsMono NF, Twemoji 10 # Install Twemoji font from yay (aur)
-  format = "<span foreground='#a89984'><b>%s</b></span>\n%b"
+  format = "<span foreground='#bdae93'><b>%s</b></span>\n%b"
   alignment = left
   word_wrap = yes
   min_icon_size = 48
