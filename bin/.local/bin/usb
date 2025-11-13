@@ -33,12 +33,12 @@ if [ "$option" = "mount" ]; then
 
   # Check if already mounted
   if mount | grep -q "/dev/$drive"; then
-    notify-send -t 30000 "󱊞  USB Mount Failed!" "/dev/$drive is already mounted."
+    notify-send -t 15000 "󱊞  USB Mount Failed!" "/dev/$drive is already mounted."
     exit 0
   fi
 
-  # Doas does its stuff (notification for 30 seconds)
-  doas mount "/dev/$drive" "$temp" >/dev/null 2>&1 && notify-send -t 30000 "󱊞  USB Mounted!" "mounted $drive to $temp."
+  # Doas does its stuff (notification for 15 seconds)
+  doas mount "/dev/$drive" "$temp" >/dev/null 2>&1 && notify-send -t 15000 "󱊞  USB Mounted!" "mounted $drive to $temp."
 
   # Copy temp directory to clipboard
   echo "$temp" | tr -d '\n' | xclip -selection clipboard
@@ -56,7 +56,7 @@ if [ "$option" = "mount" ]; then
 
   # Doas does it stuff
   if doas umount "$mountpoint" >/dev/null 2>&1; then
-    notify-send -t 30000 "󱊞  USB Unmounted!" "unmounted $drive from $mountpoint."
+    notify-send -t 15000 "󱊞  USB Unmounted!" "unmounted $drive from $mountpoint."
   else
     notify-send -u critical "󱊞 USB Unmount Failed!" "unmount failed due to running process or other reasons."
   fi
