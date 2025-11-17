@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Pipewire Setup Guide: https://www.siberoloji.com/how-to-configure-pipewire-for-audio-on-arch-linux/
 # Script from: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator/-/tree/main?ref_type=heads
 
 # Media variables

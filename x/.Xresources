@@ -5,4 +5,4 @@ Xft.antialias: true
 ! Cursor (Use nwg-look to set GTK ~/.themes, ~/.icons and cursors OR /usr/share/themes/, /usr/share/icons/)
 ! Theme  - https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme
 ! Icons  - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
-! Cursor - https://github.com/sainnhe/capitaine-cursors (cursor index name must not contain spaces)
+! Cursor - https://github.com/sainnhe/capitaine-cursors (edit name inside ~/icons/CapitaineCursors/index.theme and remove spaces from Name)

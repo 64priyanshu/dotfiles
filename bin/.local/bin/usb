@@ -10,7 +10,7 @@
 
 # Mounts and unmounts USB drives
 
-# Add these lines to "doas.conf" in order run this script from outside the terminal:
+# Add these lines to /etc/doas.conf in order run this script from outside the terminal:
 # permit nopass :wheel cmd mount
 # permit nopass :wheel cmd umount
 
