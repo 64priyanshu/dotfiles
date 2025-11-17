@@ -1,0 +1,83 @@
+(a) - aur
+(*) - has own config
+
+# 1. bin/
+[Module]          [Packages]
+battery           dunst(*)
+colorpicker       dunst(*) xcolor xclip imagemagick
+dunst-sound       dunst(*)
+fzf-custom        fzf git(*)
+mediacontrol      dunst(*) playerctl brightnessctl pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack pavucontrol
+pacman-list
+recorder          ffmpeg slop i3blocks(*)
+tmux-sessionizer  fzf tmux(*)
+usb               dmenu rofi(*) opendoas dunst(*) xclip
+webcam            mpv(*) cameractrls
+
+# 2. dunst/
+[Module]          [Packages]
+dunstrc           dunst(*) dmenu firefox ttf-twemoji(a) getnf(https://github.com/getnf/getnf)
+
+# 3. git/
+[Module]          [Packages]
+.gitconfig        git github-cli
+
+# 4. i3/
+[Module]          [Packages]
+config            i3-wm i3lock xss-lock kitty(*) firefox yazi rofi(*) rofi-emoji rofi-greenclip(a) flameshot getnf(https://github.com/getnf/getnf)
+i3blocks.conf     i3blocks
+
+# 4.5. i3blocks/
+[Module]          [Packages]
+bandwidth         bc
+battery           acpi
+brightness        brightnessctl
+cpu_usage         sysstat
+memory
+temperature       lm_sensors
+timer             dunst(*)
+volume            pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack alsa-utils pavucontrol
+
+# 5. kitty/
+[Module]          [Packages]
+kitty.conf        kitty getnf(https://github.com/getnf/getnf)
+
+# 6. mpv/
+[Module]          [Packages]
+mpv.conf          mpv
+input.conf        mpv
+
+# 7. nvim/
+[Module]          [Packages]
+init.lua          nvim git lua luarocks
+lspconfig.lua     nodejs npm
+telescope.lua     rustup(https://rust-lang.org/tools/install/) fd-find(https://crates.io/crates/fd-find) ripgrep(https://crates.io/crates/ripgrep)
+treesitter.lua    mingw-w64-gcc make
+
+# 8. rofi/
+[Module]          [Packages]
+config.rasi       rofi kitty(*) getnf(https://github.com/getnf/getnf)
+
+# 9. tmux/
+[Module]          [Packages]
+tmux.conf         tmux xclip
+
+# 10. vim/
+[Module]          [Packages]
+.vimrc            gvim
+
+# 11. wezterm/
+[Module]          [Packages]
+wezterm.lua       ttf-twemoji(a) getnf(https://github.com/getnf/getnf) or (https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip)
+
+# 12. x/
+[Module]          [Packages]
+.xinitrc          xorg xorg-xinit xorg-drivers(https://archlinux.org/groups/x86_64/xorg-drivers/) i3(*)
+.xprofile         qt5ct qt6ct nvim(*) kitty(*) firefox feh networkmanager flameshot dunst rofi-greenclip(a)
+.Xresources       nwg-look qt5ct qt6ct (theme, icons, cursor mentioned in file)
+
+# 13. zsh/
+[Module]          [Packages]
+.zshrc            xorg(*)
+.zshrc            zsh (plugins mentioned in file)
+.zshenv           nvim(*) kitty(*) firefox feh mpv(*) i3(*) rofi(*) rustup(https://rust-lang.org/tools/install/
