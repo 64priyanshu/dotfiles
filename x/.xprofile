@@ -29,8 +29,8 @@ xset s off
 xset dpms 0 0 900
 
 # Screen Wallpaper: sudo pacman -S feh
-feh --bg-fill $XDG_PICTURES_DIR/wallpapers/wallpaper.png &
-# feh --randomize --bg-fill $XDG_PICTURES_DIR/wallpapers/* &
+# feh --bg-fill $XDG_PICTURES_DIR/wallpapers/wallpaper.png &
+feh --randomize --bg-fill $XDG_PICTURES_DIR/wallpapers/* &
 
 # Network Manager Applet
 nm-applet --indicator &
@@ -43,3 +43,6 @@ dunst &
 
 # Clipboard manager: https://github.com/erebe/greenclip
 greenclip daemon &
+
+# Simple compositor
+xcompmgr -c -C -f -t-5 -l-5 -r4.2 -o.55 -I0.028 -O0.03 -D4 &
