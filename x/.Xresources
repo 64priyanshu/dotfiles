@@ -3,6 +3,6 @@ Xft.dpi: 120
 Xft.antialias: true
 
 ! Cursor (Use nwg-look to set GTK ~/.themes, ~/.icons and cursors OR /usr/share/themes/, /usr/share/icons/)
-! Theme  - https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme
-! Icons  - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+! Theme  - https://github.com/vinceliuice/Colloid-gtk-theme (./install.sh -l -d ~/.themes -n Colloid -c dark --tweaks gruvbox normal)
+! Icons  - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme (sudo pacman -S papirus-icon-theme)
 ! Cursor - https://github.com/sainnhe/capitaine-cursors (edit name inside ~/icons/CapitaineCursors/index.theme and remove spaces from Name)

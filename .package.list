@@ -73,8 +73,8 @@ wezterm.lua       ttf-twemoji(a) getnf(https://github.com/getnf/getnf) or (https
 # 12. x/
 [Module]          [Packages]
 .xinitrc          xorg xorg-xinit xorg-drivers(https://archlinux.org/groups/x86_64/xorg-drivers/) i3(*)
-.Xresources       nwg-look qt5ct qt6ct (theme, icons, cursor mentioned in file)
 .xprofile         qt5ct qt6ct nvim(*) kitty(*) firefox feh networkmanager flameshot dunst rofi-greenclip(a) xcompmgr
+.Xresources       nwg-look qt5ct qt6ct libadwaita (theme, icons, cursor mentioned in file)
 
 # 13. zsh/
 [Module]          [Packages]
