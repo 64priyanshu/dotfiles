@@ -232,10 +232,10 @@ for_window [title="^webcam$"] border pixel 1
 for_window [title="^webcam$"] floating enable
 for_window [title="^webcam$"] sticky enable
 
-# class                 border|backgr|text|indicator|child_border
-client.focused          #00000000 $yellow   #00000000 $lightyellow
-client.focused_inactive #00000000 $darkgray #00000000 $darkgray
-client.unfocused        #00000000 $darkgray #00000000 $darkgray
-client.urgent           #00000000 $red      #00000000 $red
+# class                  border     backgr     text       indicator     child_border
+client.focused           $yellow    $yellow    $darkgray  $lightyellow
+client.focused_inactive  $darkgray  $darkgray  $yellow    $darkgray
+client.unfocused         $darkgray  $darkgray  $yellow    $darkgray
+client.urgent            $red       $red       $darkgray  $red
 
 gaps inner 5
