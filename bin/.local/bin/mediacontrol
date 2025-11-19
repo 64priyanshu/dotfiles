@@ -85,13 +85,6 @@ function get_album_art {
 function show_volume_notif {
   volume=$(get_mute)
   get_volume_icon
-  notify-send -a "system-control" -t $notification_timeout -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%"
-}
-
-# Displays a volume notification
-function show_volume_notif {
-  volume=$(get_mute)
-  get_volume_icon
 
   if [[ $show_music_in_volume_indicator == "true" ]]; then
     current_song=$(playerctl -f "{{title}} - {{artist}}" metadata)
