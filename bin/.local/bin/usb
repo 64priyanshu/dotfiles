@@ -20,45 +20,47 @@ option=$(printf "mount\numount\n" | rofi -dmenu -l 2 -i -p "mount or umount")
 [ -z "$option" ] && exit 1
 
 rmtemp() {
-  rmdir "$1"
-  exit 1
+	rmdir "$1"
+	exit 1
 }
 
 if [ "$option" = "mount" ]; then
-  temp="$(mktemp -d)"
-  # drive=$(ls -1 /dev | grep "sd[a-z][0-9]" | dmenu -p "drive to mount:" -i -l 5)
-  drive=$(ls -1 /dev | grep "sd[a-z][0-9]" | rofi -dmenu -l 5 -i -p "drive to mount")
+	temp="$(mktemp -d)"
 
-  [ -z "$drive" ] && rmtemp "$temp"
 
-  # Check if already mounted
-  if mount | grep -q "/dev/$drive"; then
-    notify-send -t 15000 "󱊞  USB Mount Failed!" "/dev/$drive is already mounted."
-    exit 0
-  fi
+	# drive=$(ls -1 /dev | grep "sd[a-z][0-9]" | dmenu -p "drive to mount:" -i -l 5)
+	drive=$(ls -1 /dev | grep "sd[a-z][0-9]" | rofi -dmenu -l 5 -i -p "drive to mount")
 
-  # Doas does its stuff (notification for 15 seconds)
-  doas mount "/dev/$drive" "$temp" >/dev/null 2>&1 && notify-send -t 15000 "󱊞  USB Mounted!" "mounted $drive to $temp."
+	[ -z "$drive" ] && rmtemp "$temp"
 
-  # Copy temp directory to clipboard
-  echo "$temp" | tr -d '\n' | xclip -selection clipboard
+	# Check if already mounted
+	if mount | grep -q "/dev/$drive"; then
+		notify-send -t 15000 "󱊞  USB Mount Failed!" "/dev/$drive is already mounted."
+		exit 0
+	fi
 
-  elif [ "$option" = "umount" ]; then
-    # mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | dmenu -p "drive to unmount:" -i -l 5)
-    mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | rofi -dmenu -l 5 -i -p "drive to unmount")
+	# Doas does its stuff (notification for 15 seconds)
+	doas mount "/dev/$drive" "$temp" >/dev/null 2>&1 && notify-send -t 15000 "󱊞  USB Mounted!" "mounted $drive to $temp."
 
-  [ -z "$mount" ] && exit 1
+	# Copy temp directory to clipboard
+	echo "$temp" | tr -d '\n' | xclip -selection clipboard
 
-  # Drive
-  drive="$(echo "$mount" | awk '{ print $1 }')"
-  # Mount Point (Directory)
-  mountpoint="$(echo "$mount" | awk '{ print $3 }')"
+elif [ "$option" = "umount" ]; then
+	# mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | dmenu -p "drive to unmount:" -i -l 5)
+	mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | rofi -dmenu -l 5 -i -p "drive to unmount")
 
-  # Doas does it stuff
-  if doas umount "$mountpoint" >/dev/null 2>&1; then
-    notify-send -t 15000 "󱊞  USB Unmounted!" "unmounted $drive from $mountpoint."
-  else
-    notify-send -u critical "󱊞 USB Unmount Failed!" "unmount failed due to running process or other reasons."
-  fi
-  rmdir "$mountpoint"
+	[ -z "$mount" ] && exit 1
+
+	# Drive
+	drive="$(echo "$mount" | awk '{ print $1 }')"
+	# Mount Point (Directory)
+	mountpoint="$(echo "$mount" | awk '{ print $3 }')"
+
+	# Doas does it stuff
+	if doas umount "$mountpoint" >/dev/null 2>&1; then
+		notify-send -t 15000 "󱊞  USB Unmounted!" "unmounted $drive from $mountpoint."
+	else
+		notify-send -u critical "󱊞 USB Unmount Failed!" "unmount failed due to running process or other reasons."
+	fi
+	rmdir "$mountpoint"
 fi

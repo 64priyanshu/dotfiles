@@ -5,18 +5,18 @@
 
 # Select a file, cd into it's parent directory open the file in vim
 fzf_file(){
-  file=$(find . -type f -not -path '*/.git/*' -not -path '*/node_modules/*' -not -path '*/.venv/*' | fzf)
-  if [[ -n "$file" ]]; then
-    full_path=$(realpath "$file")
-    cd "$(dirname "$full_path")" || exit
-    v "$full_path"
-  fi
+	file=$(find . -type f -not -path '*/.git/*' -not -path '*/node_modules/*' -not -path '*/.venv/*' | fzf)
+	if [[ -n "$file" ]]; then
+		full_path=$(realpath "$file")
+		cd "$(dirname "$full_path")" || exit
+		v "$full_path"
+	fi
 }
 
 # Search for directory and cd into it
 fzf_dir(){
-  dir=$(find . -type d -not -path '*/.git/*' -not -path '*/node_modules/*' -not -path '*/.venv/*' | fzf)
-  if [[ -n "$dir" ]]; then
-    cd "$dir" || exit
-  fi
+	dir=$(find . -type d -not -path '*/.git/*' -not -path '*/node_modules/*' -not -path '*/.venv/*' | fzf)
+	if [[ -n "$dir" ]]; then
+		cd "$dir" || exit
+	fi
 }
