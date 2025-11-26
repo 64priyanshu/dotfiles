@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Script modified from: https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/dmenurecord
+
 # Requires
 # sudo pacman -S ffmpeg
 # sudo pacman -S slop

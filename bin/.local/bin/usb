@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Source: https://github.com/BryceVandegrift/dotfiles/blob/master/.local/bin/usb
+# Script modified from: https://github.com/BryceVandegrift/dotfiles/blob/master/.local/bin/usb
 
 # Requires
 # sudo pacman -S dmenu
