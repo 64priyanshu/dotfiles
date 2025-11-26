@@ -6,19 +6,19 @@
 # echo "󰃠 $(brightnessctl | grep -Po '[0-9]{1,3}(?=%)' | head -n 1)%"
 
 if command -v brightnessctl &>/dev/null; then
-  MAX_BRIGHTNESS=$(brightnessctl m)
-  CURRENT_BRIGHTNESS=$(brightnessctl g)
+	MAX_BRIGHTNESS=$(brightnessctl m)
+	CURRENT_BRIGHTNESS=$(brightnessctl g)
 
-  PERCENTAGE=$((CURRENT_BRIGHTNESS * 100 / MAX_BRIGHTNESS))
-  echo "${PERCENTAGE}%"
+	PERCENTAGE=$((CURRENT_BRIGHTNESS * 100 / MAX_BRIGHTNESS))
+	echo "${PERCENTAGE}%"
 
   # Scrolling functionality
   case "$BLOCK_BUTTON" in
-    1) pkill -RTMIN+2 i3blocks & ;;
-    4) brightnessctl -q set +5% && pkill -RTMIN+2 i3blocks & ;;
-    5) brightnessctl --min-val=1 -q set 5%- && pkill -RTMIN+2 i3blocks & ;;
+	  1) pkill -RTMIN+2 i3blocks & ;;
+	  4) brightnessctl -q set +5% && pkill -RTMIN+2 i3blocks & ;;
+	  5) brightnessctl --min-val=1 -q set 5%- && pkill -RTMIN+2 i3blocks & ;;
   esac
 else
-  echo "NULL"
-  exit 1
+	echo "NULL"
+	exit 1
 fi

@@ -31,25 +31,25 @@ my $chip = $ENV{SENSOR_CHIP} || "";
 my $temperature = -9999;
 
 sub help {
-  print "Usage: temperature [-w <warning>] [-c <critical>] [--chip <chip>]\n";
-  print "-w <percent>: warning threshold to become yellow\n";
-  print "-c <percent>: critical threshold to become red\n";
-  print "--chip <chip>: sensor chip\n";
-  exit 0;
+	print "Usage: temperature [-w <warning>] [-c <critical>] [--chip <chip>]\n";
+	print "-w <percent>: warning threshold to become yellow\n";
+	print "-c <percent>: critical threshold to become red\n";
+	print "--chip <chip>: sensor chip\n";
+	exit 0;
 }
 
 GetOptions("help|h" => \&help,
-  "w=i"    => \$t_warn,
-  "c=i"    => \$t_crit,
-  "chip=s" => \$chip);
+	"w=i"    => \$t_warn,
+	"c=i"    => \$t_crit,
+	"chip=s" => \$chip);
 
 # Get chip temperature
 open (SENSORS, "sensors -u $chip |") or die;
 while (<SENSORS>) {
-  if (/^\s+temp1_input:\s+[\+]*([\-]*\d+\.\d)/) {
-    $temperature = $1;
-    last;
-  }
+	if (/^\s+temp1_input:\s+[\+]*([\-]*\d+\.\d)/) {
+		$temperature = $1;
+		last;
+	}
 }
 close(SENSORS);
 
@@ -60,10 +60,10 @@ print "$temperature°C\n" x2;
 
 # Print color, if needed
 if ($temperature >= $t_crit) {
-  print "#FF0000\n";
-  exit 33;
+	print "#FF0000\n";
+	exit 33;
 } elsif ($temperature >= $t_warn) {
-  print "#FFFC00\n";
+	print "#FFFC00\n";
 }
 
 exit 0;

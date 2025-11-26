@@ -167,27 +167,27 @@ bindsym $super+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-# Pressing left will shrink the window’s width.
-# Pressing right will grow the window’s width.
-# Pressing up will shrink the window’s height.
-# Pressing down will grow the window’s height.
-  bindsym h resize shrink width 10 px or 10 ppt
-  bindsym k resize grow height 10 px or 10 ppt
-  bindsym j resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym k resize grow height 10 px or 10 ppt
+	bindsym j resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
 
-# same bindings, but for the arrow keys
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Up resize grow height 10 px or 10 ppt
-  bindsym Down resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Up resize grow height 10 px or 10 ppt
+	bindsym Down resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
-# back to normal: Enter or Escape or $super+r
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-  bindsym $super+r mode "default"
+	# back to normal: Enter or Escape or $super+r
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $super+r mode "default"
 }
 
 bindsym $super+r mode "resize"
@@ -206,16 +206,16 @@ set $darkgray #1d2021
 
 # Customize i3 status-bar
 bar {
-  status_command i3blocks -c ~/.config/i3/i3blocks.conf
-  position top
-  colors {
-    background $bg
-    statusline $yellow
-    focused_workspace    $aqua     $aqua     $darkgray
-    inactive_workspace   $darkgray $darkgray $yellow
-    active_workspace     $darkgray $darkgray $yellow
-    urgent_workspace     $red      $red      $bg
-  }
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	position top
+	colors {
+		background $bg
+		statusline $yellow
+		focused_workspace    $aqua     $aqua     $darkgray
+		inactive_workspace   $darkgray $darkgray $yellow
+		active_workspace     $darkgray $darkgray $yellow
+		urgent_workspace     $red      $red      $bg
+	}
 }
 
 # Disable window title but have borders instead
