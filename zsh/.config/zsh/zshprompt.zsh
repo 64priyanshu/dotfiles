@@ -13,10 +13,10 @@ setopt prompt_subst
 # Add a hook to check for untracked files in the directory
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 +vi-git-untracked() {
-  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-    git status --porcelain | grep '??' &> /dev/null; then
-    hook_com[staged]+='!'
-  fi
+	if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+		git status --porcelain | grep '??' &> /dev/null; then
+	hook_com[staged]+='!'
+	fi
 }
 
 # Configure vcs_info settings
