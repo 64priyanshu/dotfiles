@@ -19,9 +19,9 @@ set ttimeoutlen=0
 set guicursor=n-v-i:block-Cursor
 
 " Tabs and indentation
-set expandtab       " Convert tabs to spaces
-set tabstop=2       " Number of spaces that a <Tab> in the file counts for
-set shiftwidth=2    " Number of spaces for auto-indent
+set noexpandtab     " Don't convert Tabs to spaces
+set tabstop=4       " Width of Tab
+set shiftwidth=4    " Width of Tab for (auto)indent
 
 " Statusline
 set laststatus=2    " Use a single statusline for all windows
@@ -51,6 +51,10 @@ set novisualbell    " Turn off visual bell warning
 set wildmenu        " Enable TAB completions menu on command-line mode
 set wildoptions=pum " Pum completions
 set pumheight=10    " Maximum height for completions
+
+" List char
+set list
+set listchars=tab:>\ ,multispace:---+
 
 " Fold
 set foldcolumn=1    " Always show fold column
