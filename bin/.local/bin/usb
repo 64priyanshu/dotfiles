@@ -27,6 +27,8 @@ rmtemp() {
 if [ "$option" = "mount" ]; then
 	temp="$(mktemp -d)"
 
+	# Sleep command because fading animation makes second rofi menu not appear visibly
+	sleep 0.2
 
 	# drive=$(ls -1 /dev | grep "sd[a-z][0-9]" | dmenu -p "drive to mount:" -i -l 5)
 	drive=$(ls -1 /dev | grep "sd[a-z][0-9]" | rofi -dmenu -l 5 -i -p "drive to mount")
@@ -46,6 +48,9 @@ if [ "$option" = "mount" ]; then
 	echo "$temp" | tr -d '\n' | xclip -selection clipboard
 
 elif [ "$option" = "umount" ]; then
+	# Sleep command because fading animation makes second rofi menu not appear visibly
+	sleep 0.2
+
 	# mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | dmenu -p "drive to unmount:" -i -l 5)
 	mount=$(mount | grep "sd[a-z][0-9]" | awk '{ print $1 " " $2 " " $3 }' | rofi -dmenu -l 5 -i -p "drive to unmount")
 
