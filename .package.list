@@ -16,7 +16,7 @@ webcam            mpv(*) cameractrls
 
 # 2. dunst/
 [Module]          [Packages]
-dunstrc           dunst(*) dmenu firefox ttf-twemoji(a) getnf(https://github.com/getnf/getnf)
+dunstrc           dunst dmenu firefox ttf-twemoji(a) getnf(https://github.com/getnf/getnf)
 
 # 3. git/
 [Module]          [Packages]
@@ -56,7 +56,7 @@ treesitter.lua    mingw-w64-gcc make
 
 #8. picom/
 [Module]          [Packages]
-picom.conf        picom(*)
+picom.conf        picom
 
 # 9. rofi/
 [Module]          [Packages]
