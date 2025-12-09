@@ -44,5 +44,5 @@ dunst &
 # Clipboard manager: https://github.com/erebe/greenclip
 greenclip daemon &
 
-# Simple compositor
-xcompmgr -c -C -f -t-5 -l-5 -r4.2 -o.55 -I0.028 -O0.03 -D4 &
+# Compositor
+picom -b
