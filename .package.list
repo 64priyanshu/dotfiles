@@ -54,29 +54,33 @@ lspconfig.lua     nodejs npm
 telescope.lua     rustup(https://rust-lang.org/tools/install/) fd-find(https://crates.io/crates/fd-find) ripgrep(https://crates.io/crates/ripgrep)
 treesitter.lua    mingw-w64-gcc make
 
-# 8. rofi/
+#8. picom/
+[Module]          [Packages]
+picom.conf        picom(*)
+
+# 9. rofi/
 [Module]          [Packages]
 config.rasi       rofi kitty(*) getnf(https://github.com/getnf/getnf)
 
-# 9. tmux/
+# 10. tmux/
 [Module]          [Packages]
 tmux.conf         tmux xclip
 
-# 10. vim/
+# 11. vim/
 [Module]          [Packages]
 .vimrc            gvim
 
-# 11. wezterm/
+# 12. wezterm/
 [Module]          [Packages]
 wezterm.lua       ttf-twemoji(a) getnf(https://github.com/getnf/getnf) or (https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip)
 
-# 12. x/
+# 13. x/
 [Module]          [Packages]
 .xinitrc          xorg xorg-xinit xorg-drivers(https://archlinux.org/groups/x86_64/xorg-drivers/) i3(*)
-.xprofile         qt5ct qt6ct nvim(*) kitty(*) firefox feh networkmanager flameshot dunst rofi-greenclip(a) xcompmgr
+.xprofile         qt5ct qt6ct nvim(*) kitty(*) firefox feh networkmanager flameshot dunst rofi-greenclip(a) picom(*)
 .Xresources       gtk3 gtk4 nwg-look qt5ct qt6ct sassc libadwaita (theme, icons, cursor mentioned in file)
 
-# 13. zsh/
+# 14. zsh/
 [Module]          [Packages]
 .zshrc            xorg(*)
 .zshrc            zsh (plugins mentioned in file)
