@@ -51,7 +51,7 @@
 
 [play_sound]
 	summary = "*"
-	script = ~/.config/dunst/sound
+	script = ~/.local/bin/dunst-sound
 
 [urgency_low]
 	background = "#665c54"
