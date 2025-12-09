@@ -4,6 +4,7 @@
 	horizontal_padding = 20
 	frame_width = 1
 	frame_color = "#d5c4a1"
+	transparency = 5
 	gaps = true
 	gap_size = 10
 
