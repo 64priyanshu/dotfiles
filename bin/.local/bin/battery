@@ -44,7 +44,7 @@ while true; do
 			notify-send -u low "󰁽 Battery Info" "Consider plugging in the charger. Battery is at $batteryCapacity%"
 			sleep 900 # 15 mins
 		else
-			sleep 2250 # 45mins
+			sleep 2250 # 45 mins
 		fi
 	elif [[ "$batteryStatus" == "Charging" ]]; then
 		if [[ $batteryCapacity -ge 79 ]]; then
