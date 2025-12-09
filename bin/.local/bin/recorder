@@ -32,7 +32,7 @@ screencast() { ffmpeg -y \
 	-r 24 \
 	-f alsa -thread_queue_size 1024 -i default \
 	-c:v h264 \
-	-crf 0 -preset ultrafast -c:a aac \
+	-crf 23 -preset ultrafast -c:a aac \
 	-af "afftdn=nf=-75" \
 	"$HOME/Videos/screencast-$(date +%F-%T).mp4" &
 
@@ -44,7 +44,7 @@ video() { ffmpeg \
 	-framerate 30 \
 	-s "$(getdim)" \
 	-i "$DISPLAY" \
-	-c:v libx264 -qp 0 -r 30 \
+	-c:v libx264 -crf 23 -r 30 \
 	"$HOME/Videos/video-$(date +%F-%T).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
@@ -107,7 +107,7 @@ videoselected() {
 		-framerate 30 \
 		-video_size "$W"x"$H" \
 		-i :0.0+"$X,$Y" \
-		-c:v libx264 -qp 0 -r 30 \
+		-c:v libx264 -crf 23 -r 30 \
 		"$HOME/Videos/box-$(date +%F-%T).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
