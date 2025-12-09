@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# Skip sounds for system-control notifications
-if [ "$DUNST_APP_NAME" = "system-control" ]; then
+# Skip sounds for media-control notifications
+if [ "$DUNST_APP_NAME" = "media-control" ]; then
 	exit 0
 fi
 
 # Use the urgency to play different sounds (70% of volume, 0 is silent and 65536 is maximum)
 case "$DUNST_URGENCY" in
 	LOW)
-		paplay --volume=45875 ~/.local/bin/.sounds/bell.wav
+		paplay --volume=45875 ~/.config/dunst/sound/low.wav
 		;;
 	NORMAL)
-		paplay --volume=45875 ~/.local/bin/.sounds/message.wav
+		paplay --volume=45875 ~/.config/dunst/sound/normal.wav
 		;;
 	CRITICAL)
-		paplay --volume=45875 ~/.local/bin/.sounds/bell_end.wav
+		paplay --volume=45875 ~/.config/dunst/sound/critical.wav
 		;;
 esac
