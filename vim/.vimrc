@@ -31,6 +31,7 @@ set statusline=%<%f\ %h%m%r\ %y%=%-14.(%l,%c%V%)\ %P
 set signcolumn=yes  " Always show the sign column
 set cursorline      " Highlight the current line
 set cursorcolumn    " Highlight column
+set colorcolumn=80  " Set text-width indicator
 set autoindent      " Auto Indent
 set smartindent     " Smart auto-indenting
 set breakindent     " Wrapped lines continue visually indented
