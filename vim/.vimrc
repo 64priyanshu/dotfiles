@@ -72,7 +72,7 @@ let g:netrw_localcopydircmd = "cp -r" " Copy directories recursively
 " Set the undo directory and enable persistent undo
 let &undodir = expand('$HOME') . "/.vim/gvim"
 if !isdirectory(&undodir)
-  call mkdir(&undodir, "p")
+	call mkdir(&undodir, "p")
 endif
 set undofile
 
@@ -81,9 +81,9 @@ set guioptions-=T   " Remove GUI Toolbar
 
 " Font specification for Windows and UNIX
 if has("win32") || has("win64")
-  set guifont=JetBrainsMono\ NFM:h10
+	set guifont=JetBrainsMono\ NFM:h10
 elseif has("unix")
-  set guifont=JetBrainsMono\ NF\ 10
+	set guifont=JetBrainsMono\ NF\ 10
 endif
 
 " Colorscheme
@@ -92,7 +92,7 @@ colorscheme retrobox
 
 " Fix Background Color Erase (BCE) so colorscheme renders properly
 if &term =~ '256color'
-  set t_ut=
+	set t_ut=
 endif
 
 " Leader keymaps
@@ -131,25 +131,25 @@ xnoremap <leader>d "_d
 
 " Paste from clipboard keymap for GVIM
 if has("gui_running")
-  inoremap <C-S-v> <C-r>+
-  cnoremap <C-S-v> <C-r>+
+	inoremap <C-S-v> <C-r>+
+	cnoremap <C-S-v> <C-r>+
 endif
 
 " Autocmds
 augroup RemoveTrailingWhitespace
-  autocmd!
-  autocmd BufWritePre * let save_cursor = getpos(".")
-  autocmd BufWritePre * silent! %s/\s\+$//e
-  autocmd BufWritePre * call setpos(".", save_cursor)
+	autocmd!
+	autocmd BufWritePre * let save_cursor = getpos(".")
+	autocmd BufWritePre * silent! %s/\s\+$//e
+	autocmd BufWritePre * call setpos(".", save_cursor)
 augroup END
 
 augroup CloseWinOnEsc
-  autocmd!
-  autocmd FileType help,qf call s:CloseOnEsc()
+	autocmd!
+	autocmd FileType help,qf call s:CloseOnEsc()
 augroup END
 
 function! s:CloseOnEsc()
-  nnoremap <silent> <buffer> q :close<CR>
-  nnoremap <silent> <buffer> <Esc> :close<CR>
-  setlocal nobuflisted
+	nnoremap <silent> <buffer> q :close<CR>
+	nnoremap <silent> <buffer> <Esc> :close<CR>
+	setlocal nobuflisted
 endfunction
