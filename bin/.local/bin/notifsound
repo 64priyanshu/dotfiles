@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Skip sounds for media-control notifications
-if [ "$DUNST_APP_NAME" = "media-control" ]; then
+# Skip sounds for mediacontrol notifications
+if [ "$DUNST_APP_NAME" = "mediacontrol" ]; then
 	exit 0
 fi
 
