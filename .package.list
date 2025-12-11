@@ -3,11 +3,11 @@
 
 # 1. bin/
 [Module]          [Packages]
-battery           dunst(*)
+batterynotif      dunst(*)
 colorpicker       dunst(*) xcolor xclip imagemagick
-dunst-sound       dunst(*)
 fzf-custom        fzf git(*)
 mediacontrol      dunst(*) playerctl brightnessctl pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack pavucontrol
+notifsound        dunst(*)
 pacman-list
 recorder          ffmpeg slop i3blocks(*)
 tmux-sessionizer  fzf tmux(*)
