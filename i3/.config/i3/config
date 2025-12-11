@@ -238,4 +238,4 @@ client.urgent            $red       $red       $darkgray  $red
 gaps inner 5
 
 # Dunst batterynotif
-exec --no-startup-id ~/.local/bin/battery
+exec --no-startup-id ~/.local/bin/batterynotif
