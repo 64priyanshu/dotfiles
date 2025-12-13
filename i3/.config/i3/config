@@ -207,7 +207,7 @@ mode "resize" {
 }
 
 bindsym $super+r mode "resize"
-# Use $alt+leftmousebutton or $super+rightmousebutton to drag and resize with mouse
+# Use $super+rightmousebutton or hold on corner to drag and resize with mouse
 
 # Make the currently focused window a scratchpad window
 bindsym $super+Shift+minus move scratchpad
