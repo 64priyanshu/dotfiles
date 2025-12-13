@@ -121,7 +121,7 @@ bindsym $super+Shift+Up move up
 bindsym $super+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $super+z split h
+bindsym $super+s split h
 
 # split in vertical orientation
 bindsym $super+v split v
@@ -159,6 +159,10 @@ bindsym $super+7 workspace number $ws7
 bindsym $super+8 workspace number $ws8
 bindsym $super+9 workspace number $ws9
 bindsym $super+0 workspace number $ws10
+
+# move to next and previous Workspaces where a window is open
+bindsym $super+Shift+bracketright workspace next
+bindsym $super+Shift+bracketleft workspace prev
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace number $ws1
