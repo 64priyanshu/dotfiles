@@ -205,6 +205,15 @@ mode "resize" {
 bindsym $super+r mode "resize"
 # Use $alt+leftmousebutton or $super+rightmousebutton to drag and resize with mouse
 
+# Make the currently focused window a scratchpad window
+bindsym $super+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $super+minus scratchpad show
+
+# Show the kitty scratchpad window, if any.
+bindsym $alt+k [class="kitty"] scratchpad show; move position center
+
 # Set Gruvbox colorscheme colors
 set $bg #282828
 set $red #cc241d
