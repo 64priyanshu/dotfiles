@@ -51,7 +51,7 @@
 
 [play_sound]
 	summary = "*"
-	script = ~/.local/bin/notifsound
+	script = ~/.local/bin/notif-sound
 
 [urgency_low]
 	background = "#665c54"

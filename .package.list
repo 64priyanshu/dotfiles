@@ -7,7 +7,7 @@ batterynotif      dunst(*)
 colorpicker       dunst(*) xcolor xclip imagemagick
 fzf-custom        fzf git(*)
 mediacontrol      dunst(*) playerctl brightnessctl pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack pavucontrol
-notifsound        dunst(*)
+notif-sound       dunst(*)
 pacman-list
 recorder          ffmpeg slop i3blocks(*)
 tmux-sessionizer  fzf tmux(*)
@@ -33,7 +33,7 @@ window            xtitle(a)
 bandwidth         bc
 battery           acpi
 brightness        brightnessctl
-cpu_usage         sysstat
+cpu               sysstat
 memory
 temperature       lm_sensors
 timer             dunst(*)
