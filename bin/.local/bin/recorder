@@ -74,7 +74,7 @@ webcam() { ffmpeg \
 audio() { ffmpeg \
 	-f alsa -i default \
 	-af "afftdn=nf=-75" \
-	-c:a flac \
+	-c:a aac -b:a 128k \
 	"$HOME/Music/audio-$(date +%F-%T).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
