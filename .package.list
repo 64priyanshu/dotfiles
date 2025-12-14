@@ -29,7 +29,7 @@ i3blocks.conf     i3blocks
 
 # 4.5. i3blocks/
 [Module]          [Packages]
-activewindow
+window            xtitle(a)
 bandwidth         bc
 battery           acpi
 brightness        brightnessctl
