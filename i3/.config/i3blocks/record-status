@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ -e /tmp/recordingpid ]]; then
+	echo "REC"
+
+	# Show prompt to stop recording on clicking
+	case "$BLOCK_BUTTON" in
+		1) recorder & ;;
+	esac
+fi
