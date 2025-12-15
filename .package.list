@@ -53,8 +53,8 @@ input.conf        mpv
 [Module]          [Packages]
 init.lua          nvim git lua luarocks
 lspconfig.lua     nodejs npm
-telescope.lua     rustup(https://rust-lang.org/tools/install/) fd-find(https://crates.io/crates/fd-find) ripgrep(https://crates.io/crates/ripgrep)
-treesitter.lua    mingw-w64-gcc make
+telescope.lua     fd ripgrep
+treesitter.lua    mingw-w64-gcc make tree-sitter-cli(https://www.npmjs.com/package/tree-sitter-cli)
 
 #8. picom/
 [Module]          [Packages]
@@ -86,4 +86,4 @@ wezterm.lua       ttf-twemoji(a) getnf(https://github.com/getnf/getnf) or (https
 [Module]          [Packages]
 .zshrc            xorg(*)
 .zshrc            zsh (plugins mentioned in file)
-.zshenv           nvim(*) kitty(*) firefox feh mpv(*) i3(*) rofi(*) rustup(https://rust-lang.org/tools/install/
+.zshenv           nvim(*) kitty(*) firefox feh mpv(*) i3(*) rofi(*)
