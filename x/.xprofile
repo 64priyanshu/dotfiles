@@ -35,6 +35,9 @@ feh --randomize --bg-fill $XDG_PICTURES_DIR/wallpapers/* &
 # Network Manager Applet
 nm-applet --indicator &
 
+# Screenshots
+flameshot &
+
 # Notifications
 dunst &
 
