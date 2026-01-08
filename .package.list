@@ -30,13 +30,11 @@ i3blocks.conf     i3blocks
 # 4.5. i3blocks/
 [Module]          [Packages]
 window            xtitle(a)
-bandwidth         bc
 battery           acpi
 brightness        brightnessctl
 cpu               sysstat
 memory
 temperature       lm_sensors
-timer             dunst(*)
 volume            pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack alsa-utils pavucontrol
 record-status
 
