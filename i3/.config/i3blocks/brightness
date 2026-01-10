@@ -12,6 +12,7 @@ if command -v brightnessctl &>/dev/null; then
 
 	PERCENTAGE=$((CURRENT_BRIGHTNESS * 100 / MAX_BRIGHTNESS))
 	echo "${PERCENTAGE}%"
+	echo "${PERCENTAGE}%"
 
 	# Step size
 	STEP_SIZE=${STEP_SIZE:-5}
@@ -23,6 +24,7 @@ if command -v brightnessctl &>/dev/null; then
 		5) brightnessctl --min-val=1 -q set "$STEP_SIZE"%- && pkill -RTMIN+2 i3blocks & ;;
 	esac
 else
+	echo "NULL"
 	echo "NULL"
 	exit 1
 fi
