@@ -59,7 +59,8 @@ END {
 	# 	printf("%.1fG/%.1fG\n", used, total)
 	# }
 
-	# short text
+	# short text (repeated to make it full text as well to just keep percentage)
+	printf("%.f%%\n", pct)
 	printf("%.f%%\n", pct)
 
 	# color
