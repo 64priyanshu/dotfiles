@@ -215,6 +215,8 @@ bindsym $super+r mode "resize"
 # Make the currently focused window a scratchpad window
 bindsym $super+Shift+minus move scratchpad
 
+# Toggle floating to move a scratchpad window to normal workspace
+
 # Show the first scratchpad window
 bindsym $super+minus scratchpad show
 
