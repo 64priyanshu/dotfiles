@@ -10,7 +10,6 @@ mediacontrol      dunst(*) playerctl brightnessctl pipewire pipewire-audio pipew
 notif-sound       dunst(*)
 pacman-list
 recorder          ffmpeg slop i3blocks(*)
-tmux-sessionizer  fzf tmux(*)
 usb               dmenu rofi(*) opendoas dunst(*) xclip
 webcam            mpv(*) cameractrls
 

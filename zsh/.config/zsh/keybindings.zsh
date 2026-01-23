@@ -25,9 +25,6 @@ bindkey -e
 # Disable CTRL+S and CTRL + Q (freeze and unfreeze terminal output)
 stty -ixon  # Disable XON/XOFF flow control
 
-# Tmux-sessionizer
-bindkey -s '^s' 'tmux-sessionizer\n'
-
 # Sourcing my fzf scripts
 source $HOME/.local/bin/fzf-custom
 
