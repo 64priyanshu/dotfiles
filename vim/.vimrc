@@ -55,7 +55,7 @@ set pumheight=10    " Maximum height for completions
 
 " List char
 set list
-set listchars=tab:>\ ,multispace:---+
+set listchars=tab:>\ ,multispace:---+,eol:$
 
 " Fold
 set foldcolumn=1    " Always show fold column
