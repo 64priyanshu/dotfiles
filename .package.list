@@ -47,49 +47,53 @@ record-status
 [Module]          [Packages]
 kitty.conf        kitty getnf(https://github.com/getnf/getnf)
 
-# 7. mpv/
+# 7. mimeapps/
+[Module]          [Packages]
+mimeapps.list     selectdefaultapplication-git(a)
+
+# 8. mpv/
 [Module]          [Packages]
 mpv.conf          mpv
 input.conf        mpv
 
-# 8. nvim/
+# 9. nvim/
 [Module]          [Packages]
 init.lua          nvim git lua luarocks
 lspconfig.lua     nodejs npm
 telescope.lua     fd ripgrep
 treesitter.lua    mingw-w64-gcc make tree-sitter-cli(https://www.npmjs.com/package/tree-sitter-cli)
 
-#9. picom/
+#10. picom/
 [Module]          [Packages]
 picom.conf        picom
 
-# 10. redshift/
+# 11. redshift/
 [Module]          [Packages]
 redshift.conf     redshift geoclue
 
-# 11. rofi/
+# 12. rofi/
 [Module]          [Packages]
 config.rasi       rofi kitty(*) getnf(https://github.com/getnf/getnf)
 
-# 12. tmux/
+# 13. tmux/
 [Module]          [Packages]
 tmux.conf         tmux xclip
 
-# 13. vim/
+# 14. vim/
 [Module]          [Packages]
 .vimrc            gvim
 
-# 14. wezterm/
+# 15. wezterm/
 [Module]          [Packages]
 wezterm.lua       ttf-twemoji(a) getnf(https://github.com/getnf/getnf) or (https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip)
 
-# 15. x/
+# 16. x/
 [Module]          [Packages]
 .xinitrc          xorg xorg-xinit xorg-drivers(https://archlinux.org/groups/x86_64/xorg-drivers/) i3(*)
 .xprofile         qt5ct qt6ct nvim(*) kitty(*) firefox feh networkmanager flameshot dunst rofi-greenclip(a) picom(*)
 .Xresources       gtk3 gtk4 nwg-look qt5ct qt6ct sassc libadwaita (theme, icons, cursor mentioned in file)
 
-# 16. zsh/
+# 17. zsh/
 [Module]          [Packages]
 .zshrc            xorg(*)
 .zshrc            zsh (plugins mentioned in file)
