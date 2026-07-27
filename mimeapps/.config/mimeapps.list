@@ -1,5 +1,6 @@
 ; https://wiki.archlinux.org/title/XDG_MIME_Applications
 ; GUI: https://aur.archlinux.org/packages/selectdefaultapplication-git
+; TUI: https://aur.archlinux.org/packages/mime-tui
 [Default Applications]
 ; Audio
 audio/mp2=mpv.desktop

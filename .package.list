@@ -49,7 +49,7 @@ kitty.conf        kitty getnf(https://github.com/getnf/getnf)
 
 # 7. mimeapps/
 [Module]          [Packages]
-mimeapps.list     selectdefaultapplication-git(a)
+mimeapps.list     selectdefaultapplication-git(a) mime-tui(a)
 
 # 8. mpv/
 [Module]          [Packages]
