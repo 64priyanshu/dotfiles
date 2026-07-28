@@ -9,6 +9,7 @@ alias orphan-remove='sudo pacman -Rns $(pacman -Qtdq)'
 
 # Downgrade a package
 # sudo pacman -U /var/cache/pacman/pkg/<package-info>.pkg.tar.zst
+# Or use downgrade(aur) - https://aur.archlinux.org/packages/downgrade
 
 alias v="nvim"
 alias vi="nvim"

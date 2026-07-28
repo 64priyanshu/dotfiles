@@ -98,3 +98,7 @@ wezterm.lua       ttf-twemoji(a) getnf(https://github.com/getnf/getnf) or (https
 .zshrc            xorg(*)
 .zshrc            zsh (plugins mentioned in file)
 .zshenv           nvim(*) kitty(*) firefox feh mpv(*) i3(*) rofi(*)
+
+# 17.5. zsh/
+[Module]          [Packages]
+aliases.zsh       downgrade(a)
