@@ -55,7 +55,9 @@ bindsym $alt+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 # Start terminal (kitty)
 bindsym $super+Return exec i3-sensible-terminal
 # Start browser (firefox)
-bindsym $super+b exec firefox
+# bindsym $super+b exec firefox
+# Start or Switch to firefox: (From: https://www.oribarbut.com/posts/software/i3wm-switch-to-or-launch-shortcut/)
+bindsym $super+b exec --no-startup-id pgrep -x firefox && i3-msg '[class="firefox"] focus' || firefox
 # Start CLI file-explorer (yazi)
 bindsym $super+e exec "$TERMINAL yazi"
 # Start Rofi (a program launcher)
