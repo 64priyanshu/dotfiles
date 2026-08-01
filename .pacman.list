@@ -11,7 +11,6 @@ brightnessctl
 cameractrls
 clamav
 cmake
-coolercontrol-liqctld
 downgrade
 dpkg
 dunst
@@ -29,11 +28,9 @@ geoclue
 gimp
 git
 github-cli
-glib
 gnome-themes-extra
 grub
 gruvbox-plus-icon-theme
-gtk
 gvfs
 htop
 i3-wm
@@ -62,7 +59,6 @@ man-db
 mime-tui
 mingw-w64-gcc
 mpv
-nbfc-linux
 neovim
 network-manager-applet
 networkmanager
@@ -130,7 +126,6 @@ xcape
 xclip
 xcolor
 xdotool
-xinput-gui
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
