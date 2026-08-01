@@ -1,6 +1,7 @@
 7zip
 acpi
 alsa-utils
+arandr
 base
 base-devel
 bc
@@ -23,6 +24,7 @@ feh
 firefox
 flameshot
 fzf
+gamepad-tool-bin
 geoclue
 gimp
 git
