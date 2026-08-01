@@ -1,3 +1,5 @@
+# vim:foldmethod=marker
+# All-Explicit: pacman -Qqe {{{
 7zip
 acpi
 alsa-utils
@@ -175,3 +177,5 @@ zoxide
 zsh
 zsh-completions
 zsh-syntax-highlighting
+
+# }}}
