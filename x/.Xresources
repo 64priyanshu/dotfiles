@@ -2,6 +2,12 @@
 Xft.dpi: 120
 Xft.antialias: true
 
+! Monitor output display & Projection (xrandr GUI frontend)
+! https://archlinux.org/packages/extra/any/arandr/
+
+! Gamepad tester GUI
+! https://aur.archlinux.org/packages/gamepad-tool-bin
+
 ! Cursor (Use nwg-look to set GTK ~/.themes, ~/.icons and cursors OR /usr/share/themes/, /usr/share/icons/)
 ! Theme  - https://github.com/vinceliuice/Colloid-gtk-theme (./install.sh -l -d ~/.themes -n Colloid -c dark --tweaks gruvbox normal)
 ! Icons  - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme (sudo pacman -S papirus-icon-theme)
