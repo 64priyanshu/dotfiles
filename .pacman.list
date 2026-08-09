@@ -93,6 +93,7 @@ qt6ct
 rclone
 redshift
 reflector
+ripdrag
 ripgrep
 rofi
 rofi-emoji
@@ -354,6 +355,7 @@ gamepad-tool-bin
 gruvbox-plus-icon-theme
 losslesscut-bin
 mime-tui
+ripdrag
 rofi-greenclip
 selectdefaultapplication-git
 simple-mtpfs
@@ -1128,6 +1130,7 @@ redland
 redshift
 reflector
 rhash
+ripdrag
 ripgrep
 rofi
 rofi-emoji

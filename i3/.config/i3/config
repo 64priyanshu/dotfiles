@@ -264,6 +264,12 @@ for_window [class="firefox"] border none
 # Disable border for kitty terminal
 for_window [class="kitty"] border pixel 1
 
+# ripdrag(aur) (Drag-and-Drop)
+# ripdrag-git is outdated compared to ripdrag
+# usage: ripdrag -nba {files/folders}
+for_window [class="ripdrag"] floating enable, sticky enable, border pixel 1
+# for_window [class="ripdrag"] move absolute position 81 ppt 65 ppt
+
 # Webcam
 for_window [title="^webcam$"] border pixel 1
 for_window [title="^webcam$"] floating enable
