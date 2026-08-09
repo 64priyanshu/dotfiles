@@ -15,9 +15,9 @@
 #
 # If there is already a running instance, user will be prompted to end it.
 
-getdim() { xrandr | grep -oP '(?<=current ).*(?=,)' | tr -d ' ' ;}
+getdim() { xrandr | grep -oP '(?<=current ).*(?=,)' | tr -d ' ';}
 
-killrecording() { \
+killrecording() {
 	recpid="$(cat /tmp/recordingpid)"
 	kill -15 "$recpid"
 
@@ -31,9 +31,9 @@ screencast() {
 	-framerate 30 \
 	-s "$(getdim)" \
 	-i "$DISPLAY" \
-	-r 24 \
 	-f alsa -thread_queue_size 1024 -i default \
 	-c:v h264 \
+	-pix_fmt yuv420p \
 	-crf 23 -preset ultrafast -c:a aac \
 	-af "afftdn=nf=-75" \
 	"$HOME/Videos/screencast/screencast-$(date +%F-%H-%M-%S).mp4" &
@@ -60,6 +60,7 @@ video() {
 	-s "$(getdim)" \
 	-i "$DISPLAY" \
 	-c:v libx264 -crf 23 -r 30 \
+	-pix_fmt yuv420p \
 	"$HOME/Videos/videorec/video-$(date +%F-%H-%M-%S).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
@@ -77,6 +78,7 @@ videoselected() {
 		-video_size "$W"x"$H" \
 		-i :0.0+"$X,$Y" \
 		-c:v libx264 -crf 23 -r 30 \
+		-pix_fmt yuv420p \
 		"$HOME/Videos/videorec/box-$(date +%F-%H-%M-%S).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
@@ -106,8 +108,8 @@ webcamhidef() {
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
 
-askrecording() { \
-	choice=$(printf "screencast\\nvideo\\nvideo selected\\naudio\\nwebcam\\nwebcam (hi-def)" | rofi -dmenu -l 6 -i -p "Select recording style")
+askrecording() {
+	choice=$(printf "screencast\nvideo\nvideo selected\naudio\nwebcam\nwebcam (hi-def)" | rofi -dmenu -l 6 -i -p "Select recording style")
 	case "$choice" in
 		screencast) screencast;;
 		audio) audio;;
@@ -118,8 +120,8 @@ askrecording() { \
 	esac
 }
 
-asktoend() { \
-	response=$(printf "No\\nYes" | rofi -l 2 -dmenu -i -p "Recording still active. End recording?") &&
+asktoend() {
+	response=$(printf "No\nYes" | rofi -l 2 -dmenu -i -p "Recording still active. End recording?") &&
 	[ "$response" = "Yes" ] && killrecording
 }
 
@@ -133,5 +135,5 @@ case "$1" in
 		asktoend && exit
 	else
 		askrecording
-		fi ;;
+	fi ;;
 esac
