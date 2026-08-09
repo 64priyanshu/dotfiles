@@ -1,7 +1,20 @@
 #!/bin/bash
 
 if [[ -e /tmp/recordingpid ]]; then
-	echo "REC"
+	# Calculate elapsed recording time
+	start=$(stat -c %Y /tmp/recordingpid)
+	now=$(date +%s)
+	elapsed=$((now - start))
+
+	hours=$((elapsed / 3600))
+	minutes=$(((elapsed % 3600) / 60))
+	seconds=$((elapsed % 60))
+
+	if (( hours > 0 )); then
+		printf "REC %02d:%02d:%02d\n" "$hours" "$minutes" "$seconds"
+	else
+		printf "REC %02d:%02d\n" "$minutes" "$seconds"
+	fi
 
 	# Show prompt to stop recording on clicking
 	case "$BLOCK_BUTTON" in
