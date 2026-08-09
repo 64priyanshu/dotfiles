@@ -199,6 +199,7 @@ dpkg
 dunst
 efibootmgr
 espeakup
+evtest
 exfat-utils
 fastfetch
 fd
@@ -261,6 +262,7 @@ pipewire-alsa
 pipewire-pulse
 playerctl
 proton-vpn-gtk-app
+pyright
 python-pip
 python-pynvim
 qbittorrent
@@ -340,7 +342,6 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xss-lock
-yazi
 yt-dlp
 zoxide
 zsh
@@ -364,6 +365,7 @@ ttf-twemoji
 wezterm-git
 xtitle
 yay
+yazi-git
 
 # }}}
 
@@ -464,6 +466,7 @@ eglexternalplatform
 elfutils
 espeak-ng
 espeakup
+evtest
 exfat-utils
 exiv2
 expat
@@ -502,6 +505,7 @@ gdk-pixbuf2
 gegl
 geoclue
 gettext
+gexiv2-common
 giflib
 gimp
 git
@@ -883,7 +887,7 @@ linux-firmware-radeon
 linux-firmware-realtek
 linux-firmware-whence
 linux-headers
-litehtml0.9
+litehtml
 llhttp
 llvm
 llvm-libs
@@ -1035,6 +1039,7 @@ procps-ng
 proton-vpn-daemon
 proton-vpn-gtk-app
 psmisc
+pyright
 pyside6
 python
 python-aiohappyeyeballs
@@ -1321,7 +1326,7 @@ xxhash
 xz
 yajl
 yay
-yazi
+yazi-git
 yt-dlp
 yt-dlp-ejs
 yyjson
