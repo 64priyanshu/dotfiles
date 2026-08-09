@@ -80,6 +80,9 @@ bindsym $super+Shift+s exec --no-startup-id "flameshot gui"
 # Key to open screen-recorder script
 bindsym $super+Shift+v exec --no-startup-id ~/.local/bin/recorder
 
+# Key to open menu to switch recording device during recording
+bindsym $super+Shift+i exec --no-startup-id ~/.local/bin/inswitch
+
 # Key to use colorpicker tool (xcolor, imagick)
 # bindsym $super+Shift+e exec --no-startup-id "xcolor | tr -d '\n' | xclip -selection clipboard"
 bindsym $super+Shift+e exec --no-startup-id ~/.local/bin/colorpicker

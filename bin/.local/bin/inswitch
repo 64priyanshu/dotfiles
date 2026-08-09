@@ -1,0 +1,251 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly NOTIFY_TITLE="Recording Stream"
+
+# Helpers
+die() {
+	notify-send -u critical "$NOTIFY_TITLE" "$1"
+	exit 1
+}
+
+info() {
+	notify-send -u low "$NOTIFY_TITLE" "$1"
+}
+
+require_commands() {
+	local cmd
+
+	for cmd in pactl rofi notify-send; do
+		command -v "$cmd" >/dev/null 2>&1 ||
+			die "Missing command: $cmd"
+	done
+}
+
+# Get recording streams
+get_streams() {
+	pactl list source-outputs
+}
+
+build_stream_options() {
+	LC_ALL=C awk '
+		BEGIN { FS = "" }
+		function flush() {
+			if (stream_id == "") return
+			if (app == "") app = (binary != "" ? binary : "Unknown")
+			# Prefer media.name (e.g. "Meet", "Discord", a tab
+			# title) as the distinguishing second half of the
+			# label. Skip it if empty or just a repeat of the
+			# app name, and fall back to the binary so the entry
+			# is still identifiable.
+			label = app
+			if (media != "" && media != app) {
+				label = app " - " media
+			} else if (binary != "" && binary != app) {
+				label = app " - " binary
+			}
+			printf "%s\t%s\t%s\n", label, stream_id, source_index
+		}
+		/^Source Output #/ {
+			flush()
+			stream_id = $0
+			sub(/^Source Output #/, "", stream_id)
+			source_index = ""; app = ""; binary = ""; media = ""
+			next
+		}
+		/^\tSource: / {
+			source_index = $0
+			sub(/^\tSource: /, "", source_index)
+			next
+		}
+		/application\.name = / {
+			app = $0
+			sub(/^[^=]*= "/, "", app)
+			sub(/"$/, "", app)
+			next
+		}
+		/application\.process\.binary = / {
+			binary = $0
+			sub(/^[^=]*= "/, "", binary)
+			sub(/"$/, "", binary)
+			next
+		}
+		/[[:space:]]media\.name = / {
+			media = $0
+			sub(/^[^=]*= "/, "", media)
+			sub(/"$/, "", media)
+			next
+		}
+		END { flush() }
+	'
+}
+
+# Select recording stream
+select_stream() {
+	local options="$1"
+
+	printf '%s\n' "$options" |
+		rofi \
+			-dmenu \
+			-i \
+			-l 6 \
+			-p "Recording application" \
+			-display-columns 1
+}
+
+# Get recording sources
+get_sources() {
+	pactl list sources
+}
+
+build_source_options() {
+	local sources_text="$1"
+	local current_index="$2"
+	printf '%s' "$sources_text" |
+		LC_ALL=C awk -v current="$current_index" '
+			BEGIN { FS = "" }
+			function flush() {
+				if (idx == "") return
+				if (description == "") description = name
+				marker = (idx == current) ? "* " : "  "
+				printf "%s%s\t%s\n", marker, description, name
+			}
+			/^Source #/ {
+				flush()
+				idx = $0
+				sub(/^Source #/, "", idx)
+				name = ""; description = ""
+				next
+			}
+			/^\tName: / {
+				name = $0
+				sub(/^\tName: /, "", name)
+				next
+			}
+			/^\tDescription: / {
+				description = $0
+				sub(/^\tDescription: /, "", description)
+				next
+			}
+			END { flush() }
+		'
+}
+
+# Select source
+select_source() {
+	local options="$1"
+
+	printf '%s\n' "$options" |
+		rofi \
+			-dmenu \
+			-i \
+			-l 6 \
+			-p "Recording device" \
+			-display-columns 1
+}
+
+# Main
+main() {
+	require_commands
+
+	# Find active recording streams
+	local streams_text
+	streams_text=$(get_streams)
+
+	local stream_options
+	stream_options=$(printf '%s' "$streams_text" | build_stream_options)
+
+	if [[ -z "$stream_options" ]]; then
+		info "No applications are currently recording."
+		exit 0
+	fi
+
+	# Choose recording stream
+	local stream_selection
+	stream_selection=$(select_stream "$stream_options")
+
+	[[ -n "$stream_selection" ]] || exit 0
+
+	local app_label stream_id current_source_index
+
+	IFS=$'\t' read -r \
+		app_label \
+		stream_id \
+		current_source_index <<< "$stream_selection"
+
+	# Get available recording sources
+	local sources_text
+	sources_text=$(get_sources)
+
+	local source_options
+	source_options=$(build_source_options \
+		"$sources_text" \
+		"$current_source_index")
+
+	if [[ -z "$source_options" ]]; then
+		die "No recording devices found."
+	fi
+
+	# Choose destination source
+	local source_selection
+	source_selection=$(select_source "$source_options")
+
+	[[ -n "$source_selection" ]] || exit 0
+
+	# Parse selected source
+	# Strip the visual selection marker while preserving the
+	# tab-separated source name.
+	source_selection="${source_selection#\* }"
+	source_selection="${source_selection#  }"
+
+	local source_description source_name
+
+	IFS=$'\t' read -r \
+		source_description \
+		source_name <<< "$source_selection"
+
+	# Determine current source name
+	local current_source_name
+
+	current_source_name=$(
+		printf '%s' "$sources_text" |
+			LC_ALL=C awk -v current="$current_source_index" '
+				BEGIN { FS = "" }
+				function flush() {
+					if (idx == current) print name
+				}
+				/^Source #/ {
+					flush()
+					idx = $0
+					sub(/^Source #/, "", idx)
+					name = ""
+					next
+				}
+				/^\tName: / {
+					name = $0
+					sub(/^\tName: /, "", name)
+					next
+				}
+				END { flush() }
+			'
+	)
+
+	# Nothing to do
+	if [[ "$source_name" == "$current_source_name" ]]; then
+		info "$app_label is already using $source_description"
+		exit 0
+	fi
+
+	# Move recording stream
+	if pactl move-source-output "$stream_id" "$source_name"; then
+		notify-send \
+			-i audio-card \
+			-u low \
+			"$NOTIFY_TITLE" \
+			"$app_label -> $source_description"
+	else
+		die "Failed to move recording stream."
+	fi
+}
+
+main "$@"
