@@ -3,14 +3,15 @@
 
 # 1. bin/
 [Module]          [Packages]
-batterynotif      dunst(*)
-colorpicker       dunst(*) xcolor xclip imagemagick
+batterynotif      dunst(*) libnotify
+colorpicker       dunst(*) xcolor xclip imagemagick libnotify
 fzf-custom        fzf git(*)
-mediacontrol      dunst(*) playerctl brightnessctl pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack pavucontrol
+inputswitch       rofi(*) libnotify pipewire pipewire-pulse
+mediacontrol      dunst(*) libnotify playerctl brightnessctl pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack pavucontrol
 notif-sound       dunst(*)
 pacman-list
 recorder          ffmpeg slop i3blocks(*)
-usb               dmenu rofi(*) opendoas dunst(*) xclip
+usb               dmenu libnotify rofi(*) opendoas dunst(*) xclip
 webcam            mpv(*) cameractrls
 
 # 2. dunst/

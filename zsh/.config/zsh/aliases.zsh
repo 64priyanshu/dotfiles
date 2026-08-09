@@ -11,6 +11,12 @@ alias orphan-remove='sudo pacman -Rns $(pacman -Qtdq)'
 # sudo pacman -U /var/cache/pacman/pkg/<package-info>.pkg.tar.zst
 # Or use downgrade(aur) - https://aur.archlinux.org/packages/downgrade
 
+# Check what package owns the command
+# pacman -Qo "$(command -v cmd)"
+
+# Show information on a package
+# pacman -Qi package
+
 alias v="nvim"
 alias vi="nvim"
 
