@@ -87,15 +87,15 @@ videoselected() {
 webcam() {
 	mkdir -p "$HOME/Videos/webcam"
 	ffmpeg \
-	-f v4l2 \
-	-input_format mjpeg \
-	-framerate 30 \
-	-use_wallclock_as_timestamps 1 \
-	-video_size 640x480 \
-	-i /dev/video0 \
-	-c:v libx264 \
-	-pix_fmt yuv420p \
-	"$HOME/Videos/webcam/webcam-$(date +%F-%H-%M-%S).mkv" &
+		-f v4l2 \
+		-input_format mjpeg \
+		-framerate 30 \
+		-use_wallclock_as_timestamps 1 \
+		-video_size 640x480 \
+		-i /dev/video0 \
+		-c:v libx264 \
+		-pix_fmt yuv420p \
+		"$HOME/Videos/webcam/webcam-$(date +%F-%H-%M-%S).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
@@ -103,15 +103,15 @@ webcam() {
 webcamhidef() {
 	mkdir -p "$HOME/Videos/webcam"
 	ffmpeg \
-	-f v4l2 \
-	-input_format mjpeg \
-	-framerate 30 \
-	-use_wallclock_as_timestamps 1 \
-	-video_size 1280x720 \
-	-i /dev/video0 \
-	-c:v libx264 \
-	-pix_fmt yuv420p \
-	"$HOME/Videos/webcam/webcam-$(date +%F-%H-%M-%S).mkv" &
+		-f v4l2 \
+		-input_format mjpeg \
+		-framerate 30 \
+		-use_wallclock_as_timestamps 1 \
+		-video_size 1280x720 \
+		-i /dev/video0 \
+		-c:v libx264 \
+		-pix_fmt yuv420p \
+		"$HOME/Videos/webcam/webcam-$(date +%F-%H-%M-%S).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
