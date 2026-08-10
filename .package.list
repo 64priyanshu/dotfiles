@@ -6,7 +6,7 @@
 batterynotif      dunst(*) libnotify
 colorpicker       dunst(*) xcolor xclip imagemagick libnotify
 fzf-custom        fzf git(*)
-inputswitch       rofi(*) libnotify pipewire pipewire-pulse
+input-switch       rofi(*) libnotify pipewire pipewire-pulse
 mediacontrol      dunst(*) libnotify playerctl brightnessctl pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack pavucontrol
 notif-sound       dunst(*)
 pacman-list
