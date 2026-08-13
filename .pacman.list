@@ -8,6 +8,10 @@ base
 base-devel
 bc
 bind
+blueman
+bluez
+bluez-deprecated-tools
+bluez-utils
 boost
 brightnessctl
 cameractrls
@@ -18,6 +22,7 @@ dpkg
 dunst
 efibootmgr
 espeakup
+evtest
 exfat-utils
 fastfetch
 fd
@@ -84,6 +89,7 @@ pipewire-alsa
 pipewire-pulse
 playerctl
 proton-vpn-gtk-app
+pyright
 python-pip
 python-pynvim
 qbittorrent
@@ -172,7 +178,7 @@ xorg-xwud
 xss-lock
 xtitle
 yay
-yazi
+yazi-git
 yt-dlp
 zoxide
 zsh
@@ -190,6 +196,10 @@ base
 base-devel
 bc
 bind
+blueman
+bluez
+bluez-deprecated-tools
+bluez-utils
 boost
 brightnessctl
 cameractrls
@@ -406,7 +416,11 @@ bind
 binutils
 bison
 blas
+blueman
+bluez
+bluez-deprecated-tools
 bluez-libs
+bluez-utils
 boost
 boost-libs
 brightnessctl
