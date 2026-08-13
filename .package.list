@@ -1,7 +1,11 @@
 (a) - aur
 (*) - has own config
 
-# 1. bin/
+# 1. bash/
+[Module]          [Packages]
+.bashrc           bash
+
+# 2. bin/
 [Module]          [Packages]
 batterynotif      dunst(*) libnotify
 colorpicker       dunst(*) xcolor xclip imagemagick libnotify
@@ -14,24 +18,24 @@ recorder          ffmpeg slop i3blocks(*)
 system            rofi(*)
 webcam            mpv(*) cameractrls
 
-# 2. dunst/
+# 3. dunst/
 [Module]          [Packages]
 dunstrc           dunst rofi(*) firefox ttf-twemoji(a) getnf(https://github.com/getnf/getnf)
 
-# 3. font/
+# 4. font/
 [Module]          [Packages]
 fonts.conf        noto-fonts
 
-# 4. git/
+# 5. git/
 [Module]          [Packages]
 .gitconfig        git github-cli
 
-# 5. i3/
+# 6. i3/
 [Module]          [Packages]
 config            i3-wm i3lock xss-lock kitty(*) firefox yazi rofi(*) rofi-emoji rofi-greenclip(a) flameshot getnf(https://github.com/getnf/getnf) cboomer(https://github.com/laserattack/cboomer) ripdrag(a)
 i3blocks.conf     i3blocks
 
-# 5.5. i3blocks/
+# 6.5. i3blocks/
 [Module]          [Packages]
 window            xtitle(a)
 battery           acpi
@@ -44,62 +48,62 @@ temperature       lm_sensors
 volume-pipewire   pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack alsa-utils pavucontrol
 record-status
 
-# 6. kitty/
+# 7. kitty/
 [Module]          [Packages]
 kitty.conf        kitty getnf(https://github.com/getnf/getnf)
 
-# 7. mimeapps/
+# 8. mimeapps/
 [Module]          [Packages]
 mimeapps.list     selectdefaultapplication-git(a) mime-tui(a)
 
-# 8. mpv/
+# 9. mpv/
 [Module]          [Packages]
 mpv.conf          mpv
 input.conf        mpv
 
-# 9. nvim/
+# 10. nvim/
 [Module]          [Packages]
 init.lua          nvim git lua luarocks
 lspconfig.lua     nodejs npm
 telescope.lua     fd ripgrep
 treesitter.lua    mingw-w64-gcc make tree-sitter-cli(https://www.npmjs.com/package/tree-sitter-cli)
 
-#10. picom/
+#11. picom/
 [Module]          [Packages]
 picom.conf        picom
 
-# 11. redshift/
+# 12. redshift/
 [Module]          [Packages]
 redshift.conf     redshift geoclue
 
-# 12. rofi/
+# 13. rofi/
 [Module]          [Packages]
 config.rasi       rofi kitty(*) getnf(https://github.com/getnf/getnf)
 
-# 13. tmux/
+# 14. tmux/
 [Module]          [Packages]
 tmux.conf         tmux xclip
 
-# 14. vim/
+# 15. vim/
 [Module]          [Packages]
 .vimrc            gvim
 
-# 15. wezterm/
+# 16. wezterm/
 [Module]          [Packages]
 wezterm.lua       ttf-twemoji(a) getnf(https://github.com/getnf/getnf) or (https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip)
 
-# 16. x/
+# 17. x/
 [Module]          [Packages]
 .xinitrc          xorg xorg-xinit xorg-drivers(https://archlinux.org/groups/x86_64/xorg-drivers/) i3(*)
 .xprofile         qt5ct qt6ct nvim(*) kitty(*) firefox feh networkmanager flameshot dunst rofi-greenclip(a) picom(*)
 .Xresources       gtk3 gtk4 nwg-look qt5ct qt6ct sassc libadwaita arandr gamepad-tool-bin(a) (theme, icons, cursor mentioned in file)
 
-# 17. zsh/
+# 18. zsh/
 [Module]          [Packages]
 .zshrc            xorg(*)
 .zshrc            zsh (plugins mentioned in file)
 .zshenv           nvim(*) kitty(*) firefox feh mpv(*) i3(*) rofi(*)
 
-# 17.5. zsh/
+# 18.5. zsh/
 [Module]          [Packages]
 aliases.zsh       downgrade(a)
