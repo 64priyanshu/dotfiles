@@ -11,6 +11,7 @@ mediacontrol      dunst(*) libnotify playerctl brightnessctl pipewire pipewire-a
 notif-sound       dunst(*)
 pacman-list
 recorder          ffmpeg slop i3blocks(*)
+system            rofi(*)
 webcam            mpv(*) cameractrls
 
 # 2. dunst/
