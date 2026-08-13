@@ -16,7 +16,7 @@ webcam            mpv(*) cameractrls
 
 # 2. dunst/
 [Module]          [Packages]
-dunstrc           dunst dmenu firefox ttf-twemoji(a) getnf(https://github.com/getnf/getnf)
+dunstrc           dunst rofi(*) firefox ttf-twemoji(a) getnf(https://github.com/getnf/getnf)
 
 # 3. font/
 [Module]          [Packages]
