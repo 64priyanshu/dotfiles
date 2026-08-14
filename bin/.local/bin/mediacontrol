@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Pipewire Setup Guide: https://www.siberoloji.com/how-to-configure-pipewire-for-audio-on-arch-linux/
-# Script from: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator/-/tree/main?ref_type=heads
+# Script modified from: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator/-/tree/main?ref_type=heads
 
 # Media variables
 volume_step=1
@@ -17,74 +17,57 @@ show_music_in_volume_indicator=true
 notification_timeout=1000
 
 # Uses regex to get volume from pactl
-function get_volume {
+get_volume() {
 	pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '[0-9]{1,3}(?=%)' | head -1
 }
 
 # Uses regex to get mute status from pactl
-function get_mute {
+get_mute() {
 	pactl get-sink-mute @DEFAULT_SINK@ | grep -Po '(?<=Mute: )(yes|no)'
 }
 
 # Uses regex to get brightness from brightnessctl
-function get_brightness {
+get_brightness() {
 	brightnessctl | grep -Po '[0-9]{1,3}(?=%)' | head -n 1
 }
 
 # Returns a mute icon, a volume-low icon, or a volume-high icon, depending on the volume
-function get_volume_icon {
+get_volume_icon() {
 	volume=$(get_volume)
 	mute=$(get_mute)
-	if [ "$volume" -eq 0 ] || [ "$mute" == "yes" ] ; then
-		volume_icon="󰸈"
-	elif [ "$volume" -lt 20 ]; then
-		volume_icon=""
-	elif [ "$volume" -lt 50 ]; then
-		volume_icon=""
+	if [[ "$volume" -eq 0 || "$mute" == "yes" ]]; then
+		echo "󰸈"
+	elif [[ "$volume" -lt 20 ]]; then
+		echo ""
+	elif [[ "$volume" -lt 50 ]]; then
+		echo ""
 	else
-		volume_icon=" "
+		echo " "
 	fi
 }
 
-# Always returns the same icon
-function get_brightness_icon {
-	brightness_icon="󰃠"
-}
-
 # Get Album art
-function get_album_art {
+get_album_art() {
 	url=$(playerctl -f "{{mpris:artUrl}}" metadata)
 	if [[ $url == "file://"* ]]; then
 		album_art="${url/file:\/\//}"
-	elif [[ $url == "http://"* ]] && [[ $download_album_art == "true" ]]; then
+	elif [[ $url == "http://"* || $url == "https://"* ]] && [[ $download_album_art == "true" ]]; then
 		# Identify filename from URL
 		filename="$(echo $url | sed "s/.*\///")"
-
-		# Download file to /tmp if it doesn't exist
-		if [ ! -f "/tmp/$filename" ]; then
-			wget -O "/tmp/$filename" "$url"
-		fi
-
 		album_art="/tmp/$filename"
-	elif [[ $url == "https://"* ]] && [[ $download_album_art == "true" ]]; then
-		# Identify filename from URL
-		filename="$(echo $url | sed "s/.*\///")"
-
-		# Download file to /tmp if it doesn't exist
-		if [ ! -f "/tmp/$filename" ]; then
-			wget -O "/tmp/$filename" "$url"
+		# Download only if it doesn't already exist
+		if [[ ! -f "$album_art" ]]; then
+			wget -O "$album_art" "$url"
 		fi
-
-		album_art="/tmp/$filename"
 	else
 		album_art=""
 	fi
 }
 
 # Displays a volume notification
-function show_volume_notif {
-	volume=$(get_mute)
-	get_volume_icon
+show_volume_notif() {
+	volume=$(get_volume)
+	volume_icon=$(get_volume_icon)
 
 	if [[ $show_music_in_volume_indicator == "true" ]]; then
 		current_song=$(playerctl -f "{{title}} - {{artist}}" metadata)
@@ -100,7 +83,7 @@ function show_volume_notif {
 }
 
 # Displays a music notification
-function show_music_notif {
+show_music_notif() {
 	song_title=$(playerctl -f "{{title}}" metadata)
 	song_artist=$(playerctl -f "{{artist}}" metadata)
 	song_album=$(playerctl -f "{{album}}" metadata)
@@ -112,10 +95,12 @@ function show_music_notif {
 	notify-send -a "mediacontrol" -t $notification_timeout -h string:x-dunst-stack-tag:music_notif -i "$album_art" "$song_title" "$song_artist - $song_album"
 }
 
-# Displays a brightness notification using dunstify
-function show_brightness_notif {
+# Always returns the same icon
+brightness_icon="󰃠"
+
+# Displays a brightness notification
+show_brightness_notif() {
 	brightness=$(get_brightness)
-	get_brightness_icon
 	notify-send -a "mediacontrol" -t $notification_timeout -h string:x-dunst-stack-tag:brightness_notif -h int:value:$brightness "$brightness_icon $brightness%"
 }
 
