@@ -11,6 +11,7 @@ bind
 blueman
 bluez
 bluez-deprecated-tools
+bluez-obex
 bluez-utils
 boost
 brightnessctl
@@ -199,6 +200,7 @@ bind
 blueman
 bluez
 bluez-deprecated-tools
+bluez-obex
 bluez-utils
 boost
 brightnessctl
@@ -420,6 +422,7 @@ blueman
 bluez
 bluez-deprecated-tools
 bluez-libs
+bluez-obex
 bluez-utils
 boost
 boost-libs
@@ -714,6 +717,7 @@ libgpg-error
 libgudev
 libheif
 libhwasan
+libical
 libice
 libidn2
 libiec61883
@@ -1220,6 +1224,7 @@ tree-sitter-vim
 tree-sitter-vimdoc
 tslib
 ttf-jetbrains-mono
+ttf-liberation
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-common
 ttf-nerd-fonts-symbols-mono
@@ -1357,4 +1362,5 @@ zsh-completions
 zsh-syntax-highlighting
 zstd
 zxing-cpp
+
 # }}}
