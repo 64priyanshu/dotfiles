@@ -74,8 +74,10 @@ bindsym $super+Shift+q kill
 bindsym $super+Shift+f focus parent; focus child
 
 # Key to use screenshot tool (flameshot)
+# ~/Pictures/screenshots/screenshot_%F_%H-%M-%S
 bindsym $super+Shift+s exec --no-startup-id "flameshot gui"
 # bindsym $super+Shift+s exec "env QT_ENABLE_HIGHDPI_SCALING=0 flameshot gui"
+bindsym $alt+Shift+s exec --no-startup-id "flameshot gui --delay 2000"
 
 # Key to open screen-recorder script
 bindsym $super+Shift+v exec --no-startup-id ~/.local/bin/recorder

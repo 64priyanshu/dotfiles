@@ -36,7 +36,7 @@ screencast() {
 	-pix_fmt yuv420p \
 	-crf 23 -preset ultrafast -c:a aac \
 	-af "afftdn=nf=-75" \
-	"$HOME/Videos/screencast/screencast-$(date +%F-%H-%M-%S).mp4" &
+	"$HOME/Videos/screencast/screencast_$(date +%F_%H-%M-%S).mp4" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
@@ -47,7 +47,7 @@ audio() {
 	-f alsa -i default \
 	-af "afftdn=nf=-75" \
 	-c:a aac -b:a 128k \
-	"$HOME/Music/audiorec/audio-$(date +%F-%H-%M-%S).mkv" &
+	"$HOME/Music/audiorec/audio_$(date +%F_%H-%M-%S).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
@@ -61,7 +61,7 @@ video() {
 	-i "$DISPLAY" \
 	-c:v libx264 -crf 23 -r 30 \
 	-pix_fmt yuv420p \
-	"$HOME/Videos/videorec/video-$(date +%F-%H-%M-%S).mkv" &
+	"$HOME/Videos/videorec/video_$(date +%F_%H-%M-%S).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
@@ -79,7 +79,7 @@ videoselected() {
 		-i :0.0+"$X,$Y" \
 		-c:v libx264 -crf 23 -r 30 \
 		-pix_fmt yuv420p \
-		"$HOME/Videos/videorec/box-$(date +%F-%H-%M-%S).mkv" &
+		"$HOME/Videos/videorec/box_$(date +%F_%H-%M-%S).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
@@ -95,7 +95,7 @@ webcam() {
 		-i /dev/video0 \
 		-c:v libx264 \
 		-pix_fmt yuv420p \
-		"$HOME/Videos/webcam/webcam-$(date +%F-%H-%M-%S).mkv" &
+		"$HOME/Videos/webcam/webcam_$(date +%F_%H-%M-%S).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
@@ -111,7 +111,7 @@ webcamhidef() {
 		-i /dev/video0 \
 		-c:v libx264 \
 		-pix_fmt yuv420p \
-		"$HOME/Videos/webcam/webcam-$(date +%F-%H-%M-%S).mkv" &
+		"$HOME/Videos/webcam/webcamhi_$(date +%F_%H-%M-%S).mkv" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
