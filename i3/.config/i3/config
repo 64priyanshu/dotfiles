@@ -67,10 +67,10 @@ bindsym $super+period exec --no-startup-id rofi -modi emoji -show emoji -emoji-m
 # Start Rofi-clipboard-manager: https://github.com/erebe/greenclip
 bindsym $super+colon exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
-# kill focused window
+# Kill focused window
 bindsym $super+Shift+q kill
 
-# refocus window
+# Refocus window
 bindsym $super+Shift+f focus parent; focus child
 
 # Key to use screenshot tool (flameshot)
@@ -154,21 +154,23 @@ bindsym $super+space floating toggle
 
 # Popup during fullscreen
 popup_during_fullscreen smart
+
 # Focus on window activation
-# setting urgent fixes problem with GTK file picker exiting firefox from fullscreen
+# Setting urgent fixes problem with GTK file picker exiting firefox from fullscreen
 focus_on_window_activation urgent
 
 # Workspace back and forth on pressing current workspace key
 # workspace_auto_back_and_forth yes
+
 # Workspace back and forth keybind
 bindsym $super+Tab workspace back_and_forth
 
-# read 1 character and mark the current window with this character
+# Read 1 character and mark the current window with this character
 bindsym $super+Shift+m exec --no-startup-id i3-input -F 'mark %s' -l 1 -P 'Mark: '
-# read 1 character and go to the window with the character
+# Read 1 character and go to the window with the character
 bindsym $super+g exec --no-startup-id i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
-# enable window title icons
+# Enable window title icons
 for_window [all] title_window_icon on
 for_window [all] title_window_icon padding 3px
 
