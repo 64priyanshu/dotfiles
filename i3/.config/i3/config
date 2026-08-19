@@ -99,7 +99,10 @@ bindsym $super+u exec --no-startup-id ~/.local/bin/usb
 # Magnifier Script (From: https://github.com/laserattack/cboomer)
 # bindsym $super+m exec --no-startup-id ~/.local/bin/cboomer
 # Prevent multiple Magnifier instances
-bindsym $super+m exec --no-startup-id pgrep -fx ~/.local/bin/cboomer > /dev/null || ~/.local/bin/cboomer
+# bindsym $super+m exec --no-startup-id pgrep -fx ~/.local/bin/cboomer > /dev/null || ~/.local/bin/cboomer
+
+# Magnifier Script
+bindsym $super+m exec --no-startup-id ~/.local/bin/cboomer-launch
 
 # Mode launcher
 # set $mode_launcher Launch: [f]irefox [k]itty

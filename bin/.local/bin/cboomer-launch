@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Prevent multiple Magnifier instances
+if pgrep -fx "$HOME/.local/bin/cboomer" >/dev/null; then
+	exit 0
+fi
+
+# Execute Magnifier cboomer
+"$HOME/.local/bin/cboomer" &
+
+# Get PID of cboomer
+pid=$!
+
+# Tell i3blocks that cboomer started
+pkill -RTMIN+6 i3blocks
+
+# Wait until cboomer exits
+wait "$pid"
+
+# Tell i3blocks that cboomer stopped
+pkill -RTMIN+6 i3blocks

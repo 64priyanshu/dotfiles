@@ -8,6 +8,7 @@
 # 2. bin/
 [Module]          [Packages]
 batterynotif      dunst(*) libnotify
+cboomer-launch    cboomer(https://github.com/laserattack/cboomer)
 colorpicker       dunst(*) xcolor xclip imagemagick libnotify
 fzf-custom        fzf git(*)
 input-switch       rofi(*) libnotify pipewire pipewire-pulse
