@@ -94,8 +94,7 @@ bindsym $super+Shift+period exec --no-startup-id ~/.local/bin/system
 
 # Webcam Script
 bindsym $super+w exec --no-startup-id ~/.local/bin/webcam
-# Usb Script
-bindsym $super+u exec --no-startup-id ~/.local/bin/usb
+
 # Magnifier Script (From: https://github.com/laserattack/cboomer)
 # bindsym $super+m exec --no-startup-id ~/.local/bin/cboomer
 # Prevent multiple Magnifier instances
