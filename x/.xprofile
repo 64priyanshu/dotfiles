@@ -11,6 +11,10 @@ export TOUCHPAD=$(xinput list --name-only | grep -i touchpad)
 # Trackpad speed (-1 to 1)
 xinput set-prop "$TOUCHPAD" "libinput Accel Speed" 0
 
+# Force Mozilla to bypass legacy touchpad emoulation
+export MOZ_USE_XINPUT2=1
+# Check gestures with libinput-tools (libinput {debug-events, debug-gui})
+
 # Remap caps to escape
 # setxkbmap -option caps:escape
 # Swap escape and caps
