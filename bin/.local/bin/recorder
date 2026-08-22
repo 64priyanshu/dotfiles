@@ -21,6 +21,7 @@
 getdim() { xrandr | grep -oP '(?<=current ).*(?=,)' | tr -d ' ';}
 
 killrecording() {
+	[ -f /tmp/recordingpid ] || return 0
 	recpid="$(cat /tmp/recordingpid)"
 	kill -15 "$recpid"
 
@@ -35,10 +36,9 @@ screencast() {
 	-s "$(getdim)" \
 	-i "$DISPLAY" \
 	-f alsa -thread_queue_size 1024 -i default \
-	-c:v h264 \
+	-c:v libx264 \
 	-pix_fmt yuv420p \
 	-crf 23 -preset ultrafast -c:a aac \
-	-af "afftdn=nf=-75" \
 	"$HOME/Videos/screencast/screencast_$(date +%F_%H-%M-%S).mp4" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
