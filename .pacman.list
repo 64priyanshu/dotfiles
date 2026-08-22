@@ -24,7 +24,7 @@ dunst
 efibootmgr
 espeakup
 evtest
-exfat-utils
+exfatprogs
 fastfetch
 fd
 feh
@@ -213,7 +213,7 @@ dunst
 efibootmgr
 espeakup
 evtest
-exfat-utils
+exfatprogs
 fastfetch
 fd
 feh
@@ -491,7 +491,7 @@ elfutils
 espeak-ng
 espeakup
 evtest
-exfat-utils
+exfatprogs
 exiv2
 expat
 fakeroot
