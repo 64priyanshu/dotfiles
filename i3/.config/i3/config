@@ -12,6 +12,9 @@ exec --no-startup-id dex --autostart --environment i3
 # Ensures screen-locker automatically activates when system is about to sleep
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -p default -i "$XDG_PICTURES_DIR/wallpapers/lock.png"
 
+# Auto start on login
+exec --no-startup-id easyeffects --service-mode --hide-window
+
 # Dunst batterynotif
 exec --no-startup-id ~/.local/bin/batterynotif
 
