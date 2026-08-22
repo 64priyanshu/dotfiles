@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# Install easyeffects for audio effects
+# easyeffects - disable "process all output/input streams" to allow switching to different sources
+
 set -euo pipefail
 
 readonly NOTIFY_TITLE="Recording Stream"

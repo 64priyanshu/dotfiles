@@ -15,6 +15,9 @@
 #
 # If there is already a running instance, user will be prompted to end it.
 
+# Install easyeffects for audio features like supression, equalizer etc.
+# Effects for good Input: Noise Reduction, Gate
+
 getdim() { xrandr | grep -oP '(?<=current ).*(?=,)' | tr -d ' ';}
 
 killrecording() {
