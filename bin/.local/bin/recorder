@@ -48,9 +48,8 @@ audio() {
 	mkdir -p "$HOME/Music/audiorec"
 	ffmpeg \
 	-f alsa -i default \
-	-af "afftdn=nf=-75" \
-	-c:a aac -b:a 128k \
-	"$HOME/Music/audiorec/audio_$(date +%F_%H-%M-%S).mkv" &
+	-c:a flac \
+	"$HOME/Music/audiorec/audio_$(date +%F_%H-%M-%S).flac" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
