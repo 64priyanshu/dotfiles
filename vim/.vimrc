@@ -132,7 +132,7 @@ xnoremap <leader>d "_d
 
 " Paste from clipboard keymap for GVIM
 if has("gui_running")
-	inoremap <C-S-v> <C-r>+
+	inoremap <C-S-v> <C-o>"+P
 	cnoremap <C-S-v> <C-r>+
 endif
 
