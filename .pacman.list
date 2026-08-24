@@ -38,6 +38,7 @@ gimp
 git
 github-cli
 gnome-themes-extra
+gromit-mpx
 grub
 gruvbox-plus-icon-theme
 gvfs
@@ -371,6 +372,7 @@ zsh-syntax-highlighting
 # Foreign-Explicit: pacman -Qqme {{{
 downgrade
 gamepad-tool-bin
+gromit-mpx
 gruvbox-plus-icon-theme
 losslesscut-bin
 mime-tui
@@ -415,6 +417,7 @@ audit
 autoconf
 automake
 avahi
+ayatana-ido
 babl
 base
 base-devel
@@ -567,6 +570,7 @@ graphene
 graphite
 grep
 groff
+gromit-mpx
 grub
 gruvbox-plus-icon-theme
 gsettings-desktop-schemas
@@ -690,6 +694,8 @@ libatasmart
 libatomic
 libatomic_ops
 libavc1394
+libayatana-appindicator
+libayatana-indicator
 libb2
 libblake3
 libblockdev

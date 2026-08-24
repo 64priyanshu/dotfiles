@@ -33,7 +33,7 @@ fonts.conf        noto-fonts
 
 # 6. i3/
 [Module]          [Packages]
-config            i3-wm i3lock xss-lock easyeffects kitty(*) firefox yazi rofi(*) rofi-emoji rofi-greenclip(a) flameshot getnf(https://github.com/getnf/getnf) cboomer(https://github.com/laserattack/cboomer) ripdrag(a)
+config            i3-wm i3lock xss-lock easyeffects gromit-mpx(a) kitty(*) firefox yazi rofi(*) rofi-emoji rofi-greenclip(a) flameshot getnf(https://github.com/getnf/getnf) cboomer(https://github.com/laserattack/cboomer) ripdrag(a)
 i3blocks.conf     i3blocks
 
 # 6.5. i3blocks/
