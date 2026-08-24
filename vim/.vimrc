@@ -130,6 +130,11 @@ xnoremap <leader>y "+y
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 
+" Paste from clipboard in VIM for Windows
+if has('win32') || has('win64')
+	inoremap <C-S-v> <C-o>"+P
+endif
+
 " Paste from clipboard keymap for GVIM
 if has("gui_running")
 	inoremap <C-S-v> <C-o>"+P
