@@ -31,12 +31,16 @@ fonts.conf        noto-fonts
 [Module]          [Packages]
 .gitconfig        git github-cli
 
-# 6. i3/
+# 6. gromit-mpx/
 [Module]          [Packages]
-config            i3-wm i3lock xss-lock easyeffects gromit-mpx(a) kitty(*) firefox yazi rofi(*) rofi-emoji rofi-greenclip(a) flameshot getnf(https://github.com/getnf/getnf) cboomer(https://github.com/laserattack/cboomer) ripdrag(a)
+gromit-mpx.cfg    gromit-mpx(a)
+
+# 7. i3/
+[Module]          [Packages]
+config            i3-wm i3lock xss-lock easyeffects gromit-mpx(*) kitty(*) firefox yazi rofi(*) rofi-emoji rofi-greenclip(a) flameshot getnf(https://github.com/getnf/getnf) cboomer(https://github.com/laserattack/cboomer) ripdrag(a)
 i3blocks.conf     i3blocks
 
-# 6.5. i3blocks/
+# 7.5. i3blocks/
 [Module]          [Packages]
 window            xtitle(a)
 battery           acpi
@@ -49,62 +53,62 @@ record-status
 temperature       lm_sensors
 volume-pipewire   pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack alsa-utils pavucontrol
 
-# 7. kitty/
+# 8. kitty/
 [Module]          [Packages]
 kitty.conf        kitty getnf(https://github.com/getnf/getnf)
 
-# 8. mimeapps/
+# 9. mimeapps/
 [Module]          [Packages]
 mimeapps.list     selectdefaultapplication-git(a) mime-tui(a)
 
-# 9. mpv/
+# 10. mpv/
 [Module]          [Packages]
 mpv.conf          mpv
 input.conf        mpv
 
-# 10. nvim/
+# 11. nvim/
 [Module]          [Packages]
 init.lua          nvim git lua luarocks
 lspconfig.lua     nodejs npm
 telescope.lua     fd ripgrep
 treesitter.lua    mingw-w64-gcc make tree-sitter-cli(https://www.npmjs.com/package/tree-sitter-cli)
 
-#11. picom/
+# 12. picom/
 [Module]          [Packages]
 picom.conf        picom
 
-# 12. redshift/
+# 13. redshift/
 [Module]          [Packages]
 redshift.conf     redshift geoclue
 
-# 13. rofi/
+# 14. rofi/
 [Module]          [Packages]
 config.rasi       rofi kitty(*) getnf(https://github.com/getnf/getnf)
 
-# 14. tmux/
+# 15. tmux/
 [Module]          [Packages]
 tmux.conf         tmux xclip
 
-# 15. vim/
+# 16. vim/
 [Module]          [Packages]
 .vimrc            gvim
 
-# 16. wezterm/
+# 17. wezterm/
 [Module]          [Packages]
 wezterm.lua       ttf-twemoji(a) getnf(https://github.com/getnf/getnf) or (https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip)
 
-# 17. x/
+# 18. x/
 [Module]          [Packages]
 .xinitrc          xorg xorg-xinit xorg-drivers(https://archlinux.org/groups/x86_64/xorg-drivers/) i3(*)
 .xprofile         qt5ct qt6ct nvim(*) kitty(*) firefox libinput-tools feh networkmanager flameshot dunst rofi-greenclip(a) picom(*)
 .Xresources       gtk3 gtk4 nwg-look qt5ct qt6ct sassc libadwaita arandr gamepad-tool-bin(a) (theme, icons, cursor mentioned in file)
 
-# 18. zsh/
+# 19. zsh/
 [Module]          [Packages]
 .zshrc            xorg(*)
 .zshrc            zsh (plugins mentioned in file)
 .zshenv           nvim(*) kitty(*) firefox feh mpv(*) i3(*) rofi(*)
 
-# 18.5. zsh/
+# 19.5. zsh/
 [Module]          [Packages]
 aliases.zsh       downgrade(a)
