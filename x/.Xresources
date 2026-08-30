@@ -8,7 +8,7 @@ Xft.antialias: true
 ! Gamepad tester GUI
 ! https://aur.archlinux.org/packages/gamepad-tool-bin
 
-! Cursor (Use nwg-look to set GTK ~/.themes, ~/.icons and cursors OR /usr/share/themes/, /usr/share/icons/)
+! (Use nwg-look to set GTK ~/.themes, ~/.icons and cursors OR /usr/share/themes/, /usr/share/icons/ OR .local/share/themes, .local/share/icons)
 ! Theme  - https://github.com/vinceliuice/Colloid-gtk-theme (./install.sh -l -d ~/.themes -n Colloid -c dark --tweaks gruvbox normal)
 ! Icons  - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme (sudo pacman -S papirus-icon-theme)
 ! Cursor - https://github.com/sainnhe/capitaine-cursors (edit name inside ~/icons/CapitaineCursors/index.theme and remove spaces from Name)
