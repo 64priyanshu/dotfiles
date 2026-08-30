@@ -12,3 +12,5 @@ Xft.antialias: true
 ! Theme  - https://github.com/vinceliuice/Colloid-gtk-theme (./install.sh -l -d ~/.themes -n Colloid -c dark --tweaks gruvbox normal)
 ! Icons  - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme (sudo pacman -S papirus-icon-theme)
 ! Cursor - https://github.com/sainnhe/capitaine-cursors (edit name inside ~/icons/CapitaineCursors/index.theme and remove spaces from Name)
+
+! Fix GTK round corner black edges problem: https://unix.stackexchange.com/questions/705043/rounded-corners-from-gtk-theme-have-black-background
