@@ -32,4 +32,4 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # Paths
-export PATH="$HOME/.local/bin/":$PATH
+export PATH="$HOME/.local/bin":$PATH
