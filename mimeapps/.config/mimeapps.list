@@ -1,8 +1,8 @@
-; https://wiki.archlinux.org/title/XDG_MIME_Applications
-; GUI: https://aur.archlinux.org/packages/selectdefaultapplication-git
-; TUI: https://aur.archlinux.org/packages/mime-tui
+# https://wiki.archlinux.org/title/XDG_MIME_Applications
+# GUI: https://aur.archlinux.org/packages/selectdefaultapplication-git
+# TUI: https://aur.archlinux.org/packages/mime-tui
 [Default Applications]
-; Audio
+# Audio
 audio/flac=mpv.desktop
 audio/vnd.dts=mpv.desktop
 audio/vnd.rn-realaudio=mpv.desktop
@@ -28,7 +28,7 @@ audio/x-aiff=mpv.desktop
 audio/x-tta=mpv.desktop
 audio/x-wavpack=mpv.desktop
 audio/aac=mpv.desktop
-; Image
+# Image
 image/heif=feh.desktop
 image/x-tga=feh.desktop
 image/webp=feh.desktop
@@ -44,7 +44,7 @@ image/vnd.zbrush.pcx=feh.desktop
 image/avif=firefox.desktop
 image/gif=firefox.desktop
 image/apng=firefox.desktop
-; Video
+# Video
 video/dv=mpv.desktop
 video/matroska=mpv.desktop
 video/x-matroska=mpv.desktop
@@ -65,13 +65,13 @@ video/mp4=mpv.desktop
 video/mkv=mpv.desktop
 video/x-flv=mpv.desktop
 video/3gpp=mpv.desktop
-; inode and Text
+# inode and Text
 inode/directory=yazi.desktop
 text/plain=nvim.desktop
 text/x-csrc=nvim.desktop
 text/x-shellscript=nvim.desktop
 text/x-c++src=nvim.desktop
-; Others
+# Others
 application/x-bittorrent=org.qbittorrent.qBittorrent.desktop
 application/xml=firefox.desktop
 application/x-xpinstall=firefox.desktop
