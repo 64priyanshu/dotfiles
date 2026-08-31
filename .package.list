@@ -11,7 +11,7 @@ batterynotif      dunst(*) libnotify
 cboomer-launch    cboomer(https://github.com/laserattack/cboomer)
 colorpicker       dunst(*) xcolor xclip imagemagick libnotify
 fzf-custom        fzf git(*)
-input-switch      rofi(*) libnotify easyeffects lsp-plugins pipewire pipewire-pulse
+input-switch      rofi(*) libnotify easyeffects qjackctl qpwgraph lsp-plugins pipewire pipewire-pulse
 mediacontrol      dunst(*) libnotify playerctl brightnessctl pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack pavucontrol
 notif-sound       dunst(*)
 pacman-list

@@ -3,6 +3,8 @@
 # Install easyeffects for audio effects
 # easyeffects - disable "process all output/input streams" to allow switching to different sources
 
+# Install qjackctl or qpwgraph as graph managers for precise modifications of input-output streams
+
 set -euo pipefail
 
 readonly NOTIFY_TITLE="Recording Stream"
