@@ -2,6 +2,9 @@
 set $super Mod4
 set $alt Mod1
 
+# i3-msg trick
+# i3-msg "workspace 2; exec kitty"
+
 # Set font (Install using getnf: https://github.com/getnf/getnf)
 # Check font-family names using 'fc-list : family' or 'fc-list : family | grep -i jetbrains'
 font pango: JetBrainsMono NF 8
@@ -24,6 +27,9 @@ exec --no-startup-id ~/.local/bin/batterynotif
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
+
+# Disable focus wrapping
+# focus_wrapping no
 
 # Disable mouse-hover making windows focus
 focus_follows_mouse no
@@ -215,8 +221,8 @@ bindsym $super+9 workspace number $ws9
 bindsym $super+0 workspace number $ws10
 
 # move to next and previous Workspaces where a window is open
-bindsym $super+Shift+bracketright workspace next
-bindsym $super+Shift+bracketleft workspace prev
+bindsym $super+n workspace next
+bindsym $super+p workspace prev
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace number $ws1
