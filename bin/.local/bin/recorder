@@ -28,17 +28,21 @@ killrecording() {
 	rm -f /tmp/recordingpid && pkill -RTMIN+3 i3blocks
 }
 
+# Variables
+FRAMERATE=30
+CRF=23
+
 screencast() {
 	mkdir -p "$HOME/Videos/screencast"
 	ffmpeg -y \
 	-f x11grab \
-	-framerate 30 \
+	-framerate "$FRAMERATE" \
 	-s "$(getdim)" \
 	-i "$DISPLAY" \
 	-f alsa -thread_queue_size 1024 -i default \
 	-c:v libx264 \
 	-pix_fmt yuv420p \
-	-crf 23 -preset ultrafast -c:a aac \
+	-crf "$CRF" -preset ultrafast -c:a aac \
 	"$HOME/Videos/screencast/screencast_$(date +%F_%H-%M-%S).mp4" &
 
 	echo $! > /tmp/recordingpid && pkill -RTMIN+3 i3blocks
@@ -58,10 +62,10 @@ video() {
 	mkdir -p "$HOME/Videos/videorec"
 	ffmpeg \
 	-f x11grab \
-	-framerate 30 \
+	-framerate "$FRAMERATE" \
 	-s "$(getdim)" \
 	-i "$DISPLAY" \
-	-c:v libx264 -crf 23 -r 30 \
+	-c:v libx264 -crf "$CRF" -r "$FRAMERATE" \
 	-pix_fmt yuv420p \
 	"$HOME/Videos/videorec/video_$(date +%F_%H-%M-%S).mkv" &
 
@@ -76,10 +80,10 @@ videoselected() {
 	mkdir -p "$HOME/Videos/videorec"
 	ffmpeg \
 		-f x11grab \
-		-framerate 30 \
+		-framerate "$FRAMERATE" \
 		-video_size "$W"x"$H" \
 		-i :0.0+"$X,$Y" \
-		-c:v libx264 -crf 23 -r 30 \
+		-c:v libx264 -crf "$CRF" -r "$FRAMERATE" \
 		-pix_fmt yuv420p \
 		"$HOME/Videos/videorec/box_$(date +%F_%H-%M-%S).mkv" &
 
@@ -91,7 +95,7 @@ webcam() {
 	ffmpeg \
 		-f v4l2 \
 		-input_format mjpeg \
-		-framerate 30 \
+		-framerate "$FRAMERATE" \
 		-use_wallclock_as_timestamps 1 \
 		-video_size 640x480 \
 		-i /dev/video0 \
@@ -107,7 +111,7 @@ webcamhidef() {
 	ffmpeg \
 		-f v4l2 \
 		-input_format mjpeg \
-		-framerate 30 \
+		-framerate "$FRAMERATE" \
 		-use_wallclock_as_timestamps 1 \
 		-video_size 1280x720 \
 		-i /dev/video0 \
