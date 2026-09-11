@@ -30,7 +30,7 @@ killrecording() {
 
 # Variables
 FRAMERATE=30
-CRF=23
+CRF=23 # ranges 0 (lossless) to 51 (worst quality)
 
 screencast() {
 	mkdir -p "$HOME/Videos/screencast"
