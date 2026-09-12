@@ -2,6 +2,9 @@
 set $super Mod4
 set $alt Mod1
 
+# Check X11 keysym using xorg-xev (https://wiki.archlinux.org/title/Keyboard_input#Identifying_keycodes_in_Xorg)
+# xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+
 # i3-msg trick
 # i3-msg "workspace 2; exec kitty"
 
