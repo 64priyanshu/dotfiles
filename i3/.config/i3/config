@@ -158,6 +158,9 @@ bindsym $super+s split h
 # split in vertical orientation
 bindsym $super+v split v
 
+# toggle split orientation
+bindsym $super+t split toggle
+
 # enter fullscreen mode for the focused container
 bindsym $super+f fullscreen toggle
 
@@ -165,13 +168,13 @@ bindsym $super+f fullscreen toggle
 bindsym $super+bracketright focus mode_toggle
 
 # change container layout (toggle split only)
-bindsym $super+t layout toggle split
+bindsym $super+bracketleft layout toggle split
 
 # toggle tiling / floating
 bindsym $super+space floating toggle
 
 # toggle sticky
-bindsym $super+bracketleft sticky toggle
+bindsym $super+BackSpace sticky toggle
 
 # Popup during fullscreen
 popup_during_fullscreen smart
