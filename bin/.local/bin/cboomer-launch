@@ -1,5 +1,15 @@
 #!/bin/sh
 
+# https://github.com/laserattack/cboomer
+# Clone the repo somewhere, and ln -s full/path/cboomer ~/.local/bin
+
+# Modify values in cboomer/src/config.h
+# Config default_config = {
+# 	.feather = 0.025f,
+# 	.texture_filter = 1,
+# 	.key_escape = XK_q,
+# };
+
 # Prevent multiple Magnifier instances
 if pgrep -fx "$HOME/.local/bin/cboomer" >/dev/null; then
 	exit 0
