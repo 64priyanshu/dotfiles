@@ -130,6 +130,9 @@ xnoremap <leader>y "+y
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 
+" Allow saving of files as sudo
+cmap w!! w !sudo tee > /dev/null %
+
 " Paste from clipboard keymap for GVIM
 if has("gui_running")
 	inoremap <C-S-v> <C-o>"+P
