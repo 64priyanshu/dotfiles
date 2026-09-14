@@ -1,5 +1,5 @@
 " Leader
-let mapleader =" "
+let mapleader=" "
 
 " Enable line numbers and relative numbering
 set number
@@ -130,8 +130,10 @@ xnoremap <leader>y "+y
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 
-" Command-Line map to save files as sudo
-cmap w!! w !sudo tee > /dev/null %
+" Command-Line map to save files as sudo (UNIX only)
+if has("unix")
+	cnoreabbrev w!! w !sudo tee > /dev/null %
+endif
 
 " Paste from clipboard keymap for GVIM
 if has("gui_running")
