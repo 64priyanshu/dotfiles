@@ -31,7 +31,7 @@ xset s off
 
 # Suspend after 10 minutes of inactivity (only if no media is playing)
 # Requires mpv-mpris for playerctl to recognize mpv
-xautolock -time 10 -locker 'playerctl -a status 2>/dev/null | grep -q "^Playing$" || systemctl suspend' -detectsleep
+xautolock -time 10 -locker 'playerctl -a status 2>/dev/null | grep -q "^Playing$" || systemctl suspend' -detectsleep &
 
 # Suspend after closing Laptop's Lid
 # sudoedit /etc/systemd/logind.conf and uncomment #HandleLidSwitch=suspend
