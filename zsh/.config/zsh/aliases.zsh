@@ -17,6 +17,9 @@ alias orphan-remove='sudo pacman -Rns $(pacman -Qtdq)'
 # Show information on a package
 # pacman -Qi package
 
+# Useful pacman utility from pacman-contrib
+# pactree
+
 alias v="nvim"
 alias vi="nvim"
 
