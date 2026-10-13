@@ -71,6 +71,7 @@ man-db
 mime-tui
 mingw-w64-gcc
 mpv
+mpv-mpris
 neovim
 network-manager-applet
 networkmanager
@@ -132,11 +133,13 @@ ttf-twemoji
 ufw
 unrar
 usbutils
+virtualbox
 virtualbox-guest-iso
 wezterm-git
 wget
 wl-clipboard
 wmctrl
+xautolock
 xcape
 xclip
 xcolor
@@ -184,7 +187,7 @@ xorg-xwud
 xss-lock
 xtitle
 yay
-yazi-git
+yazi
 yt-dlp
 zoxide
 zsh
@@ -259,6 +262,7 @@ macchanger
 man-db
 mingw-w64-gcc
 mpv
+mpv-mpris
 neovim
 network-manager-applet
 networkmanager
@@ -314,6 +318,7 @@ ttf-nerd-fonts-symbols-mono
 ufw
 unrar
 usbutils
+virtualbox
 virtualbox-guest-iso
 wget
 wl-clipboard
@@ -363,6 +368,7 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xss-lock
+yazi
 yt-dlp
 zoxide
 zsh
@@ -385,9 +391,9 @@ simple-mtpfs
 ttf-times-new-roman
 ttf-twemoji
 wezterm-git
+xautolock
 xtitle
 yay
-yazi-git
 
 # }}}
 
@@ -419,7 +425,6 @@ audit
 autoconf
 automake
 avahi
-ayatana-ido
 babl
 base
 base-devel
@@ -452,6 +457,7 @@ cairomm-1.16
 cameractrls
 cblas
 cdparanoia
+cfitsio
 clamav
 clang
 clucene
@@ -479,6 +485,7 @@ deno
 desktop-file-utils
 device-mapper
 diffutils
+dkms
 dmenu
 dnssec-anchors
 dotconf
@@ -597,6 +604,7 @@ gvfs
 gzip
 harfbuzz
 harfbuzz-icu
+hdf5
 hicolor-icon-theme
 hidapi
 highway
@@ -685,6 +693,7 @@ libabw
 libaccounts-glib
 libaccounts-qt
 libadwaita
+libaec
 libao
 libappindicator
 libarchive
@@ -697,7 +706,6 @@ libatomic
 libatomic_ops
 libavc1394
 libayatana-appindicator
-libayatana-indicator
 libb2
 libblake3
 libblockdev
@@ -720,6 +728,7 @@ libcap-ng
 libcdio
 libcdio-paranoia
 libcdr
+libcgif
 libcloudproviders
 libcmis
 libcolord
@@ -773,6 +782,7 @@ libical
 libice
 libidn2
 libiec61883
+libimagequant
 libimobiledevice
 libimobiledevice-glue
 libinih
@@ -791,8 +801,10 @@ liblo
 liblqr
 liblsan
 libluv
+liblzf
 libmad
 libmakepkg-dropins
+libmatio
 libmaxminddb
 libmd
 libmilter
@@ -884,6 +896,7 @@ libtirpc
 libtommath
 libtool
 libtorrent-rasterbar
+libtpms
 libtsan
 libubsan
 libunibreak
@@ -899,6 +912,7 @@ libuv
 libva
 libvdpau
 libverto
+libvips
 libvisio
 libvorbis
 libvpl
@@ -953,6 +967,7 @@ lilv
 linux
 linux-api-headers
 linux-firmware
+linux-firmware-amd
 linux-firmware-amdgpu
 linux-firmware-atheros
 linux-firmware-broadcom
@@ -963,6 +978,7 @@ linux-firmware-nvidia
 linux-firmware-other
 linux-firmware-radeon
 linux-firmware-realtek
+linux-firmware-ti
 linux-firmware-whence
 linux-headers
 litehtml
@@ -1014,11 +1030,11 @@ mpdecimal
 mpfr
 mpg123
 mpv
+mpv-mpris
 msgpack-c
 mtdev
 mujs
 mypaint-brushes
-mypaint-brushes1
 ncurses
 neon
 neovim
@@ -1042,6 +1058,7 @@ npth
 nspr
 nss
 ntfs-3g
+numactl
 nvidia-open
 nvidia-settings
 nvidia-utils
@@ -1182,7 +1199,6 @@ python-propcache
 python-proton-core
 python-proton-keyring-linux
 python-proton-vpn-api-core
-python-proton-vpn-local-agent
 python-psutil
 python-pycparser
 python-pygments
@@ -1346,7 +1362,9 @@ v4l-utils
 vapoursynth
 verdict
 vid.stab
+virtualbox
 virtualbox-guest-iso
+virtualbox-host-dkms
 vmaf
 volume_key
 vte-common
@@ -1367,6 +1385,7 @@ x264
 x265
 xapp
 xapp-symbolic-icons
+xautolock
 xcape
 xcb-imdkit
 xcb-proto
@@ -1447,7 +1466,7 @@ xxhash
 xz
 yajl
 yay
-yazi-git
+yazi
 yt-dlp
 yt-dlp-ejs
 yyjson
