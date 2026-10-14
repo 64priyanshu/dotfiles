@@ -109,7 +109,7 @@ function set_default_playback_device_next {
 	move_sinks_to_new_default $default_sink
 }
 
-# Find the physical Speaker sink each time; never change the default sink.
+# Find the physical Speaker sink each time
 get_speaker_sink() {
 	pactl list sinks short | awk '$2 ~ /^alsa_output\./ && $2 ~ /Speaker/ { print $2; exit }'
 }
@@ -130,69 +130,60 @@ case "$BLOCK_BUTTON" in
 		[[ -n "$SPEAKER_SINK" ]] && pactl set-sink-volume "$SPEAKER_SINK" "-${AUDIO_DELTA}%" ;;
 esac
 
-
 function print_format {
 	echo "$1" | envsubst '${SYMB}${VOL}${INDEX}${NAME}'
 }
 
 function print_block {
-	local DEFAULT_SINK SINK_DATA INDEX NAME VOL MUTED DESCRIPTION SINK_NAME ALSA_NAME EE_RUNNING
+	DEFAULT_SINK=$(pactl get-default-sink)
+	ACTIVE="$(pactl list sinks  | grep "State\: RUNNING" -B4 -A55)"
 
-	DEFAULT_SINK=$(LC_ALL=C pactl get-default-sink)
-
-	SINK_DATA=$(LC_ALL=C pactl --format=json list sinks | jq -r --arg def "$DEFAULT_SINK" '
-		(any(.[]; .name == "easyeffects_sink" and .state == "RUNNING")) as $ee
-		| ( first(.[] | select(.state == "RUNNING" and .name != "easyeffects_sink"))
-		    // first(.[] | select(.name == $def and .name != "easyeffects_sink"))
-		    // first(.[] | select(.name | startswith("alsa_output.") and (. | test("speaker"; "i"))))
-		    // first(.[] | select(.name == $def))
-		    // .[0] ) as $s
-		| select($s != null)
-		| [ ($s.properties["api.alsa.pcm.card"] // ""),
-		    ($s.properties["node.nick"] // ""),
-		    (($s.volume | to_entries[0].value.value_percent // "0%") | rtrimstr("%")),
-		    $s.mute,
-		    ($s.description // ""),
-		    $s.name,
-		    ($s.properties["alsa.name"] // ""),
-		    $ee ] | join("|")')
-
-	if [[ -z "$SINK_DATA" ]]; then
-		echo "Sound inactive"
-		if [[ "$SUBSCRIBE" != 1 ]]; then
-			echo "Sound inactive"
-			echo '#222225'
-		fi
-		return
+	if [[ "$ACTIVE" == *"easyeffects_sink"* || ( "$ACTIVE" == "" && "$DEFAULT_SINK" == "easyeffects_sink" ) ]] ; then
+		SPEAKER_SINK=$(get_speaker_sink)
+		ACTIVE="$(pactl list sinks | grep -F "$SPEAKER_SINK" -B4 -A55)"
+	elif [[ $ACTIVE = "" ]] ; then
+		ACTIVE="$(pactl list sinks | grep -F "$DEFAULT_SINK" -B4 -A55)"
 	fi
+	ACTIVE="$(echo "$ACTIVE" | grep "Name:\|Volume: \(front-left\|mono\)\|Mute:\|api.alsa.pcm.card = \|node.nick = ")"
+	for Name in NAME MUTED VOL INDEX NICK; do
+		read -r $Name
+	done < <(echo "$ACTIVE")
+	INDEX=$(echo "$INDEX"  | grep -o '".*"' | sed 's/"//g')
+	VOL=$(echo "$VOL" | grep -o "[0-9]*%" | head -1 )
+	VOL="${VOL%?}"
+	NAME=$(echo "$NICK" | grep -o '".*"' | sed 's/"//g')
 
-	IFS='|' read -r INDEX NAME VOL MUTED DESCRIPTION SINK_NAME ALSA_NAME EE_RUNNING <<< "$SINK_DATA"
-
-	INDEX=${INDEX:-0}
-	VOL=${VOL:-0}
-	NAME=${NAME:-${DESCRIPTION:-Speaker}}
-
-	if [[ "$USE_ALSA_NAME" == 1 ]]; then
-		NAME=${ALSA_NAME:-$SINK_NAME}
-	elif [[ "$USE_DESCRIPTION" == 1 ]]; then
+	if [[ $USE_ALSA_NAME == 1 ]] ; then
+		ALSA_NAME=$(pactl list sinks |\
+			awk '/^\s*\*/{f=1}/^\s*index:/{f=0}f' |\
+			grep "alsa.name\|alsa.mixer_name" |\
+			head -n1 |\
+			sed 's/.*= "\(.*\)".*/\1/')
+		NAME=${ALSA_NAME:-$NAME}
+	elif [[ $USE_DESCRIPTION == 1 ]] ; then
+		DESCRIPTION=$(pactl list sinks  | grep "State\: RUNNING" -B4 -A55 | grep 'Description: ' | sed 's/^.*: //')
 		NAME=${DESCRIPTION:-$NAME}
 	fi
 
-	[[ "$EE_RUNNING" == true || "$SINK_NAME" != "$DEFAULT_SINK" && "$DEFAULT_SINK" == "easyeffects_sink" ]] && NAME="${NAME}(e)"
-
-	if [[ "$MUTED" == false ]]; then
+	if [[ $MUTED =~ "no" ]] ; then
 		SYMB=$AUDIO_HIGH_SYMBOL
-		(( VOL <= AUDIO_MED_THRESH )) && SYMB=$AUDIO_MED_SYMBOL
-		(( VOL <= AUDIO_LOW_THRESH )) && SYMB=$AUDIO_LOW_SYMBOL
+		[[ $VOL -le $AUDIO_MED_THRESH ]] && SYMB=$AUDIO_MED_SYMBOL
+		[[ $VOL -le $AUDIO_LOW_THRESH ]] && SYMB=$AUDIO_LOW_SYMBOL
 		COLOR=$DEFAULT_COLOR
 	else
 		SYMB=$AUDIO_MUTED_SYMBOL
 		COLOR=$MUTED_COLOR
 	fi
 
-	print_format "$LONG_FORMAT"
+	if [[ $ACTIVE = "" ]] ; then
+		echo "Sound inactive"
+		COLOR='#222225'
+	fi
 
-	if [[ "$SUBSCRIBE" != 1 ]]; then
+	if [[ $SUBSCRIBE == 1 ]] ; then
+		print_format "$LONG_FORMAT"
+	else
+		print_format "$LONG_FORMAT"
 		print_format "$SHORT_FORMAT"
 		echo "$COLOR"
 	fi

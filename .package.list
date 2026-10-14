@@ -51,7 +51,7 @@ keyindicator
 memory
 record-status
 temperature       lm_sensors
-volume-pipewire   pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack alsa-utils pavucontrol
+volume-pipewire   pipewire pipewire-audio pipewire-pulse pipewire-alsa wireplumber pipewire-jack alsa-utils pavucontrol easyeffects
 
 # 8. kitty/
 [Module]          [Packages]
