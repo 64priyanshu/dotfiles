@@ -8,6 +8,14 @@
 # 	.feather = 0.025f,
 # 	.texture_filter = 1,
 # 	.key_escape = XK_q,
+# 	.key_flashlight = XK_2,
+# 	.key_reset = XK_1,
+# 	.key_zoom_in = XK_equal,
+# 	.key_zoom_out = XK_minus,
+# 	.key_rotate_left = XK_9,
+# 	.key_rotate_right = XK_0,
+# 	.key_mirror = XK_3,
+# 	.key_save_screenshot = XK_s,
 # };
 
 # Prevent multiple Magnifier instances
