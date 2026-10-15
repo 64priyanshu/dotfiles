@@ -6,7 +6,11 @@
 # Modify values in cboomer/src/config.h
 # Config default_config = {
 # 	.feather = 0.025f,
+#
+# 	.screenshot_path = "~/Pictures/screenshots/cboomer_screenshot.png",
+#
 # 	.texture_filter = 1,
+#
 # 	.key_escape = XK_q,
 # 	.key_flashlight = XK_2,
 # 	.key_reset = XK_1,
