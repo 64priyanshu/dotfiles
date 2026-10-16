@@ -29,9 +29,6 @@ xset +dpms
 # Turn off screensaver
 xset s off
 
-# Turn off screen after 5 minutes (300 seconds) of inactivity
-xset dpms 0 0 300
-
 # Suspend after 10 minutes of inactivity (only if no media is playing)
 # Requires mpv-mpris for playerctl to recognize mpv
 xautolock -time 10 -locker 'playerctl -a status 2>/dev/null | grep -q "^Playing$" || systemctl suspend' -detectsleep &
