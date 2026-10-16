@@ -32,11 +32,18 @@ xset s off
 # Suspend after 10 minutes of inactivity (only if no media is playing)
 # Requires mpv-mpris for playerctl to recognize mpv
 # xautolock -time 10 -locker 'playerctl -a status 2>/dev/null | grep -q "^Playing$" || systemctl suspend' -detectsleep &
+
 # Checks pipewire sinks (doesn't need playerctl and mpv-mpris)
 # xautolock -time 10 -locker 'pactl list sinks short 2>/dev/null | awk "{print \$NF}" | grep -qx RUNNING || systemctl suspend' -detectsleep &
 
 # Check pipewire sink and check if app is fullscreen
-xautolock -time 10 -locker 'pactl list sinks short 2>/dev/null | awk "{print \$NF}" | grep -qx RUNNING || xprop -id "$(xdotool getactivewindow 2>/dev/null)" _NET_WM_STATE 2>/dev/null | grep -q FULLSCREEN || systemctl suspend' -detectsleep &
+# xautolock -time 10 -locker 'pactl list sinks short 2>/dev/null | awk "{print \$NF}" | grep -qx RUNNING || xprop -id "$(xdotool getactivewindow 2>/dev/null)" _NET_WM_STATE 2>/dev/null | grep -q FULLSCREEN || systemctl suspend' -detectsleep &
+
+# Check if battery is full, pipewire sink and if app is fullscreen
+# xautolock -time 10 -locker 'grep -qxE "Charging|Full" /sys/class/power_supply/BAT*/status 2>/dev/null || pactl list sinks short 2>/dev/null | awk "{print \$NF}" | grep -qx RUNNING || xprop -id "$(xdotool getactivewindow 2>/dev/null)" _NET_WM_STATE 2>/dev/null | grep -q FULLSCREEN || systemctl suspend' -detectsleep &
+
+# Shorter final version
+# xautolock -time 10 -locker 'grep -qxE "Charging|Full" /sys/class/power_supply/BAT*/status || pactl list sinks short | grep -q "\sRUNNING$" || xprop -id "$(xdotool getactivewindow)" _NET_WM_STATE | grep -q FULLSCREEN || systemctl suspend' -detectsleep &
 
 # Suspend after closing Laptop's Lid
 # sudoedit /etc/systemd/logind.conf and uncomment #HandleLidSwitch=suspend
