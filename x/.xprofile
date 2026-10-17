@@ -30,7 +30,12 @@ xset +dpms
 xset s off
 
 # Suspend after 10 minutes of inactivity (only if no media is playing)
-xautolock -time 10 -locker 'grep -qxE "Charging|Full" /sys/class/power_supply/BAT*/status || pactl list sinks short | grep -q "\sRUNNING$" || xprop -id "$(xdotool getactivewindow)" _NET_WM_STATE | grep -q FULLSCREEN || systemctl suspend' -detectsleep &
+xautolock -time 10 -detectsleep -locker '
+	grep -qxE "Charging|Full" /sys/class/power_supply/BAT*/status \
+	|| pactl list sinks short | grep -q "\sRUNNING$" \
+	|| xprop -id "$(xdotool getactivewindow)" _NET_WM_STATE | grep -q FULLSCREEN || \
+	systemctl suspend
+' &
 
 # Suspend after closing Laptop's Lid
 # sudoedit /etc/systemd/logind.conf and uncomment #HandleLidSwitch=suspend
