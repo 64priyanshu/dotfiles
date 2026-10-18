@@ -30,6 +30,9 @@ LOW_ALERT=40
 last_alert=""
 full_notified=false
 
+# Slight delay at startup
+sleep 0.5
+
 while true; do
 	batteryCapacity=$(cat "$BATPATH/capacity")
 	batteryStatus=$(cat "$BATPATH/status")
