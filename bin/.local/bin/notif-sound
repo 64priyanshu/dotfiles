@@ -1,19 +1,27 @@
 #!/bin/bash
 
-# Skip sounds for mediacontrol notifications
+# Skip sounds for mediacontrol notifications (~/.local/bin/mediacontrol)
 if [ "$DUNST_APP_NAME" = "mediacontrol" ]; then
+	exit 0
+fi
+
+# Use Physical Speaker Sink and not Easy Effects
+SINK=$(pactl list sinks short | awk '$2 ~ /^alsa_output\./ && $2 ~ /Speaker/ { print $2; exit }')
+
+# Exit if no speaker sink was found
+if [ -z "$SINK" ]; then
 	exit 0
 fi
 
 # Use the urgency to play different sounds (70% of volume, 0 is silent and 65536 is maximum)
 case "$DUNST_URGENCY" in
 	LOW)
-		paplay --volume=45875 ~/.config/dunst/sound/low.wav
+		paplay --device="$SINK" --volume=45875 ~/.config/dunst/sound/low.wav
 		;;
 	NORMAL)
-		paplay --volume=45875 ~/.config/dunst/sound/normal.wav
+		paplay --device="$SINK" --volume=45875 ~/.config/dunst/sound/normal.wav
 		;;
 	CRITICAL)
-		paplay --volume=45875 ~/.config/dunst/sound/critical.wav
+		paplay --device="$SINK" --volume=45875 ~/.config/dunst/sound/critical.wav
 		;;
 esac
