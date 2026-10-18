@@ -13,7 +13,7 @@ Modified: Mon Feb 12 2018 04:08:43 PST -0800
 
 * {
 	/* Theme settings */
-	highlight: bold italic;
+	highlight: underline #fabd2f;
 	scrollbar: true;
 
 	/* Gruvbox dark colors */
