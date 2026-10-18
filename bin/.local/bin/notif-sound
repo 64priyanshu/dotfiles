@@ -13,15 +13,18 @@ if [ -z "$SINK" ]; then
 	exit 0
 fi
 
-# Use the urgency to play different sounds (70% of volume, 0 is silent and 65536 is maximum)
+# Volume (75% of volume, 0 is silent and 65536 is maximum)
+VOLUME=49152
+
+# Use the urgency to play different sounds
 case "$DUNST_URGENCY" in
 	LOW)
-		paplay --device="$SINK" --volume=45875 ~/.config/dunst/sound/low.wav
+		paplay --device="$SINK" --volume="$VOLUME" ~/.config/dunst/sound/low.wav
 		;;
 	NORMAL)
-		paplay --device="$SINK" --volume=45875 ~/.config/dunst/sound/normal.wav
+		paplay --device="$SINK" --volume="$VOLUME" ~/.config/dunst/sound/normal.wav
 		;;
 	CRITICAL)
-		paplay --device="$SINK" --volume=45875 ~/.config/dunst/sound/critical.wav
+		paplay --device="$SINK" --volume="$VOLUME" ~/.config/dunst/sound/critical.wav
 		;;
 esac
