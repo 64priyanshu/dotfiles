@@ -6,6 +6,7 @@ if [ "$DUNST_APP_NAME" = "mediacontrol" ]; then
 fi
 
 # Use Physical Speaker Sink and not Easy Effects
+# OR enable 'process all output streams' and add 'paplay' to excluded app lists
 SINK=$(pactl list sinks short | awk '$2 ~ /^alsa_output\./ && $2 ~ /Speaker/ { print $2; exit }')
 
 # Exit if no speaker sink was found
