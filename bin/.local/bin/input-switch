@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install easyeffects for audio effects
-# easyeffects - disable "process all input streams" to allow switching to different sources
+# easyeffects - disable "process all input streams" OR enable "process all input streams" and exclude "Digital Microphone" source to allow switching to different sources
 
 # Install qjackctl or qpwgraph as graph managers for precise modifications of input-output streams
 
