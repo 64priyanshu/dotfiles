@@ -87,7 +87,7 @@ bindsym $super+colon exec --no-startup-id rofi -modi "clipboard:greenclip print"
 bindsym $super+Shift+q kill
 
 # Refocus window
-bindsym $super+Shift+f focus parent; focus child
+bindsym $super+Shift+f focus parent, focus child
 
 # Key to use screenshot tool (flameshot)
 # ~/Pictures/screenshots/screenshot_%F_%H-%M-%S
@@ -294,7 +294,7 @@ bindsym $super+Shift+minus move scratchpad
 bindsym $super+minus scratchpad show
 
 # Show the kitty scratchpad window, if any.
-bindsym $alt+k [class="kitty"] scratchpad show; move position center
+bindsym $alt+k [class="kitty"] scratchpad show, move position center
 
 # Set Gruvbox colorscheme colors
 set $bg #282828
