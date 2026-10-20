@@ -27,6 +27,9 @@ if pgrep -fx "$HOME/.local/bin/cboomer" >/dev/null; then
 	exit 0
 fi
 
+# Change cursor to indicate cboomer is active
+xsetroot -cursor_name center_ptr
+
 # Execute Magnifier cboomer
 "$HOME/.local/bin/cboomer" &
 
@@ -38,6 +41,9 @@ pkill -RTMIN+6 i3blocks
 
 # Wait until cboomer exits
 wait "$pid"
+
+# Restore default pointer cursor
+xsetroot -cursor_name left_ptr
 
 # Tell i3blocks that cboomer stopped
 pkill -RTMIN+6 i3blocks
