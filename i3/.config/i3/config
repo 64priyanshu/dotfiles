@@ -176,6 +176,9 @@ bindsym $super+bracketleft layout toggle split
 # toggle tiling / floating
 bindsym $super+space floating toggle
 
+# Resize and center floating window
+bindsym $super+c [floating] resize set 90 ppt 90 ppt, move position center
+
 # toggle sticky
 bindsym $super+BackSpace sticky toggle
 
