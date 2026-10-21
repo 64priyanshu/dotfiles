@@ -73,7 +73,10 @@ video() {
 }
 
 videoselected() {
-	slop -f "%x %y %w %h" > /tmp/slop
+	slop -f "%x %y %w %h" > /tmp/slop || {
+		rm -f /tmp/slop
+		return 1
+	}
 	read -r X Y W H < /tmp/slop
 	W=$((W / 2 * 2))
 	H=$((H / 2 * 2))
