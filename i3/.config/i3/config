@@ -22,7 +22,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -p defaul
 # Presets collection: https://github.com/JackHack96/EasyEffects-Presets
 # Preffered Preset: https://wiki.archlinux.org/title/Lenovo_ThinkPad_T14_(AMD)_Gen_4#Speakers
 exec --no-startup-id easyeffects --service-mode --hide-window
-# Increase pipewire quantum to fix easyeffects crashing issue (value: 1024 to 8192)
+# Increase pipewire quantum (value: 1024 to 8192) to fix easyeffects crashing issue if easyeffects is the preffered output sink
 exec --no-startup-id /usr/bin/pw-metadata -n settings 0 clock.force-quantum 2048
 
 # Screen annotation tool  (gromit-mpx(a))
