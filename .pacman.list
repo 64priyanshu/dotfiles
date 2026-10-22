@@ -15,6 +15,7 @@ bluez-obex
 bluez-utils
 boost
 brightnessctl
+calf
 cameractrls
 clamav
 cmake
@@ -212,6 +213,7 @@ bluez-obex
 bluez-utils
 boost
 brightnessctl
+calf
 cameractrls
 clamav
 cmake
@@ -454,6 +456,7 @@ ca-certificates-mozilla
 ca-certificates-utils
 cairo
 cairomm-1.16
+calf
 cameractrls
 cblas
 cdparanoia
@@ -524,6 +527,7 @@ firefox
 flac
 flameshot
 flex
+fluidsynth
 fmt
 fontconfig
 freeglut
@@ -947,7 +951,6 @@ libxklavier
 libxml2
 libxmlb
 libxmu
-libxnvctrl
 libxpm
 libxpresent
 libxrandr
@@ -985,6 +988,7 @@ litehtml
 llhttp
 llvm
 llvm-libs
+llvm-lit
 lm_sensors
 lmdb
 losslesscut-bin
@@ -1021,6 +1025,7 @@ mingw-w64-crt
 mingw-w64-gcc
 mingw-w64-headers
 mingw-w64-winpthreads
+ministream
 minizip
 mkinitcpio
 mkinitcpio-busybox
