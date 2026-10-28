@@ -23,8 +23,8 @@ export MOZ_USE_XINPUT2=1
 # Keys speed
 xset r rate 550 25 # initial delay 600ms, repeat 25 ms
 
-# Enable DPMS (Display Power Management Signaling)
-xset +dpms
+# Disable DPMS (Display Power Management Signaling)
+xset -dpms
 
 # Turn off screensaver
 xset s off
