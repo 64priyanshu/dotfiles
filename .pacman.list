@@ -186,6 +186,7 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xss-lock
+xterm
 xtitle
 yay
 yazi
@@ -370,6 +371,7 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xss-lock
+xterm
 yazi
 yt-dlp
 zoxide
@@ -1465,6 +1467,7 @@ xorg-xwud
 xorgproto
 xsel
 xss-lock
+xterm
 xtitle
 xvidcore
 xxhash
