@@ -8,6 +8,9 @@ set relativenumber
 " Syntax on
 syntax on
 
+" Enable filetype specifics
+filetype plugin indent on
+
 " Backspace
 set backspace=indent,eol,start
 
