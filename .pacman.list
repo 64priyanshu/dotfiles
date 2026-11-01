@@ -96,6 +96,7 @@ pipewire-alsa
 pipewire-pulse
 playerctl
 proton-vpn-gtk-app
+pureref
 pyright
 python-pip
 python-pynvim
@@ -388,6 +389,7 @@ gromit-mpx
 gruvbox-plus-icon-theme
 losslesscut-bin
 mime-tui
+pureref
 ripdrag
 rofi-greenclip
 selectdefaultapplication-git
@@ -1157,6 +1159,7 @@ protobuf
 proton-vpn-daemon
 proton-vpn-gtk-app
 psmisc
+pureref
 purpose
 pyright
 pyside6
