@@ -335,6 +335,10 @@ bar {
 # default_border pixel 1
 # default_floating_border pixel 1
 
+# Toggle border on current window
+bindsym $super+Shift+backslash border toggle
+# bindsym $super+Shift+bar border toggle
+
 # Disable border for firefox browser window
 for_window [class="firefox"] border none
 # Disable border for kitty terminal
