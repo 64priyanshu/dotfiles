@@ -182,7 +182,10 @@ bindsym $super+space floating toggle
 
 # Resize and center focused floating window (both work the same)
 # bindsym $super+c [con_id="__focused__"] resize set 90 ppt 90 ppt, move position center
-bindsym $super+c [con_id="__focused__" floating] resize set 90 ppt 90 ppt, move position center
+bindsym $super+comma [con_id="__focused__" floating] resize set 90 ppt 90 ppt, move position center
+
+# Resize and center floating window (smaller window)
+bindsym $super+Shift+comma [con_id="__focused__" floating] resize set 50 ppt 75 ppt, move position center
 
 # toggle sticky
 bindsym $super+BackSpace sticky toggle
