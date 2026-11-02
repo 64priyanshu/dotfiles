@@ -104,8 +104,8 @@ config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
 
 -- Others
-config.front_end = "WebGpu"
-config.webgpu_power_preference = "HighPerformance"
+config.front_end = "OpenGL"
+-- config.webgpu_power_preference = "LowPower"
 config.enable_kitty_graphics = true
 
 -- Keymaps
