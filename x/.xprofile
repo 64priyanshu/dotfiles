@@ -58,6 +58,3 @@ greenclip daemon &
 
 # Compositor
 picom -b
-
-# Redshift
-redshift &
