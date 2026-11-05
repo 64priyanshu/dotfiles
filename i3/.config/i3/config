@@ -348,6 +348,8 @@ bindsym $super+Shift+backslash border toggle
 
 # Disable border for firefox browser window
 for_window [class="firefox"] border none
+# Enable border for firefox private windows
+for_window [class="firefox" title=".*Private Browsing$"] border pixel 1
 # Disable border for kitty terminal
 for_window [class="kitty"] border pixel 1
 
