@@ -29,10 +29,11 @@ xset -dpms
 # Turn off screensaver
 xset s off
 
-# Suspend after 10 minutes of inactivity (only if no media is playing)
-xautolock -time 10 -detectsleep -locker '
+# Suspend after 10 minutes of inactivity (except: charging, media playing detected by playerctl or fullscreen)
+# Move the cursor to top-left to disable locker script
+xautolock -time 10 -detectsleep -corners '-000' -locker '
 	grep -qxE "Charging|Full" /sys/class/power_supply/BAT*/status \
-	|| pactl list sinks short | grep -q "\sRUNNING$" \
+	|| playerctl -a status 2>/dev/null | grep -q "^Playing$" \
 	|| xprop -id "$(xdotool getactivewindow)" _NET_WM_STATE | grep -q FULLSCREEN || \
 	systemctl suspend
 ' &
