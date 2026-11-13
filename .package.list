@@ -59,7 +59,7 @@ kitty.conf        kitty getnf(https://github.com/getnf/getnf)
 
 # 9. mimeapps/
 [Module]          [Packages]
-mimeapps.list     selectdefaultapplication-git(a) mime-tui(a) mpv nsxiv firefox yazi neovim qbittorrent
+mimeapps.list     selectdefaultapplication-git(a) mime-tui(a) mpv(*) nsxiv firefox yazi neovim(*) qbittorrent
 
 # 10. mpv/
 [Module]          [Packages]
