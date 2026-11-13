@@ -59,7 +59,7 @@ kitty.conf        kitty getnf(https://github.com/getnf/getnf)
 
 # 9. mimeapps/
 [Module]          [Packages]
-mimeapps.list     selectdefaultapplication-git(a) mime-tui(a) mpv nsxiv firefox yazi nvim qbittorrent
+mimeapps.list     selectdefaultapplication-git(a) mime-tui(a) mpv nsxiv firefox yazi neovim qbittorrent
 
 # 10. mpv/
 [Module]          [Packages]
@@ -68,7 +68,7 @@ input.conf        mpv
 
 # 11. nvim/
 [Module]          [Packages]
-init.lua          nvim git lua luarocks
+init.lua          neovim git lua luarocks
 lspconfig.lua     nodejs npm
 telescope.lua     fd ripgrep
 treesitter.lua    mingw-w64-gcc make tree-sitter-cli(https://www.npmjs.com/package/tree-sitter-cli)
@@ -100,14 +100,14 @@ wezterm.lua       ttf-twemoji(a) getnf(https://github.com/getnf/getnf) or (https
 # 18. x/
 [Module]          [Packages]
 .xinitrc          xorg xorg-xinit xorg-drivers(https://archlinux.org/groups/x86_64/xorg-drivers/) i3(*)
-.xprofile         qt5ct qt6ct nvim(*) kitty(*) firefox libinput-tools xautolock(a) playerctl mpv-mpris feh networkmanager flameshot dunst rofi-greenclip(a) picom(*)
+.xprofile         qt5ct qt6ct neovim(*) kitty(*) firefox libinput-tools xautolock(a) playerctl mpv-mpris feh networkmanager flameshot dunst rofi-greenclip(a) picom(*)
 .Xresources       gtk3 gtk4 nwg-look qt5ct qt6ct sassc libadwaita arandr gamepad-tool-bin(a) xterm getnf (theme, icons, cursor mentioned in file)
 
 # 19. zsh/
 [Module]          [Packages]
 .zshrc            xorg(*)
 .zshrc            zsh (plugins mentioned in file)
-.zshenv           nvim(*) kitty(*) firefox nsxiv mpv(*) i3(*) rofi(*)
+.zshenv           neovim(*) kitty(*) firefox nsxiv mpv(*) i3(*) rofi(*)
 
 # 19.5. zsh/
 [Module]          [Packages]
